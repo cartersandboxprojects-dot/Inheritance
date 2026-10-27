@@ -170,7 +170,7 @@ namespace Inheritance.Tests
             var state = new GameState(phase);
             state.SetFact(BreckenComfortedElena, fact);
             if (knowledge) state.GrantKnowledge(Victoria, BreckenComfortedElena);
-            state.SetFact(BreckenMetCharlie, true);
+            // Keep opposite truth false so each case isolates its missing prerequisite.
             state.GrantKnowledge(Elena, BreckenComfortedElena);
             state.GrantKnowledge(Victoria, BreckenMetCharlie);
             state.ModifyRelationship(Victoria, Resentment, -5);
