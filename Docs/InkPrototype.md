@@ -10,7 +10,7 @@ within 2.5 world units press E or click Talk. Choose family with Elena or
 business with Charlie. Close the conversation, approach Victoria, and talk.
 Esc/Close dismisses dialogue. Restart prototype clears session state so the
 other outcome can be exercised without leaving Play Mode. Leaving a choice
-conversation without choosing spends nothing. Session persistence is out of scope.
+conversation without choosing spends nothing. Use Save/Load for the backend state slot; see SaveLoad.md.
 
 Victoria is a third cylinder at (0,1,4), cloned from Elena with the same
 stationary collider/rendering and screen-space label setup. The scene runner

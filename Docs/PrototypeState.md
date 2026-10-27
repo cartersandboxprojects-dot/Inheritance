@@ -28,7 +28,7 @@ Identifiers are case-sensitive. `GameState` remains independent of authored cont
 `TryApply(state)`: evaluate once, return false without effects if ineligible,
 otherwise apply effects in declaration order and return true. Conditions/effects
 are immutable delegate-backed definitions authored in C#, with no Unity dependency.
-No OR/NOT combinators, serialization, scheduler, history, automatic inference,
+The original consequence milestone included no OR/NOT combinators, serialization, scheduler, history, automatic inference,
 scene hookup, dialogue runner, or save/load are included.
 
 Effects are sequential, not transactional: invalid identifiers or relationship/day
@@ -81,3 +81,10 @@ predicates and report consequences also require the opposite event false.
 The scene's explicit information event is Brecken reporting his meeting when
 talking to Victoria. See InkPrototype.md for complete current logic, controls,
 outcome table, and verification. The current suite has 32 passing cases.
+
+## Save/load extension (October 27, 2026)
+
+GameState now exposes detached Capture/Restore snapshots. StatePersistence writes
+versioned JSON and restores all backend state without Unity or Ink dependencies.
+FuneralNightSaveValidation owns the current prototype's authored consistency rules.
+See SaveLoad.md for the format, single-slot UI, error behavior, and verification.

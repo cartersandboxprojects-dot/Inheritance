@@ -6,9 +6,9 @@ namespace Inheritance.State
     public enum OpportunityState { Unavailable, Available, Missed, Deferred, Completed }
     public enum TimeBlock { Morning, Afternoon, Evening, Night }
 
-    // Session state only. Content owns identifiers and decides when consequences apply.
+    // Backend-owned state. Content owns identifiers and decides when consequences apply.
     // Knowledge records awareness of an event, independently of its current truth value.
-    public sealed class GameState
+    public sealed partial class GameState
     {
         private readonly Dictionary<string, bool> facts = new Dictionary<string, bool>();
         private readonly Dictionary<(string character, string attribute), int> relationships =

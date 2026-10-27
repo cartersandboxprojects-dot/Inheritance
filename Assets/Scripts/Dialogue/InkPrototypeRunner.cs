@@ -1,3 +1,5 @@
+using System;
+using System.IO;
 using Inheritance.State;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -17,12 +19,51 @@ namespace Inheritance.Dialogue
         public ElenaInkConversation Conversation { get; private set; }
         public string Transcript { get; private set; }
         private string speaker;
+        public string PersistenceStatus { get; private set; } = "";
+        public string SavePath => Path.Combine(Application.persistentDataPath, "funeral-night-v1.json");
+
+        public bool SavePrototype()
+        {
+            try
+            {
+                StatePersistence.Save(SavePath, State, FuneralNightSaveValidation.Validate);
+                PersistenceStatus = "Saved.";
+                return true;
+            }
+            catch (Exception error) when (error is IOException || error is InvalidDataException || error is UnauthorizedAccessException ||
+                error is System.Runtime.Serialization.SerializationException || error is ArgumentException)
+            {
+                PersistenceStatus = "Save failed: " + error.Message;
+                return false;
+            }
+        }
+
+        public bool LoadPrototype()
+        {
+            try
+            {
+                // Replace only after full parsing and validation; failed loads preserve session/dialogue.
+                var loaded = StatePersistence.Load(SavePath, FuneralNightSaveValidation.Validate);
+                State = loaded;
+                CloseConversation();
+                PersistenceStatus = "Loaded. Approach a character to start a new conversation.";
+                return true;
+            }
+            catch (Exception error) when (error is IOException || error is InvalidDataException || error is UnauthorizedAccessException ||
+                error is System.Runtime.Serialization.SerializationException || error is ArgumentException ||
+                error is System.Xml.XmlException)
+            {
+                PersistenceStatus = "Load failed: " + error.Message;
+                return false;
+            }
+        }
 
         private void Start() => ResetPrototype();
 
         public void ResetPrototype()
         {
             State = FuneralNightContent.CreateState();
+            PersistenceStatus = "";
             CloseConversation();
         }
 
@@ -81,7 +122,7 @@ namespace Inheritance.Dialogue
         private void OnGUI()
         {
             if (State == null) return;
-            GUILayout.BeginArea(new Rect(12, 12, 460, 290), GUI.skin.box);
+            GUILayout.BeginArea(new Rect(12, 12, 500, 410), GUI.skin.box);
             GUILayout.Label("Funeral night - WASD/arrows to move, E to talk, Esc to close");
             if (Conversation == null)
             {
@@ -103,6 +144,11 @@ namespace Inheritance.Dialogue
                 " | Business: " + State.GetFact(FuneralNightContent.BreckenMetCharlie));
             GUILayout.Label(State.StoryPhase + " | " + State.CurrentTimeBlock);
             if (GUILayout.Button("Restart prototype (try the other choice)")) ResetPrototype();
+            GUILayout.BeginHorizontal();
+            if (GUILayout.Button("Save")) SavePrototype();
+            if (GUILayout.Button("Load")) LoadPrototype();
+            GUILayout.EndHorizontal();
+            GUILayout.Label(PersistenceStatus);
             GUILayout.EndArea();
         }
     }
