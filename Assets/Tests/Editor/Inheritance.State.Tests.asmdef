@@ -1,0 +1,6 @@
+{
+    "name": "Inheritance.State.Tests",
+    "references": ["Inheritance.State"],
+    "includePlatforms": ["Editor"],
+    "optionalUnityReferences": ["TestAssemblies"]
+}
