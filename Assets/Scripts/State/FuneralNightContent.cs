@@ -14,7 +14,7 @@ namespace Inheritance.State
 
         public static GameState CreateState()
         {
-            var state = new GameState(FuneralNight, TimeBlock.Night);
+            var state = new GameState(FuneralNight, TimeBlock.Evening);
             state.SetOpportunityState(CharlieBusiness, OpportunityState.Available);
             return state;
         }

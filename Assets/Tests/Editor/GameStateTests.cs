@@ -56,7 +56,7 @@ namespace Inheritance.Tests
             state.SetOpportunityState(CharlieBusiness, value);
             Assert.That(state.GetOpportunityState(CharlieBusiness), Is.EqualTo(value));
             Assert.That(state.GetOpportunityState("OtherOpportunity"), Is.EqualTo(OpportunityState.Unavailable));
-            Assert.That(state.CurrentTimeBlock, Is.EqualTo(TimeBlock.Night));
+            Assert.That(state.CurrentTimeBlock, Is.EqualTo(TimeBlock.Evening));
             Assert.That(state.StoryPhase, Is.EqualTo(FuneralNight));
         }
 
@@ -64,6 +64,7 @@ namespace Inheritance.Tests
         public void TimeAndStoryPhaseChangeIndependently()
         {
             var state = CreateState();
+            state.AdvanceTime();
             state.AdvanceTime();
             Assert.That(state.Day, Is.EqualTo(1));
             Assert.That(state.CurrentTimeBlock, Is.EqualTo(TimeBlock.Morning));

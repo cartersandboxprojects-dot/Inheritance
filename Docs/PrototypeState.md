@@ -1,36 +1,71 @@
-# Funeral-night state prototype
+# Funeral-night state and consequence prototype
 
-`FuneralNightContent.CreateState()` creates a new session in `FuneralNight`, day 0,
-`TimeBlock.Night`, with `Charlie_FuneralNightBusiness` available. Missing facts are
-false, relationships are zero, knowledge is absent, and opportunities are unavailable.
-Identifiers are case-sensitive. There is no static mutable state or scene dependency.
+`FuneralNightContent.CreateState()` starts in `FuneralNight`, day 0, Evening,
+with `Charlie_FuneralNightBusiness` Available. Missing facts are false,
+relationships zero, knowledge absent, and opportunities Unavailable.
+Identifiers are case-sensitive. `GameState` remains independent of authored content.
 
-`GameState` separates world facts (bool), player-to-character relationship attributes
-(int, keyed by character and attribute), character awareness (character/fact pairs),
-opportunities (enum), broad time blocks with a relative day counter, and story phase
-(content string). Resentment is the prototype relationship attribute; its range and
-story effects belong to content, not the storage layer.
+## Generic API
 
-Prototype identifiers: `BRECKEN_COMFORTED_ELENA`,
-`BRECKEN_MET_CHARLIE_FUNERAL_NIGHT`, `Elena`, `Victoria`, `Resentment`,
-`Charlie_FuneralNightBusiness`, `FuneralNight`, `AfterFuneralNight`.
+`Condition.IsMet(state)` reads state without changing it. Factory operations:
+- `Fact(id, expected = true)`
+- `Knowledge(character, fact, expected = true)`
+- `RelationshipAtMost(character, attribute, maximum)` (inclusive integer comparison)
+- `Opportunity(id, expected)`
+- `Time(expected)`
+- `Phase(expected)`
+- `All(params Condition[])`: short-circuit AND; an empty group is true.
 
-Opportunity states: Unavailable, Available, Missed, Deferred, Completed.
-Time blocks: Morning, Afternoon, Evening, Night. `AdvanceTime()` advances one
-block; Night wraps to Morning and increments Day. Phase changes do not advance time.
+`Effect.Apply(state)` operations:
+- `SetFact(id, value)`
+- `ModifyRelationship(character, attribute, delta)`
+- `GrantKnowledge(character, fact)`
+- `SetOpportunity(id, value)`
+- `AdvanceTime()` (one block; Night rolls to Morning and increments Day)
+- `SetPhase(id)`
 
-Writing truth never grants knowledge. `GrantKnowledge` explicitly records awareness
-of an event, not a belief about its truth. No inference or propagation is performed.
-Time does not automatically close opportunities, and relationships do not write facts.
-The future scene/consequence caller must apply those effects explicitly.
+`Consequence(condition, params Effect[])` copies its definitions and exposes
+`TryApply(state)`: evaluate once, return false without effects if ineligible,
+otherwise apply effects in declaration order and return true. Conditions/effects
+are immutable delegate-backed definitions authored in C#, with no Unity dependency.
+No OR/NOT combinators, serialization, scheduler, history, automatic inference,
+scene hookup, dialogue runner, or save/load are included.
 
-Example sequence: set the comfort fact, modify Elena/Resentment, advance time,
-explicitly grant Victoria knowledge when the story calls for it, then query phase,
-truth, and knowledge separately when selecting a later scene branch.
+Effects are sequential, not transactional: invalid identifiers or relationship/day
+overflow can throw, and earlier effects are not rolled back. Definitions must be
+valid before execution; identifier validation is delegated to GameState operations.
+There is no generic one-shot tracking. Content guards must prevent unwanted repeats.
+Definition arrays are copied and null entries rejected. Definitions may be shared
+between sessions; all mutable state stays in the supplied GameState.
 
-Run `Inheritance.Tests.GameStateTests` in Unity Test Runner (EditMode), or Pipeline
-`test run` with mode `editor` and filter `Inheritance.Tests.GameStateTests`.
-These tests cover independence, defaults, day rollover, and the funeral-night sequence.
+## Authored proof
 
-This is an in-memory model only. Scene hookup, save/load, automatic consequences,
-dialogue eligibility evaluation, and future narrative systems are outside this step.
+`FuneralNightConsequences.ChooseElena` requires FuneralNight, Evening, Charlie's
+opportunity Available, and both existing event facts false. It sets
+`BRECKEN_COMFORTED_ELENA` true, sets `BRECKEN_MET_CHARLIE_FUNERAL_NIGHT` false,
+subtracts 1 from Elena/Resentment, marks `Charlie_FuneralNightBusiness` Missed,
+advances to Night, and sets `AfterFuneralNight`. Victoria remains unaware.
+The changed phase/time/opportunity/fact guards reject a repeat choice.
+
+Later, the caller explicitly invokes `InformVictoria.TryApply(state)` when the
+information should travel. Its conditions require the comfort fact, AfterFuneralNight,
+and Victoria not yet knowing it; its sole effect grants that knowledge.
+`VictoriaBranch.IsMet(state)` requires the comfort fact AND Victoria knowing that
+same fact AND AfterFuneralNight. Other facts, characters' knowledge, opportunities,
+and relationships cannot substitute for these requirements.
+
+Example caller sequence:
+1. Create a state with `FuneralNightContent.CreateState()`.
+2. Call `FuneralNightConsequences.ChooseElena.TryApply(state)` for the player's choice.
+3. VictoriaBranch is false until the later InformVictoria consequence is applied.
+4. Apply InformVictoria at the authored information event; VictoriaBranch is now true.
+
+Truth and awareness remain independent. Knowing a fact does not make it true,
+and changing world truth never grants knowledge. Relationships are player-to-character
+integer attributes; content owns their interpretation and bounds.
+
+Run EditMode tests with Pipeline `test run`, mode `editor`, filter `Inheritance.Tests`.
+GameStateTests covers storage separation/defaults/rollover; ConsequenceTests covers
+all condition categories, AND composition, immediate effects, rejected choices,
+repeat guards, propagation timing, each branch prerequisite, unrelated state, and
+immutable definition arrays.
