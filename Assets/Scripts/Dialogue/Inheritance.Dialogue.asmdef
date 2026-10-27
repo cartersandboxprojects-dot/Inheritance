@@ -1,1 +1,1 @@
-{"name":"Inheritance.Dialogue","references":["Inheritance.State","Ink-Libraries","Ink"]}
+{"name":"Inheritance.Dialogue","references":["Inheritance.State","Ink-Libraries","Ink","Unity.InputSystem"]}

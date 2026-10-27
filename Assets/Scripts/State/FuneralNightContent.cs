@@ -6,6 +6,7 @@ namespace Inheritance.State
         public const string BreckenComfortedElena = "BRECKEN_COMFORTED_ELENA";
         public const string BreckenMetCharlie = "BRECKEN_MET_CHARLIE_FUNERAL_NIGHT";
         public const string Elena = "Elena";
+        public const string Charlie = "Charlie";
         public const string Victoria = "Victoria";
         public const string Resentment = "Resentment";
         public const string CharlieBusiness = "Charlie_FuneralNightBusiness";

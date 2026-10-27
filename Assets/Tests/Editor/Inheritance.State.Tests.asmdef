@@ -1,6 +1,6 @@
 {
     "name": "Inheritance.State.Tests",
-    "references": ["Inheritance.State"],
+    "references": ["Inheritance.State","Inheritance.Dialogue","Ink-Libraries","Ink"],
     "includePlatforms": ["Editor"],
     "optionalUnityReferences": ["TestAssemblies"]
 }

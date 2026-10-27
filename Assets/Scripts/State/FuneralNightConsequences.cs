@@ -17,15 +17,46 @@ namespace Inheritance.State
             Effect.AdvanceTime(),
             Effect.SetPhase(FuneralNightContent.AfterFuneralNight));
 
+        // The same evening opportunity is consumed by either mutually exclusive choice.
+        public static readonly Consequence ChooseCharlie = new Consequence(
+            Condition.All(
+                Condition.Phase(FuneralNightContent.FuneralNight),
+                Condition.Time(TimeBlock.Evening),
+                Condition.Opportunity(FuneralNightContent.CharlieBusiness, OpportunityState.Available),
+                Condition.Fact(FuneralNightContent.BreckenComfortedElena, false),
+                Condition.Fact(FuneralNightContent.BreckenMetCharlie, false)),
+            Effect.SetFact(FuneralNightContent.BreckenMetCharlie, true),
+            Effect.ModifyRelationship(FuneralNightContent.Elena, FuneralNightContent.Resentment, 1),
+            Effect.ModifyRelationship(FuneralNightContent.Charlie, FuneralNightContent.Resentment, -1),
+            Effect.SetOpportunity(FuneralNightContent.CharlieBusiness, OpportunityState.Completed),
+            Effect.AdvanceTime(),
+            Effect.SetPhase(FuneralNightContent.AfterFuneralNight));
+
+        public static readonly Consequence InformVictoriaAboutCharlie = new Consequence(
+            Condition.All(
+                Condition.Fact(FuneralNightContent.BreckenMetCharlie),
+                Condition.Fact(FuneralNightContent.BreckenComfortedElena, false),
+                Condition.Phase(FuneralNightContent.AfterFuneralNight),
+                Condition.Knowledge(FuneralNightContent.Victoria, FuneralNightContent.BreckenMetCharlie, false)),
+            Effect.GrantKnowledge(FuneralNightContent.Victoria, FuneralNightContent.BreckenMetCharlie));
+
+        public static readonly Condition VictoriaBusinessBranch = Condition.All(
+            Condition.Fact(FuneralNightContent.BreckenMetCharlie),
+            Condition.Fact(FuneralNightContent.BreckenComfortedElena, false),
+            Condition.Knowledge(FuneralNightContent.Victoria, FuneralNightContent.BreckenMetCharlie),
+            Condition.Phase(FuneralNightContent.AfterFuneralNight));
+
         public static readonly Consequence InformVictoria = new Consequence(
             Condition.All(
                 Condition.Fact(FuneralNightContent.BreckenComfortedElena),
+            Condition.Fact(FuneralNightContent.BreckenMetCharlie, false),
                 Condition.Phase(FuneralNightContent.AfterFuneralNight),
                 Condition.Knowledge(FuneralNightContent.Victoria, FuneralNightContent.BreckenComfortedElena, false)),
             Effect.GrantKnowledge(FuneralNightContent.Victoria, FuneralNightContent.BreckenComfortedElena));
 
         public static readonly Condition VictoriaBranch = Condition.All(
             Condition.Fact(FuneralNightContent.BreckenComfortedElena),
+            Condition.Fact(FuneralNightContent.BreckenMetCharlie, false),
             Condition.Knowledge(FuneralNightContent.Victoria, FuneralNightContent.BreckenComfortedElena),
             Condition.Phase(FuneralNightContent.AfterFuneralNight));
     }

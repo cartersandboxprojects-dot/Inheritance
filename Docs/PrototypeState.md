@@ -69,3 +69,15 @@ GameStateTests covers storage separation/defaults/rollover; ConsequenceTests cov
 all condition categories, AND composition, immediate effects, rejected choices,
 repeat guards, propagation timing, each branch prerequisite, unrelated state, and
 immutable definition arrays.
+
+## Victoria playable extension (October 27, 2026)
+
+The initial authored proof above described the Elena-only milestone. The current
+prototype adds ChooseCharlie, InformVictoriaAboutCharlie, and VictoriaBusinessBranch.
+Both choices share exclusive fact/time/phase/opportunity guards. Charlie records
+BreckenMetCharlie, completes CharlieBusiness, adds 1 Elena resentment and subtracts
+1 Charlie resentment, then advances to Night/AfterFuneralNight. Both Victoria
+predicates and report consequences also require the opposite event false.
+The scene's explicit information event is Brecken reporting his meeting when
+talking to Victoria. See InkPrototype.md for complete current logic, controls,
+outcome table, and verification. The current suite has 32 passing cases.

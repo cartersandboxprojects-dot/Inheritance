@@ -1,63 +1,85 @@
-# Ink dialogue prototype
+# Funeral-night Ink prototype
 
 Verified October 27, 2026 with Unity 6000.3.27f1.
 
-## Architecture
+## Playable flow
 
-Ink controls conversation flow and reads caller-owned GameState. The explicit
-comfort_elena request delegates exclusively to the existing guarded
-FuneralNightConsequences.ChooseElena.TryApply operation. It does not write raw
-world state or maintain a parallel authoritative state. The mutation callback
-is bound with lookaheadSafe=false; only pure queries are lookahead-safe.
-The existing bridge and backend were preserved without redesign.
+Open Assets/Prototype_Mansion.unity and enter Play Mode. Move Brecken with
+WASD/arrows. Approach a stationary labeled cylinder (Elena, Charlie, Victoria);
+within 2.5 world units press E or click Talk. Choose family with Elena or
+business with Charlie. Close the conversation, approach Victoria, and talk.
+Esc/Close dismisses dialogue. Restart prototype clears session state so the
+other outcome can be exercised without leaving Play Mode. Leaving a choice
+conversation without choosing spends nothing. Session persistence is out of scope.
 
-InkPrototypeRunner is a temporary graybox OnGUI harness. Each Play session
-creates fresh prototype state. Future integration should inject the real
-session owner and replace this UI; save/load is outside this prototype.
+Victoria is a third cylinder at (0,1,4), cloned from Elena with the same
+stationary collider/rendering and screen-space label setup. The scene runner
+references Brecken and all three NPCs.
 
-## Package and scene
+## Architecture and authored information event
 
-Official com.inkle.ink-unity-integration 2.0.0 is installed through the upm Git
-branch, locked to 73cc147969899710843f473fdb06cea0e4d50fed. InkSettings and
-INK_RUNTIME/INK_EDITOR defines are included. Prototype_Mansion references the
-imported InkFile through its runner.
+Ink controls flow; ElenaInkConversation binds pure backend queries with
+lookaheadSafe=true and guarded consequence requests with lookaheadSafe=false.
+No Ink variable is authoritative. The bridge retains its original class name
+but now selects elena, charlie, or victoria knots from the existing story asset.
+InkPrototypeRunner owns fresh prototype session state and minimal proximity UI.
 
-The Directional Light's UniversalAdditionalLightData is retained as expected
-URP Editor data, verified against installed URP 17.3.0 source:
+Speaking to Victoria is an explicit authored report: the UI states that Brecken
+tells her who he spent the evening with. The runner invokes InformVictoria and
+InformVictoriaAboutCharlie; only the eligible true, exclusive event is granted.
+Neither choosing nor querying automatically grants knowledge. There is no
+generic propagation or belief engine.
 
-- Project GraphicsSettings and QualitySettings select Universal pipeline assets.
-- Editor/Lighting/UniversalRenderPipelineSerializedLight.cs constructs its
-  additional data through CoreEditorUtils.GetAdditionalData.
-- Core RP Editor/CoreEditorUtils.cs adds missing data with Undo.AddComponent.
-- Runtime/UniversalAdditionalLightData.cs defines exactly the serialized defaults:
-  pipeline shadow bias enabled, high additional-light shadow tier (2), no custom
-  shadow layers, cookie size (1,1), offset (0,0), pipeline soft-shadow quality (0),
-  default rendering/shadow masks (1), and current serialized version 4.
+Victoria's exact predicates:
+- Family: BRECKEN_COMFORTED_ELENA true, BRECKEN_MET_CHARLIE_FUNERAL_NIGHT false,
+  Victoria knows BRECKEN_COMFORTED_ELENA, phase AfterFuneralNight.
+- Business: BRECKEN_MET_CHARLIE_FUNERAL_NIGHT true, BRECKEN_COMFORTED_ELENA false,
+  Victoria knows BRECKEN_MET_CHARLIE_FUNERAL_NIGHT, phase AfterFuneralNight.
+- Otherwise: "I have not heard what you decided tonight."
 
-This is the normal light-inspector attachment path, not an Ink requirement or
-an authored lighting adjustment. Original Light and Transform fields are unchanged.
-Persisting the component avoids repeating the automatic attachment on inspection.
+The eligible lines are "I see you have chosen family over business." and
+"Your mind is on business instead of family."
 
-## Verification after cleanup
+## Backend outcomes
 
-- Removed Assets/Temp/ink-before.png, ink-after.png, their metadata, and the empty
-  Assets/Temp folder and folder metadata through AssetDatabase.DeleteAsset.
-- Forced Ink story reimport succeeded and produced compiled story JSON.
-- Script recompile reported up_to_date, with no compilation failure.
-- Live runner started with one choice and comfort fact false; selecting the same
-  handler used by the button completed the story and set comfort true.
-- Backend effects: Night, AfterFuneralNight, Elena resentment -1, Charlie's
-  opportunity Missed, Victoria unaware. Repeating TryApply was rejected and
-  resentment remained -1.
-- Returning conversation recognized the existing comfort fact.
-- Ineligible conversation returned the alternate response; fact, phase, time,
-  day, relationship, opportunity and Victoria knowledge remained unchanged.
-- Existing EditMode suite: 20 passed, zero failed/skipped/inconclusive.
+Both choices require FuneralNight, Evening, CharlieBusiness Available, and both
+event facts false. Both advance one block to Night, day remains 0, and set phase
+AfterFuneralNight. These guards reject repeats and the opposite choice.
 
-Tooling history: the earlier screenshot destination error and command-discovery
-errors were identified and cleared. An initial asynchronous test attempt overlapped
-Play Mode, causing test-runner errors; it was cancelled and rerun successfully
-outside Play Mode. These were verification orchestration errors, not game errors.
-Final clean-console cycle passed: 20/20 EditMode tests, forced Ink reimport,
-and live Play Mode choice. Final Editor console: zero errors and zero warnings;
-compilationFailed=false. Editor left outside Play Mode.
+| Choice | Comforted Elena | Met Charlie | Elena resentment | Charlie resentment | CharlieBusiness |
+| --- | --- | --- | --- | --- | --- |
+| Elena/family | true | false | -1 | unchanged (0) | Missed |
+| Charlie/business | false | true | +1 | -1 | Completed |
+
+Relationship deltas are prototype authored values. GameState remains generic;
+FuneralNightConsequences owns all effects and eligibility. Each information
+consequence requires the matching exclusive truth, later phase, and absent
+knowledge, and grants only Victoria's awareness of that event.
+
+## Package and scene provenance
+
+No package changes. Official com.inkle.ink-unity-integration 2.0.0 remains locked
+to 73cc147969899710843f473fdb06cea0e4d50fed. Existing Ink settings and defines remain.
+
+Directional Light's UniversalAdditionalLightData remains the verified URP 17.3
+default inspector attachment. CoreEditorUtils.GetAdditionalData adds it through
+Undo.AddComponent; UniversalAdditionalLightData defines the serialized defaults.
+This change does not alter lighting.
+
+## Verification
+
+- Unity CLI recompile passed with no errors or warnings; forced Ink import passed.
+- Pipeline EditMode suite: 32 passed, 0 failed/skipped/inconclusive (20 existing
+  cases plus 12 focused cases). Covers both backend choices/effects/repeats,
+  truth/knowledge/phase requirements, explicit propagation, contradictory truth,
+  actual compiled Ink branches, opposite dialogue eligibility, and leaving.
+- Live Play Mode through the same public handlers used by UI: early Victoria
+  fallback, rejected out-of-range talk, Elena choice then family verification,
+  restart, Charlie choice then business verification. Knowledge absent before
+  report and present after. Repeat and opposite backend requests rejected.
+- Game advanced from frame 2402 to 13884; inspected Game View screenshots showed
+  both lines, outcome readout, and all three labels. Verification positioned
+  Brecken via Pipeline and invoked interaction/choice handlers; physical key
+  presses were not simulated.
+- Captures kept outside Assets; temporary capture assets removed.
+- Editor left outside Play Mode; background override restored.
