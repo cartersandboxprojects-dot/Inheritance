@@ -1,0 +1,89 @@
+Assets/Mansion.meta
+Assets/Mansion/Assets.meta
+Assets/Mansion/Assets/Materials.meta
+Assets/Mansion/Assets/Materials/CeilingA.mat
+Assets/Mansion/Assets/Materials/CeilingA.mat.meta
+Assets/Mansion/Assets/Materials/DoorExt1A.mat
+Assets/Mansion/Assets/Materials/DoorExt1A.mat.meta
+Assets/Mansion/Assets/Materials/FloorTileA.mat
+Assets/Mansion/Assets/Materials/FloorTileA.mat.meta
+Assets/Mansion/Assets/Materials/FloorTileC.mat
+Assets/Mansion/Assets/Materials/FloorTileC.mat.meta
+Assets/Mansion/Assets/Materials/WallExtA.mat
+Assets/Mansion/Assets/Materials/WallExtA.mat.meta
+Assets/Mansion/Assets/Materials/WallInt.mat
+Assets/Mansion/Assets/Materials/WallInt.mat.meta
+Assets/Mansion/Assets/Materials/Walls.mat
+Assets/Mansion/Assets/Materials/Walls.mat.meta
+Assets/Mansion/Assets/Models.meta
+Assets/Mansion/Assets/Models/Ceilings.meta
+Assets/Mansion/Assets/Models/Ceilings/Ceiling4A.fbx
+Assets/Mansion/Assets/Models/Ceilings/Ceiling4A.fbx.meta
+Assets/Mansion/Assets/Models/Door Frames.meta
+Assets/Mansion/Assets/Models/Door Frames/DoorFrameExt1A.fbx
+Assets/Mansion/Assets/Models/Door Frames/DoorFrameExt1A.fbx.meta
+Assets/Mansion/Assets/Models/Floors.meta
+Assets/Mansion/Assets/Models/Floors/FloorTile4.fbx
+Assets/Mansion/Assets/Models/Floors/FloorTile4.fbx.meta
+Assets/Mansion/Assets/Models/Walls.meta
+Assets/Mansion/Assets/Models/Walls/Ext.meta
+Assets/Mansion/Assets/Models/Walls/Ext/Wall1CornerA.fbx
+Assets/Mansion/Assets/Models/Walls/Ext/Wall1CornerA.fbx.meta
+Assets/Mansion/Assets/Models/Walls/Ext/Wall2DoorExt1A.fbx
+Assets/Mansion/Assets/Models/Walls/Ext/Wall2DoorExt1A.fbx.meta
+Assets/Mansion/Assets/Models/Walls/Int.meta
+Assets/Mansion/Assets/Models/Walls/Int/WallIntCornerinside2A.fbx
+Assets/Mansion/Assets/Models/Walls/Int/WallIntCornerinside2A.fbx.meta
+Assets/Mansion/Assets/Models/Walls/Int/WallIntDoorExt1A.fbx
+Assets/Mansion/Assets/Models/Walls/Int/WallIntDoorExt1A.fbx.meta
+Assets/Mansion/Assets/Prefabs.meta
+Assets/Mansion/Assets/Prefabs/Ceilings.meta
+Assets/Mansion/Assets/Prefabs/Ceilings/Ceiling4A.prefab
+Assets/Mansion/Assets/Prefabs/Ceilings/Ceiling4A.prefab.meta
+Assets/Mansion/Assets/Prefabs/Doorframes.meta
+Assets/Mansion/Assets/Prefabs/Doorframes/DoorFrameExt1A.prefab
+Assets/Mansion/Assets/Prefabs/Doorframes/DoorFrameExt1A.prefab.meta
+Assets/Mansion/Assets/Prefabs/Floor Tiles.meta
+Assets/Mansion/Assets/Prefabs/Floor Tiles/FloorTile4A.prefab
+Assets/Mansion/Assets/Prefabs/Floor Tiles/FloorTile4A.prefab.meta
+Assets/Mansion/Assets/Prefabs/Walls Exterior.meta
+Assets/Mansion/Assets/Prefabs/Walls Exterior/Wall1CornerA.prefab
+Assets/Mansion/Assets/Prefabs/Walls Exterior/Wall1CornerA.prefab.meta
+Assets/Mansion/Assets/Prefabs/Walls Exterior/Wall2DoorExt1A.prefab
+Assets/Mansion/Assets/Prefabs/Walls Exterior/Wall2DoorExt1A.prefab.meta
+Assets/Mansion/Assets/Prefabs/Walls Interior.meta
+Assets/Mansion/Assets/Prefabs/Walls Interior/WallIntCornerinside2A.prefab
+Assets/Mansion/Assets/Prefabs/Walls Interior/WallIntCornerinside2A.prefab.meta
+Assets/Mansion/Assets/Prefabs/Walls Interior/WallIntDoorExt1A.prefab
+Assets/Mansion/Assets/Prefabs/Walls Interior/WallIntDoorExt1A.prefab.meta
+Assets/Mansion/Assets/Textures.meta
+Assets/Mansion/Assets/Textures/CeilingA.png
+Assets/Mansion/Assets/Textures/CeilingA.png.meta
+Assets/Mansion/Assets/Textures/Ceiling-nrm.png
+Assets/Mansion/Assets/Textures/Ceiling-nrm.png.meta
+Assets/Mansion/Assets/Textures/DoorExt1A.png
+Assets/Mansion/Assets/Textures/DoorExt1A.png.meta
+Assets/Mansion/Assets/Textures/DoorExt1A-nrm.png
+Assets/Mansion/Assets/Textures/DoorExt1A-nrm.png.meta
+Assets/Mansion/Assets/Textures/FloorTileA.png
+Assets/Mansion/Assets/Textures/FloorTileA.png.meta
+Assets/Mansion/Assets/Textures/FloorTileA-nrm.png
+Assets/Mansion/Assets/Textures/FloorTileA-nrm.png.meta
+Assets/Mansion/Assets/Textures/FloorTileC.png
+Assets/Mansion/Assets/Textures/FloorTileC.png.meta
+Assets/Mansion/Assets/Textures/FloorTileC-nrm.png
+Assets/Mansion/Assets/Textures/FloorTileC-nrm.png.meta
+Assets/Mansion/Assets/Textures/FloorTileC-spec.png
+Assets/Mansion/Assets/Textures/FloorTileC-spec.png.meta
+Assets/Mansion/Assets/Textures/WallExtA.png
+Assets/Mansion/Assets/Textures/WallExtA.png.meta
+Assets/Mansion/Assets/Textures/WallExtA-nrm.png
+Assets/Mansion/Assets/Textures/WallExtA-nrm.png.meta
+Assets/Mansion/Assets/Textures/WallInt.png
+Assets/Mansion/Assets/Textures/WallInt.png.meta
+Assets/Mansion/Assets/Textures/WallInt-nrm.png
+Assets/Mansion/Assets/Textures/WallInt-nrm.png.meta
+Assets/Mansion/Assets/Textures/Walls.png
+Assets/Mansion/Assets/Textures/Walls.png.meta
+Assets/Mansion/Assets/Textures/Walls-nrm.png
+Assets/Mansion/Assets/Textures/Walls-nrm.png.meta

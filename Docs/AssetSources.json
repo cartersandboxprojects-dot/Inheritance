@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "packages": [
+    {
+      "name": "Mansion Pack",
+      "publisher": "Greenworks",
+      "version": "1.1",
+      "source": "Unity Asset Store, licensed local cache",
+      "archivePath": "C:\\Users\\josep\\AppData\\Roaming\\Unity\\Asset Store-5.x\\Greenworks\\3D ModelsEnvironmentsUrban\\Mansion Pack.unitypackage",
+      "sha256": "d4ae5ad40d50d6817ae293c18e54b091dad200a04404b1765c1204200e5b1d0b",
+      "vendorRoot": "Assets/Mansion",
+      "supportOverlay": {
+        "archivePath": "Assets/Mansion/Assets/Mansion-URP.unitypackage",
+        "sha256": "ded61fb67343e91d2f4c314b6612590865052559a94a871b7c03e3ab5bd405d3"
+      },
+      "restore": "Import the original archive in Unity 6000.3.27f1 / URP 17.3.0, then its bundled URP overlay. Preserve paths and GUIDs. The committed selected dependency subset is sufficient for the qualification sample; full archives are not required for checkout."
+    }
+  ]
+}
