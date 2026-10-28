@@ -4,7 +4,7 @@ Verified October 27, 2026 with Unity 6000.3.27f1.
 
 ## Playable flow
 
-Open Assets/Prototype_Mansion.unity and enter Play Mode. Move Brecken with
+Open Assets/Scenes/Prototype/Prototype_Mansion_POC.unity and enter Play Mode. Move Brecken with
 WASD/arrows. Approach a stationary labeled cylinder (Elena, Charlie, Victoria);
 within 2.5 world units press E or click Talk. Choose family with Elena or
 business with Charlie. Close the conversation, approach Victoria, and talk.

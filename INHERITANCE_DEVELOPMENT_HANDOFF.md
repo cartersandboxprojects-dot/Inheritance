@@ -9,6 +9,35 @@ Convention mirrored from Wedge's WEDGE_DEVELOPMENT_HANDOFF.md and
 WEDGE_CURRENT_CHECKPOINT.md, inspected October 27, 2026. This record documents
 source/build provenance; it does not independently establish legal ownership.
 
+## Environment structure (2026-10-28)
+
+Started on clean main at 9f003ac; Unity 6000.3.27f1. Moved Prototype_Mansion to
+Assets/Scenes/Prototype/Prototype_Mansion_POC.unity with unchanged scene contents
+and original meta/GUID. Created independent Prototype_Sandbox with existing
+playable graybox and a new 200m test ground/workspace; the original had no terrain.
+Created Assets/Scenes/Game/Mansion.unity as geometry/camera/light shell, removing
+prototype cast, player and runner from this copy only. Mansion replaces SampleScene
+as the sole enabled production build scene; SampleScene itself remains untouched.
+
+Docs/EnvironmentWorkflow.md establishes frozen POC, experimental Sandbox and clean
+production lanes; GameState/content-driven day/time/story variation; third-party
+qualification; and lightweight optional prefab promotion paths. No gameplay code,
+packages or asset pipeline added. Current Ink scene-opening instructions migrated.
+
+Verified all three scenes open with zero missing scripts/broken serialized references.
+POC scene/meta Git hashes equal their original HEAD versions. Full EditMode suite:
+60 passed, none failed/skipped/inconclusive. Live POC handlers exercised both choices
+and Victoria responses. Save/reset/load restored AfterFuneralNight, preserving the
+original save-slot bytes/existence. Frames advanced 982 -> 4661. No physical-key
+movement or standalone build retest. Editor left on clean POC outside Play Mode,
+background override off, compilation idle and current Console zero errors/warnings.
+Pipeline retains an old October 27 invalid-command error in its history.
+
+ProjectSettings and ShaderGraphSettings showed line-ending-only working-file rewrites;
+normalized Git hashes equal HEAD, with no serialized-value changes. Only intended
+scene/meta/docs/build-list changes belong in this tranche. This entry shares the
+commit Establish prototype sandbox and production scenes; Git supplies its exact hash.
+
 ## Wall-alignment cleanup (2026-10-27)
 
 Approved scope: smallest human-eye cleanup of Prototype_Mansion wall joins/ends.

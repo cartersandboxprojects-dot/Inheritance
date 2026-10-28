@@ -1,38 +1,19 @@
 # Inheritance current checkpoint
 
-Stopping point: October 27, 2026. Read INHERITANCE_DEVELOPMENT_HANDOFF.md and
-Docs/PrototypeState.md, Docs/InkPrototype.md, Docs/SaveLoad.md. Repository source
-and Git history are authoritative; this checkpoint separates completion from future work.
+Stopping point: October 28, 2026. See Docs/EnvironmentWorkflow.md for the three-lane environment policy and INHERITANCE_DEVELOPMENT_HANDOFF.md for milestone history.
 
-## Completed baseline
+## Current environment tranche
 
-Narrative/save milestone: 63a7050bfb9f7868a98828b19dd8cb67ff21d0c6,
-"Add validated backend save/load persistence to mansion prototype".
-Unity 6.3 LTS 6000.3.27f1 / URP; Prototype_Mansion; backend-owned state and guarded
-Condition/Effect/Consequence; Ink 2.0.0 flow; exclusive Elena/Charlie funeral-night
-choice; explicit Victoria knowledge transfer/reaction; schema-v1 JSON Save/Load.
-Joe's milestone manual verification covers both paths and smooth movement.
+Started on clean main at 9f003ac (wall-alignment checkpoint), Unity 6000.3.27f1.
+- Open Assets/Scenes/Prototype/Prototype_Mansion_POC.unity for the proven playable prototype. Renamed/moved with original GUID and scene contents unchanged.
+- Prototype_Sandbox in the same folder contains an independent prototype copy, 200m test ground and Assembly Workspace.
+- Assets/Scenes/Game/Mansion.unity is a production geometry/camera/light shell and the sole enabled build scene. It has no prototype gameplay actors/runner yet.
+- No new gameplay, packages, prefabs, scripts or state-activation system. Reuse one physical Mansion for future GameState/content variation.
 
-## This checkpoint
+## Verification
 
-North/South Wall x scale reduced 17 -> 16.5, removing 0.25-unit end tabs so the
-four exterior corners meet flush. Only two scene values changed. Same-view visual
-inspection passed. Compilation has zero errors/warnings; full EditMode suite
-60/60 passed. Play Mode frames advanced and Elena -> Victoria family response
-passed through actual interaction handlers; zero Console errors/warnings.
-No physical-key movement or standalone player build was retested today.
-Editor left outside Play Mode, background override off. Existing save slot untouched.
-The wall fix and both persistent records share one commit, identified in Git history.
+All three scenes opened in the live Editor: zero missing scripts/broken serialized references. POC scene and meta Git hashes match the originals. Full EditMode suite: 60/60 passed, none failed/skipped/inconclusive.
+POC Play Mode advanced from frame 982 to 4661; actual interaction handlers exercised Elena and Charlie choices and both correct Victoria responses. Save/reset/load restored AfterFuneralNight; original save-slot bytes/existence restored afterward. Physical-key movement and standalone builds were not retested.
+Editor left on clean POC outside Play Mode, compilation idle, background override off, current Console zero errors/warnings. Pipeline's retained history includes an unrelated October 27 invalid-command error, not a new project error.
 
-## Resume and boundaries
-
-Open Assets/Prototype_Mansion.unity. WASD/arrows move, E talks in range, Esc closes.
-Save/Load operates one local backend-state slot; Restart clears the current session.
-Run the Inheritance.Tests EditMode suite through Pipeline before further milestones.
-Keep the handoff as durable milestone history and update this checkpoint at stopping
-points; retain commit anchors and actual verification limits. Commit/push verified
-work to origin/main under the established workflow.
-
-Future work is not implemented: bridge naming, identifier hardening, transactional
-effects, save migrations, other-platform/player verification and a second authored
-loop. No refactor or narrative expansion is implied by this visual cleanup.
+The environment scenes/docs/build-list change share the commit titled Establish prototype sandbox and production scenes; resolve its hash in Git history. Narrative/save baseline remains 63a7050bfb9f7868a98828b19dd8cb67ff21d0c6.
