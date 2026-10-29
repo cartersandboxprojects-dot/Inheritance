@@ -205,3 +205,14 @@ Earlier milestone sections and their test counts are historical.
 
 ## Day 1 Morning/Afternoon continuation
 Sandbox uses day1-afternoon-v3.json with the combined strict catalog and bounded Morning/Afternoon history replay. Existing Morning-only slot is preserved. Schema remains v3; failed loads retain live state. See Docs/DayOneAfternoon.md.
+
+## Day 1 Morning/Afternoon/Evening continuation (current)
+
+Runner now uses day1-evening-v3.json, preserving earlier slots. Schema stays v3.
+DayOneEveningContent.Validate replays complete authored history using existing
+Morning and extracted Afternoon replay, then Evening entry, take/defer, exclusive
+final choice and Victoria close. Full snapshots must match; no validation weakened.
+Availability/Completed/Deferred opportunity state, remaining capacity, final choice,
+delayable interactions, Victoria knowledge/outcome and Day 1 completion all persist.
+Failed loads retain live session. Earlier valid histories are accepted by the new
+validator; old slots are not auto-selected. See Docs/DayOneEvening.md.

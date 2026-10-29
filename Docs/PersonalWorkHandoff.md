@@ -86,3 +86,16 @@ contains exact flow, IDs, Personal-writing needs and the next-tranche boundary.
 This is logical/playable scaffolding, not final scene presentation. Production
 Mansion and frozen POC, art/vendor/packages/project settings remain untouched.
 Earlier milestone sections and their test counts are historical.
+
+## Day 1 Evening completion (October 29, 2026)
+
+Current implementation supersedes the earlier Evening-pending endpoint. Sandbox
+continues with a free conditional invitation opening, optional external encounter
+(2) OR free Deferred outcome, one Mansion conversation (1), then a free Victoria
+close. Elena/Charlie choices are meaningful and unchosen conversations are marked
+delayable; minor relative is light texture. Unused Evening capacity explicitly
+winds down with existing ConsumeRemainder semantics. Close marks day1.completed /
+tutorial.day1.complete at Day 1 Night 3/3. No Day 2/freeform system is implemented.
+Victoria reads only witnessed board knowledge and Brecken's explicit final-choice
+report; private actions never become her knowledge implicitly. Full IDs, writing
+needs and canonical/provisional distinctions: Docs/DayOneEvening.md.

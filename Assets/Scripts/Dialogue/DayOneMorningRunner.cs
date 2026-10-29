@@ -5,13 +5,13 @@ using UnityEngine;
 
 namespace Inheritance.Dialogue
 {
-    // Lightweight interaction panel only. Abstract Day 1 Morning/Afternoon interactions only.
+    // Lightweight interaction panel only. Abstract structured Day 1 interactions only.
     public sealed class DayOneMorningRunner : MonoBehaviour
     {
         public GameState State { get; private set; }
         public string Transcript { get; private set; }
         public string PersistenceStatus { get; private set; } = "";
-        public string SavePath => Path.Combine(Application.persistentDataPath, "day1-afternoon-v3.json");
+        public string SavePath => Path.Combine(Application.persistentDataPath, "day1-evening-v3.json");
         private Vector2 scroll;
         private void Awake()
         {
@@ -43,14 +43,14 @@ namespace Inheritance.Dialogue
             " Morning exhausted; automatic transition to Afternoon 3/3. Required office sequence is now available.");
         public bool SaveMorning()
         {
-            try { StatePersistence.Save(SavePath, State, DayOneAfternoonContent.Validate, DayOneAfternoonContent.Catalog()); PersistenceStatus = "Day 1 saved."; return true; }
+            try { StatePersistence.Save(SavePath, State, DayOneEveningContent.Validate, DayOneEveningContent.Catalog()); PersistenceStatus = "Day 1 saved."; return true; }
             catch (Exception e) { PersistenceStatus = "Save failed: " + e.Message; return false; }
         }
         public bool LoadMorning()
         {
             try
             {
-                var loaded = StatePersistence.Load(SavePath, DayOneAfternoonContent.Validate, DayOneAfternoonContent.Catalog());
+                var loaded = StatePersistence.Load(SavePath, DayOneEveningContent.Validate, DayOneEveningContent.Catalog());
                 State = loaded; Transcript = "Day 1 loaded. Continue from the recorded stage below."; PersistenceStatus = "Day 1 loaded."; return true;
             }
             catch (Exception e) { PersistenceStatus = "Load failed: " + e.Message; return false; }
@@ -72,9 +72,23 @@ namespace Inheritance.Dialogue
                 ? "Dismissal creates initial concern."
                 : State.GetFact(DayOneAfternoonContent.Informed) ? "Preparation supports an informed, composed first impression."
                 : "Listening and restraint create a cautious, constructive first impression even without prior context.")
-                + " [Provisional reactions] Afternoon exhausted; automatic Evening 3/3. Stop: evening pending.";
+                + " [Provisional reactions] Afternoon exhausted; automatic Evening 3/3. Evening opportunities now available.";
             return true;
         }
+        public bool EnterEvening() => ApplyEvening(() => DayOneEveningContent.Enter(State), "Evening invitation [provisional]. Attendance is optional.");
+        public bool ExternalEvening(bool take) => ApplyEvening(() => take ? DayOneEveningContent.TakeExternal(State) : DayOneEveningContent.DeferExternal(State),
+            take ? "[Provisional] External encounter complete (2 units). Return to Mansion (abstract)." : "Invitation deferred, unresolved. Remain at Mansion; no attendance penalty authored.");
+        public bool MansionEvening(int choice) => ApplyEvening(() => DayOneEveningContent.ChooseFinal(State, choice),
+            choice == 0 ? "[Provisional] Elena seeks connection and reassurance after Brecken's return and their parents' deaths. Spend time together."
+            : choice == 1 ? "[Provisional] Charlie offers helpful business advice and review as an experienced cousin and mentor. Spend time together."
+            : "[Provisional identity] A light extended-family conversation; optional world texture.");
+        public bool VictoriaClose()
+        {
+            string text = DayOneEveningContent.CloseText(State);
+            return ApplyEvening(() => DayOneEveningContent.CloseDay(State), text);
+        }
+        private bool ApplyEvening(Func<bool> action, string text)
+        { if (!action()) return false; Transcript = text; return true; }
         private void OnGUI()
         {
             if (State == null) return;
@@ -85,7 +99,7 @@ namespace Inheritance.Dialogue
             GUI.DrawTexture(panel, Texture2D.whiteTexture); GUI.color = previousColor;
             GUILayout.BeginArea(panel, GUI.skin.box);
             scroll = GUILayout.BeginScrollView(scroll);
-            GUILayout.Label("DAY 1 / MORNING + AFTERNOON - Sandbox scaffolding");
+            GUILayout.Label("DAY 1 / MORNING + AFTERNOON + EVENING - Sandbox scaffolding");
             GUILayout.Label(DayOneMorningContent.Notice);
             GUILayout.Label("Day " + State.Day + " | " + State.CurrentTimeBlock + " | Capacity " + State.TimeUnitsRemaining + "/3");
             GUILayout.Label("Stage: " + State.StoryPhase);
@@ -127,7 +141,23 @@ namespace Inheritance.Dialogue
                 if (GUILayout.Button("Dismiss concerns and demand trust in your authority (2 units)")) BoardMeeting(false);
             }
             if (State.StoryPhase == DayOneAfternoonContent.EveningPending)
-                GUILayout.Label("AFTERNOON COMPLETE / Evening 3/3. Evening content pending.");
+                if (GUILayout.Button("Begin Evening (free)")) EnterEvening();
+            if (State.StoryPhase == DayOneEveningContent.External)
+            {
+                GUILayout.Label(State.GetFact(DayOneMorningContent.Social) ? "Adrian / private-club drinks [provisional, abstract]" : "Former girlfriend / personal encounter [provisional, distinct from Alex Wynn]");
+                if (GUILayout.Button("Take external commitment (2 units)")) ExternalEvening(true);
+                if (GUILayout.Button("Defer invitation / remain at Mansion (free)")) ExternalEvening(false);
+            }
+            if (State.StoryPhase == DayOneEveningContent.Mansion)
+            {
+                GUILayout.Label("Mansion final conversation. One choice, 1 unit; unused Evening capacity winds down explicitly before Victoria.");
+                if (GUILayout.Button("Elena: connection and reassurance (1 unit)")) MansionEvening(0);
+                if (GUILayout.Button("Charlie: business advice / review (1 unit)")) MansionEvening(1);
+                if (GUILayout.Button("Minor relative [provisional]: light conversation (1 unit)")) MansionEvening(2);
+            }
+            if (State.StoryPhase == DayOneEveningContent.Close)
+                if (GUILayout.Button("Victoria: report final conversation / close Day 1 (free)")) VictoriaClose();
+            if (State.GetFact(DayOneEveningContent.Complete)) GUILayout.Label("TUTORIAL DAY 1 COMPLETE. No post-Day-1 gameplay implemented.");
             GUILayout.Label("Newspaper context: " + State.Knows(DayOneMorningContent.Brecken, DayOneMorningContent.Preparation) +
                 " | Optional family seed: " + State.GetFact(DayOneMorningContent.Seed) + " | Breakfast complete: " + State.GetFact(DayOneMorningContent.Breakfast));
             GUILayout.Label(Transcript);

@@ -69,7 +69,7 @@ namespace Inheritance.State
             return new Consequence(Board, ActionCost.Fixed(2), effects.ToArray());
         }
         public static bool CompleteBoard(GameState state, bool measured) => BoardAction(measured, HasContext(state), state.GetFact(HalePrepared)).TryApply(state);
-        public static ContentCatalog Catalog()
+        public static ContentCatalog Catalog(IEnumerable<ContentEntry> additional = null)
         {
             var entries = new List<ContentEntry>();
             foreach (var id in new[] { Secretary, VP }) entries.Add(new ContentEntry(ContentKind.Character, id, provisionalReason: DayOneMorningContent.Notice));
@@ -80,9 +80,10 @@ namespace Inheritance.State
             var names = new[] { "secretary", "hale_prepared", "hale_basic", "acquisitions", "board_informed", "board_listening", "board_concern_context", "board_concern", "board_hale_prepared", "board_hale_prepared_concern" };
             for (int i = 0; i < actions.Length; i++) entries.Add(ContentEntry.Binding(Prefix + "action." + names[i], actions[i], DayOneMorningContent.Notice));
             entries.Add(ContentEntry.Opportunity(AcquisitionOpportunity, "VP identity, target and later resolution remain unwritten; multi-day opening only."));
+            if (additional != null) entries.AddRange(additional);
             return DayOneMorningContent.Catalog(entries);
         }
-        public static void Validate(GameState state)
+        internal static GameState ReplayHistory(GameState state)
         {
             var expected = DayOneMorningContent.ReplayHistory(state);
             Replay(state, SecretarySeed, () => ChooseOffice(expected, 0));
@@ -90,7 +91,11 @@ namespace Inheritance.State
             Replay(state, Acquisitions, () => ChooseOffice(expected, 2));
             Replay(state, Measured, () => CompleteBoard(expected, true));
             Replay(state, Dismissive, () => CompleteBoard(expected, false));
-            if (StatePersistence.Serialize(expected) != StatePersistence.Serialize(state)) throw new InvalidDataException("Day 1 save does not match an authored Morning/Afternoon history.");
+            return expected;
+        }
+        public static void Validate(GameState state)
+        {
+            if (StatePersistence.Serialize(ReplayHistory(state)) != StatePersistence.Serialize(state)) throw new InvalidDataException("Day 1 save does not match an authored Morning/Afternoon history.");
         }
         private static void Replay(GameState source, string fact, Func<bool> action)
         { if (source.GetFact(fact) && !action()) throw new InvalidDataException("Invalid Afternoon choice order: " + fact); }

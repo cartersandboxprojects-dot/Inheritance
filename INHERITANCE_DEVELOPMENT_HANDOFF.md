@@ -289,3 +289,44 @@ Morning baseline, including metadata; Sandbox scene/meta unchanged too. No art,
 vendor, package or project-setting changes. Evidence: Temp/DayOneAfternoon-*.
 Next work: Evening logic only when requested; Personal writing and production
 presentation remain unresolved. Commit title: Implement Day 1 afternoon logic.
+
+## October 29, 2026 — Day 1 Tranche 3 Evening complete
+
+This is the current stopping point; earlier tranche boundaries are historical.
+Implemented only backend/content and abstract existing Sandbox runner controls.
+Flow: Evening 3/3 / day1.evening.pending -> free invitation opening from Morning
+Personal Life or Social Duty -> take (2, Completed) OR free defer (Deferred) ->
+Mansion final Elena / Charlie / minor-relative choice (1) -> explicit remainder
+wind-down when needed -> Night 3/3 -> free Victoria close -> day1.completed and
+tutorial.day1.complete. No Day 2 content or freeform architecture implemented.
+
+Victoria uses her witnessed board impression and explicit report of the final
+Mansion conversation only. No private-call, newspaper or attendance omniscience,
+no family/business meter. Unchosen Elena/Charlie interactions remain delayable.
+All exact dialogue, minor-relative/former-girlfriend identities, club guest details
+and reaction/rapport tuning remain provisional; established roles are preserved.
+Personal writing still owns those decisions and future delayed-interaction content.
+See Docs/DayOneEvening.md for exact flow, IDs, policy and implementation boundaries.
+
+Save schema v3 unchanged. Separate Evening slot preserves old slots. Full bounded
+history replay rejects invented/contradictory state; failed loads preserve session.
+Verification: 206/206 full EditMode tests (189 baseline +17 focused cases), zero
+failures/skips/inconclusive; all 12 live handler combinations pass 288 checks.
+Every route exercises invitation save/load, post-decision mid-Evening reset/reload,
+corrupt-load preservation, completion and completed-state reload. Actual invitation,
+Mansion and completion panels visually inspected. Clean compilation; final current
+Console ground truth 0 errors / 0 warnings (historical Pipeline buffer is separate).
+Runner reset to Morning; Play Mode stopped; verification save restored/removed.
+One initial new test assertion incorrectly expected provisional metadata to be a
+Strict error; corrected to existing warning policy, then full suite passed.
+
+Production Mansion SHA-256:
+8FA6D5996D5FEAA8311D8A86A1D456F5B91CBA7792E2EC0DAD0EBC5955C3DF41
+Frozen POC SHA-256:
+AD62AFA9FCFE923C6F6637C2E0E22B708B7B4D6E39FDD0A256D8F85962460A4A
+Both scenes and their metadata match f5fd6d65f3c127f8570fa3ffa137ed0e99083cec;
+Sandbox scene/meta match too. No art/vendor/package/project-setting changes.
+Evidence in ignored Temp: DayOneEvening-full-tests.json, -live.json,
+-final-compile.json, -final-console.json, -protected.json; invitation/Mansion/
+completion screenshots and walk-evening.cs. No Player build performed.
+Commit title: Implement Day 1 evening logic.
