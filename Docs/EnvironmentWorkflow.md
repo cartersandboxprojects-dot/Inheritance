@@ -87,3 +87,7 @@ Explicit foliage pipeline exceptions to the vendor-original convention: apply th
 The selected closure is about 227.1 MB including metadata, with 225.4 MB in 26 LFS objects. Existing patterns cover the selected FBX/PNG/TGA/PSD; no speculative TIFF rule was added. Keep vendor notices. Every future foliage addition must repeat closure/reference and storage-impact review, because the full import contains legacy render paths and expensive demo content.
 
 One wind controller writes shared global shader state, including in edit mode. Avoid competing controllers and explicitly reinitialize globals when switching wind setups. Qualify target density, shadows, terrain/navigation and art direction before production promotion. The photoreal mossy trunk currently looks more detailed than the Mansion surfaces. Furniture and Town remain deferred; no final grounds have been built.
+
+## Expandable mansion entry foundation (2026-10-29)
+
+The Sandbox now contains the owned two-story entry seed with a 24 x 12 m core, open wing stubs, 4 m bays/floor spacing, and removable cap. See [MansionEntryFoundation.md](MansionEntryFoundation.md) for the long-term estate program, exact grid/axes/wall conventions, expansion planes, provisional elements, and verification. Production promotion remains separate.
