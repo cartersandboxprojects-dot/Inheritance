@@ -230,3 +230,17 @@ Evidence: ignored Temp/StableIds-full-tests.json and final compile/Console recor
 No live gameplay walkthrough/player build was added. Only backend code, its save/load
 caller, tests and docs changed; scenes/art/vendor/packages/settings remain unchanged.
 Commit title: `Harden authored content identifiers` (resolve hash via Git history).
+
+## PROVISIONAL SANDBOX DAY (October 29, 2026)
+
+A complete non-canonical systems day now runs only in Prototype_Sandbox. Every new
+beat is provisional AI-generated test content, not accepted story. Morning free
+Elena/Charlie conversations unlock a 2-unit family task versus a 3-unit business
+call; competition, explicit time boundaries, delayed phone delivery, a guarded
+Victoria reaction and separate v3 save/load slot carry both paths to Night.
+All new catalog entries carry ProvisionalReason and resolve strictly. No backend
+architecture or canonical Ink was changed. See Docs/ProvisionalSandboxDay.md for
+exact flow, IDs, Personal Carter rewrite responsibilities and verification.
+Full EditMode suite: 171/171 passed (167 baseline + 4). Both live Sandbox UI-handler
+paths passed with save/reload continuation. Compilation passed; current Console
+0 errors/0 warnings. Production Mansion and frozen POC scenes remain unchanged.
