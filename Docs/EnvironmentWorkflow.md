@@ -106,3 +106,8 @@ Owned assembly: Assets/Inheritance/Environment/Sandbox/Mansion_Stair_MasterSuite
 ## Ceremonial staircase correction - 2026-10-29
 
 See [MansionStairCorrection.md](MansionStairCorrection.md), which supersedes the earlier return stair, near-door placement, and uninterrupted ground cross-band claims. Current stair: one centered 4 m clear flight beginning at the far end of the foyer (Z6), 22 risers to Y4, 300 mm goings, 6.3 m run, and a 7.7 x 3.7 m upper gallery. The east passage continues past the reserved future southbound third-floor stair to the eastbound hall; Brecken's suite remains first door on the left. The third-floor flight is not built. Suite program and room arrangement are retained.
+
+
+## Family breakfast room shell - 2026-10-29
+
+See [MansionFamilyBreakfastShell.md](MansionFamilyBreakfastShell.md) for the new Sandbox-only 8 x 6 m rear-west bay (local X=-12..-4, Z12..18), 7.6 x 5.6 m clear, Y0 floor / 3.8 m ceiling. Offset south entry connects to the west stair-side aisle. North kitchen/service, west family sitting, and east private-circulation thresholds reserve unbuilt adjacent spaces; no broader wing layout is fixed. Temporary 3.6 x 1.2 m table / 5 x 2.6 m occupied-envelope guides supported seven to ten places and were removed. Full EditMode 206/206; Console 0 errors / 0 warnings. Stair depth/foyer arrival proportions and receiving-room/rear balcony placement remain known future issues, intentionally untouched. Original foundation and stair/suite assets are unchanged.

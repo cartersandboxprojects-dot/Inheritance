@@ -311,6 +311,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2929755060476939396, guid: 0c0d84baa765d1a41b25ed9a26ad6eb6, type: 3}
   m_PrefabInstance: {fileID: 18826917}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &75226784
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4162146954815873275, guid: 0d0ae1812d22ded4191a3a30bcca2b87, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162146954815873275, guid: 0d0ae1812d22ded4191a3a30bcca2b87, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162146954815873275, guid: 0d0ae1812d22ded4191a3a30bcca2b87, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162146954815873275, guid: 0d0ae1812d22ded4191a3a30bcca2b87, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162146954815873275, guid: 0d0ae1812d22ded4191a3a30bcca2b87, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162146954815873275, guid: 0d0ae1812d22ded4191a3a30bcca2b87, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162146954815873275, guid: 0d0ae1812d22ded4191a3a30bcca2b87, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162146954815873275, guid: 0d0ae1812d22ded4191a3a30bcca2b87, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162146954815873275, guid: 0d0ae1812d22ded4191a3a30bcca2b87, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162146954815873275, guid: 0d0ae1812d22ded4191a3a30bcca2b87, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4281980623436030630, guid: 0d0ae1812d22ded4191a3a30bcca2b87, type: 3}
+      propertyPath: m_Name
+      value: Family Breakfast Room Shell
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0d0ae1812d22ded4191a3a30bcca2b87, type: 3}
 --- !u!1 &151205578
 GameObject:
   m_ObjectHideFlags: 0
@@ -2415,3 +2472,4 @@ SceneRoots:
   - {fileID: 1254410931}
   - {fileID: 1704838326}
   - {fileID: 5096810185470761532}
+  - {fileID: 75226784}
