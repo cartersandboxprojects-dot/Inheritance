@@ -26,7 +26,7 @@ namespace Inheritance.Dialogue
         {
             try
             {
-                StatePersistence.Save(SavePath, State, FuneralNightSaveValidation.Validate);
+                StatePersistence.Save(SavePath, State, FuneralNightSaveValidation.Validate, AuthoredContentCatalogs.FuneralNight());
                 PersistenceStatus = "Saved.";
                 return true;
             }
@@ -43,7 +43,7 @@ namespace Inheritance.Dialogue
             try
             {
                 // Replace only after full parsing and validation; failed loads preserve session/dialogue.
-                var loaded = StatePersistence.Load(SavePath, FuneralNightSaveValidation.Validate);
+                var loaded = StatePersistence.Load(SavePath, FuneralNightSaveValidation.Validate, AuthoredContentCatalogs.FuneralNight());
                 State = loaded;
                 CloseConversation();
                 PersistenceStatus = "Loaded. Approach a character to start a new conversation.";

@@ -15,6 +15,7 @@ namespace Inheritance.State
 
         public static GameState CreateState()
         {
+            AuthoredContentCatalogs.FuneralNight().RequireValid(ContentValidationMode.Runtime);
             var state = new GameState(FuneralNight, TimeBlock.Evening);
             state.SetOpportunityState(CharlieBusiness, OpportunityState.Available);
             return state;

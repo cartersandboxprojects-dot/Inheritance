@@ -139,9 +139,10 @@ namespace Inheritance.State
         public const int CurrentVersion = 3;
         public const int MaximumBytes = 1024 * 1024;
 
-        public static string Serialize(GameState state, Action<GameState> validate = null)
+        public static string Serialize(GameState state, Action<GameState> validate = null, ContentCatalog catalog = null)
         {
             if (state == null) throw new ArgumentNullException(nameof(state));
+            catalog?.ValidateSaved(state);
             validate?.Invoke(state);
             using (var stream = new MemoryStream())
             {
@@ -151,7 +152,7 @@ namespace Inheritance.State
             }
         }
 
-        public static GameState Deserialize(string json, Action<GameState> validate = null)
+        public static GameState Deserialize(string json, Action<GameState> validate = null, ContentCatalog catalog = null)
         {
             if (string.IsNullOrWhiteSpace(json) || Encoding.UTF8.GetByteCount(json) > MaximumBytes)
                 throw new InvalidDataException("Save is empty or too large.");
@@ -161,7 +162,7 @@ namespace Inheritance.State
                 var save = (StateSave)new DataContractJsonSerializer(typeof(StateSave)).ReadObject(reader);
                 if (reader.MoveToContent() != XmlNodeType.None)
                     throw new InvalidDataException("Unexpected data after the save object.");
-                var state = GameState.Restore(save);
+                var state = catalog == null ? GameState.Restore(save) : catalog.Restore(save);
                 validate?.Invoke(state);
                 return state;
             }
@@ -198,9 +199,9 @@ namespace Inheritance.State
             }
             if (quoted || depth != 0) throw new InvalidDataException("Incomplete JSON save object.");
         }
-        public static void Save(string path, GameState state, Action<GameState> validate = null)
+        public static void Save(string path, GameState state, Action<GameState> validate = null, ContentCatalog catalog = null)
         {
-            string json = Serialize(state, validate);
+            string json = Serialize(state, validate, catalog);
             string temporary = path + "." + Guid.NewGuid().ToString("N") + ".tmp";
             try
             {
@@ -220,10 +221,10 @@ namespace Inheritance.State
             }
         }
 
-        public static GameState Load(string path, Action<GameState> validate = null)
+        public static GameState Load(string path, Action<GameState> validate = null, ContentCatalog catalog = null)
         {
             if (new FileInfo(path).Length > MaximumBytes) throw new InvalidDataException("Save is too large.");
-            return Deserialize(File.ReadAllText(path, Encoding.UTF8), validate);
+            return Deserialize(File.ReadAllText(path, Encoding.UTF8), validate, catalog);
         }
     }
 }

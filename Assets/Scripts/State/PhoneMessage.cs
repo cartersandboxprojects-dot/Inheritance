@@ -1,3 +1,4 @@
+using System.Linq;
 using System;
 using System.Collections.Generic;
 
@@ -40,6 +41,8 @@ namespace Inheritance.State
         public string Id { get; }
         public string SenderId { get; }
         public string Text { get; }
+        internal string[] Errors => delivery.Errors.Concat(onRead == null ? new string[0] : onRead.Errors).ToArray();
+        internal ContentReference[] References => new[] { new ContentReference(ContentKind.Character, SenderId) }.Concat(RelatedOpportunityId == null ? new ContentReference[0] : new[] { new ContentReference(ContentKind.Opportunity, RelatedOpportunityId) }).Concat(delivery.References).Concat(onRead == null ? new ContentReference[0] : onRead.References).ToArray();
         public string RelatedOpportunityId { get; }
         private readonly Condition delivery;
         private readonly Consequence onRead;

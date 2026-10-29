@@ -139,3 +139,35 @@ and content migrations before renaming authored IDs. No broad ID refactor here.
 All consequences now commit atomically, including uncosted effects; failed effects
 cannot leak partial state into a later save. See INHERITANCE_CURRENT_CHECKPOINT.md
 and the handoff entry titled Backend gameplay quality checkpoint for the full audit.
+
+
+## Stable authored identifiers (October 29, 2026)
+
+Stable-ID hardening is implemented; the earlier “next hardening” notes are historical.
+See Docs/StableIdentifiers.md for the full inventory, conventions, mode behavior,
+alias/removal policy, runtime boundary, and deferred work. Current strings and story
+semantics are retained. Category-aware authored catalogs validate actual definition
+references; existing uppercase/mixed IDs are explicit legacy spellings. New IDs use
+lowercase dot/underscore segments, maximum 128 ASCII characters.
+
+Development mode allows missing canonical targets only on entries explicitly marked
+provisional with a reason; strict/tests and runtime reject unresolved references.
+Duplicates, malformed IDs, contradictory equalities, invalid enums and invalid
+migration rules remain errors in every mode. No Sandbox/scene/UI changes.
+
+Save schema remains v3. The actual runner supplies a catalog for save/load; all
+saved ID categories are checked before state replacement. One-hop reviewed aliases
+demonstrate character and opportunity renames, collision rejection, and removal by
+replacement. Explicitly archived historical facts retain truth/knowledge safely;
+other unmapped removals/unknown IDs reject load. Generic registry-free serialization
+and GameState cloning remain available for engine tests and actions, not as a
+production validation boundary. The funeral-specific story validator is retained.
+
+Full unfiltered Unity 6000.3.27f1 EditMode suite: **167/167 passed**, 0 failed,
+skipped or inconclusive (121 baseline + 46 new). Compile completed with failed=false,
+errors=[], compilationFailed=false; current Console 0 errors/0 warnings. Existing
+Elena/Charlie/Victoria, time-cost and delayed message/reaction regressions pass.
+Evidence: ignored Temp/StableIds-full-tests.json and final compile/Console records.
+No live gameplay walkthrough/player build was added. Only backend code, its save/load
+caller, tests and docs changed; scenes/art/vendor/packages/settings remain unchanged.
+Commit title: `Harden authored content identifiers` (resolve hash via Git history).

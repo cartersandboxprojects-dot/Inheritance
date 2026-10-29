@@ -8,6 +8,7 @@ namespace Inheritance.State
     {
         public static void Validate(GameState state)
         {
+            AuthoredContentCatalogs.FuneralNight().ValidateSaved(state);
             bool family = state.GetFact(BreckenComfortedElena);
             bool business = state.GetFact(BreckenMetCharlie);
             bool knowsFamily = state.Knows(Victoria, BreckenComfortedElena);

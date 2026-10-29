@@ -12,21 +12,22 @@ namespace Inheritance.State
         public static readonly OpportunityDefinition Family = new OpportunityDefinition(FamilyId,
             ActionCost.ConsumeRemainder, Condition.Phase(Phase), TimeBlock.Afternoon, ActionCost.Free,
             new[] { new OpportunityCompetition(BusinessId, OpportunityState.Missed) },
-            Effect.SetFact(FamilyFact, true), Effect.GrantKnowledge("Elena", FamilyFact));
+            Effect.SetFact(FamilyFact, true), Effect.GrantKnowledge(FuneralNightContent.Elena, FamilyFact));
         public static readonly OpportunityDefinition Business = new OpportunityDefinition(BusinessId,
             ActionCost.ConsumeRemainder, Condition.Phase(Phase), TimeBlock.Afternoon, ActionCost.Free,
             new[] { new OpportunityCompetition(FamilyId, OpportunityState.Deferred) });
-        public static readonly MessageDefinition Thanks = new MessageDefinition(MessageId, "Elena",
+        public static readonly MessageDefinition Thanks = new MessageDefinition(MessageId, FuneralNightContent.Elena,
             "Thank you for spending the afternoon with me.",
             Condition.All(Condition.Phase(Phase), Condition.Time(TimeBlock.Evening),
                 Condition.Opportunity(FamilyId, OpportunityState.Completed), Condition.Fact(FamilyFact)), FamilyId);
         public static readonly Condition LaterReaction = Condition.All(Condition.Phase(Phase), Condition.Time(TimeBlock.Evening),
             Condition.Opportunity(FamilyId, OpportunityState.Completed), Condition.Opportunity(BusinessId, OpportunityState.Missed),
-            Condition.Message(MessageId, MessageStatus.Read), Condition.Fact(FamilyFact), Condition.Knowledge("Elena", FamilyFact));
+            Condition.Message(MessageId, MessageStatus.Read), Condition.Fact(FamilyFact), Condition.Knowledge(FuneralNightContent.Elena, FamilyFact));
         public static readonly Consequence React = new Consequence(Condition.All(LaterReaction, Condition.Fact(ReactionFact, false)),
             ActionCost.Free, Effect.SetFact(ReactionFact, true));
         public static GameState CreateState()
         {
+            AuthoredContentCatalogs.SchedulingProof().RequireValid(ContentValidationMode.Runtime);
             var state = new GameState(Phase, TimeBlock.Afternoon);
             Evaluate(state); return state;
         }

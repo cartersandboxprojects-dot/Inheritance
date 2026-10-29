@@ -21,6 +21,8 @@ namespace Inheritance.State
     {
         public string Id { get; }
         public ActionCost Cost { get; }
+        internal string[] Errors => eligibility.Errors.Concat(effects.SelectMany(e => e.Errors)).ToArray();
+        internal ContentReference[] References => eligibility.References.Concat(competing.Select(c => new ContentReference(ContentKind.Opportunity, c.Id))).Concat(effects.SelectMany(e => e.References)).ToArray();
         public ActionCost AcceptanceCost { get; }
         private readonly Condition eligibility;
         private readonly TimeBlock? block;
