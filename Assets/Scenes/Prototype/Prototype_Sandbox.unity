@@ -1714,7 +1714,7 @@ GameObject:
   - component: {fileID: 1704838326}
   - component: {fileID: 1704838325}
   m_Layer: 0
-  m_Name: PROVISIONAL SANDBOX DAY - NON CANONICAL
+  m_Name: DAY 1 MORNING LOGIC - NON CANONICAL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1729,9 +1729,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1704838324}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 697799025459b6d40ae00fcc7a7d1258, type: 3}
+  m_Script: {fileID: 11500000, guid: 4ddd6f175adf4508b9c9e274006fb594, type: 3}
   m_Name:
-  m_EditorClassIdentifier: Inheritance.Dialogue::Inheritance.Dialogue.SandboxDayRunner
+  m_EditorClassIdentifier: Inheritance.Dialogue::Inheritance.Dialogue.DayOneMorningRunner
 --- !u!4 &1704838326
 Transform:
   m_ObjectHideFlags: 0

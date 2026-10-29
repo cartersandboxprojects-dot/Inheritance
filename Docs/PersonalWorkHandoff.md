@@ -69,3 +69,20 @@ Inspect the referenced repository files directly, then produce a concise AI-read
 - What Personal Carter may rewrite for real Day 1: motivations, dialogue, commitments, room use, scene flow/choreography, side stories, nonlinear timing, costs, missed/deferred meanings and later reactions. Propose required implementation changes explicitly; do not present them as already built or edit canonical implementation to fit the summary.
 
 Keep the summary descriptive and story-facing. Separate implemented capability, non-canonical demonstration and proposed story decisions; do not turn this handoff into acceptance of the provisional story.
+
+
+## Real Day 1 Morning implementation (October 29, 2026)
+
+Day 1 Tranche 1 now replaces the default Sandbox systems-day panel with the real
+Morning structure: abstract wake/coffee, free Marie agenda, Stay/newspaper versus
+Leave/family seed (1), required Breakfast with a small topic variation (1), then
+Social Duty versus Personal Life call (1). Existing exhaustion automatically enters
+Afternoon 3/3; this tranche stops at day1.office.pending. No Afternoon content.
+GameState, ActionCost and v3 save behavior are unchanged. Separate Morning slot
+uses strict/runtime catalog checks and bounded authored-history validation.
+Established roles/structure are distinguished from provisional writing, contacts,
+family placeholders and relationship variations in Docs/DayOneMorning.md, which
+contains exact flow, IDs, Personal-writing needs and the next-tranche boundary.
+This is logical/playable scaffolding, not final scene presentation. Production
+Mansion and frozen POC, art/vendor/packages/project settings remain untouched.
+Earlier milestone sections and their test counts are historical.

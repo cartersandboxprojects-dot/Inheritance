@@ -244,3 +244,20 @@ exact flow, IDs, Personal Carter rewrite responsibilities and verification.
 Full EditMode suite: 171/171 passed (167 baseline + 4). Both live Sandbox UI-handler
 paths passed with save/reload continuation. Compilation passed; current Console
 0 errors/0 warnings. Production Mansion and frozen POC scenes remain unchanged.
+
+
+## Real Day 1 Morning implementation (October 29, 2026)
+
+Day 1 Tranche 1 now replaces the default Sandbox systems-day panel with the real
+Morning structure: abstract wake/coffee, free Marie agenda, Stay/newspaper versus
+Leave/family seed (1), required Breakfast with a small topic variation (1), then
+Social Duty versus Personal Life call (1). Existing exhaustion automatically enters
+Afternoon 3/3; this tranche stops at day1.office.pending. No Afternoon content.
+GameState, ActionCost and v3 save behavior are unchanged. Separate Morning slot
+uses strict/runtime catalog checks and bounded authored-history validation.
+Established roles/structure are distinguished from provisional writing, contacts,
+family placeholders and relationship variations in Docs/DayOneMorning.md, which
+contains exact flow, IDs, Personal-writing needs and the next-tranche boundary.
+This is logical/playable scaffolding, not final scene presentation. Production
+Mansion and frozen POC, art/vendor/packages/project settings remain untouched.
+Earlier milestone sections and their test counts are historical.

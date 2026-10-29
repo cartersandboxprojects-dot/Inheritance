@@ -112,3 +112,10 @@ Personal Carter's next step is editorial: choose the real day placement, motivat
 commitments, dialogue, costs, delivery window, deferred-task meaning and later
 reaction. Keep those decisions provisional until deliberately accepted. This loop
 provides testable structure, not a canonical story proposal.
+
+## Default Sandbox panel superseded
+
+The real Day 1 Morning tranche now owns the default Prototype_Sandbox panel.
+The systems-day content/runner and tests remain intact for regression purposes.
+This guide describes the earlier systems proof. See DayOneMorning.md for the
+current default interaction flow; its save slot is separate.
