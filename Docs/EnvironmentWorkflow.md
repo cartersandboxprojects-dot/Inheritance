@@ -91,3 +91,9 @@ One wind controller writes shared global shader state, including in edit mode. A
 ## Expandable mansion entry foundation (2026-10-29)
 
 The Sandbox now contains the owned two-story entry seed with a 24 x 12 m core, open wing stubs, 4 m bays/floor spacing, and removable cap. See [MansionEntryFoundation.md](MansionEntryFoundation.md) for the long-term estate program, exact grid/axes/wall conventions, expansion planes, provisional elements, and verification. Production promotion remains separate.
+
+## Reusable human scale references (2026-10-29)
+
+Keep provisional owned human rulers under `Assets/Inheritance/Environment/Sandbox/Reference/`. `HumanScaleReference_Adult.prefab` is 1.800 m tall and `HumanScaleReference_Short.prefab` is 1.680 m tall. Both have unit root scale, feet at local Y=0, local +Z forward, built-in primitive geometry and one shared neutral URP material. They have no scripts, rig, animation or colliders; use them for visual proportion checks, not as gameplay characters. Place their root at the finished floor elevation rather than recentering by bounds.
+
+Seven instances in the Sandbox entry foundation validate portico, front opening, center hall, both guide walls and west wing junction, with the shorter figure beside the center adult. Keep the group separate from the architectural prefab. See [MansionEntryFoundation.md](MansionEntryFoundation.md#human-scale-validation---2026-10-29) for exact placements, eye-level views, measurements, limitations and verification. Current scale reads appropriately generous: 3.8 m overhead, 7.8 m clear hall, 1.86 m between provisional open door leaves and 4 m bay rhythm. No architecture change or production promotion follows automatically from this pass.
