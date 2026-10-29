@@ -282,3 +282,6 @@ contains exact flow, IDs, Personal-writing needs and the next-tranche boundary.
 This is logical/playable scaffolding, not final scene presentation. Production
 Mansion and frozen POC, art/vendor/packages/project settings remain untouched.
 Earlier milestone sections and their test counts are historical.
+
+## Day 1 Afternoon tranche
+The abstract Sandbox panel now continues through one office visit and the required Board Meeting to Evening 3/3. See Docs/DayOneAfternoon.md for guards, state and provisional outcomes. No Evening interactions or production construction.

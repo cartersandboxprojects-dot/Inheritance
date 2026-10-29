@@ -60,7 +60,7 @@ namespace Inheritance.State
         public static readonly Condition ReadyForOffice = Condition.All(Condition.Phase(OfficePending), Condition.Time(TimeBlock.Afternoon),
             Condition.Fact(Ready), Condition.Fact(OfficeRequired), Condition.Fact(Breakfast));
 
-        public static ContentCatalog Catalog()
+        public static ContentCatalog Catalog(IEnumerable<ContentEntry> additional = null)
         {
             var entries = new List<ContentEntry>();
             foreach (var id in new[] { Brecken, Marie, Richard, Adrian }) entries.Add(new ContentEntry(ContentKind.Character, id));
@@ -76,6 +76,7 @@ namespace Inheritance.State
             var names = new[] { "deliver_coffee", "read_agenda", "stay", "leave", "breakfast_support", "breakfast_business", "social_duty", "personal_life" };
             for (int i = 0; i < actions.Length; i++) entries.Add(ContentEntry.Binding(Prefix + "action." + names[i], actions[i], Notice));
             entries.Add(ContentEntry.Binding(Prefix + "ready_for_office", ReadyForOffice));
+            if (additional != null) entries.AddRange(additional);
             return new ContentCatalog(entries);
         }
         public static GameState CreateState()
@@ -89,14 +90,18 @@ namespace Inheritance.State
         }
         // Bounded authored history validation, not a scheduler or a generic engine rule.
         // Replay the recorded one-shot choices to reject contradictory, skipped or fabricated saved state.
-        public static void Validate(GameState state)
+        internal static GameState ReplayHistory(GameState state)
         {
             var expected = CreateState();
             Replay(state, expected, Coffee, DeliverCoffee); Replay(state, expected, Agenda, ReadAgenda);
             Replay(state, expected, Stayed, Stay); Replay(state, expected, Left, Leave);
             Replay(state, expected, Support, BreakfastSupport); Replay(state, expected, Business, BreakfastBusiness);
             Replay(state, expected, Social, SocialDuty); Replay(state, expected, Personal, PersonalLife);
-            if (StatePersistence.Serialize(expected) != StatePersistence.Serialize(state))
+            return expected;
+        }
+        public static void Validate(GameState state)
+        {
+            if (StatePersistence.Serialize(ReplayHistory(state)) != StatePersistence.Serialize(state))
                 throw new InvalidDataException("Day 1 Morning save does not match an authored history.");
         }
         private static void Replay(GameState source, GameState target, string fact, Consequence action)

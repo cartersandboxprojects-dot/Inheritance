@@ -202,3 +202,6 @@ contains exact flow, IDs, Personal-writing needs and the next-tranche boundary.
 This is logical/playable scaffolding, not final scene presentation. Production
 Mansion and frozen POC, art/vendor/packages/project settings remain untouched.
 Earlier milestone sections and their test counts are historical.
+
+## Day 1 Morning/Afternoon continuation
+Sandbox uses day1-afternoon-v3.json with the combined strict catalog and bounded Morning/Afternoon history replay. Existing Morning-only slot is preserved. Schema remains v3; failed loads retain live state. See Docs/DayOneAfternoon.md.

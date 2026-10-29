@@ -261,3 +261,31 @@ contains exact flow, IDs, Personal-writing needs and the next-tranche boundary.
 This is logical/playable scaffolding, not final scene presentation. Production
 Mansion and frozen POC, art/vendor/packages/project settings remain untouched.
 Earlier milestone sections and their test counts are historical.
+
+## October 29, 2026 — Day 1 Tranche 2 Afternoon complete
+
+Current stopping point supersedes the Morning-only endpoint above. Abstract
+Prototype_Sandbox now continues: authored office obligation at Afternoon 3/3 ->
+exactly one secretary / CEO Richard Hale / Acquisitions VP visit, cost 1 -> required
+Board Meeting, cost 2 -> automatic Evening 3/3, day1.evening.pending. No Evening
+content or environment construction. Charlie remains cousin/mentor, never CEO.
+
+Secretary is light/delayable; Hale has newspaper-prepared/basic variants; VP opens
+an unresolved multi-day opportunity. Board records provisional informed/listening/
+concern first impressions, a distinct prepared-Hale payoff and explicit individual
+knowledge/rapport. No universal competence meter. Save schema v3 unchanged; new
+separate Afternoon slot validates complete Morning/Afternoon authored histories.
+Failed loads preserve active state. See Docs/DayOneAfternoon.md for full ID inventory,
+canonical/provisional distinction, writing needs and next-tranche scope.
+
+Verification: 189/189 full EditMode tests (178+11), zero failures/skips/inconclusive;
+312 live handler checks across 12 combinations, each including 2/3 save/reset/reload
+and failed-load preservation; automatic Evening 3/3 and saved endpoint verified.
+Clean compilation and final current Console 0 errors / 0 warnings. Initial test
+runner attempt from pre-existing Play Mode failed; clean stopped-editor rerun passed.
+Office/board/Evening UI visually inspected. Reset to Morning, Play Mode stopped and
+verification slot restored/removed. Production Mansion and frozen POC SHA-256 match
+Morning baseline, including metadata; Sandbox scene/meta unchanged too. No art,
+vendor, package or project-setting changes. Evidence: Temp/DayOneAfternoon-*.
+Next work: Evening logic only when requested; Personal writing and production
+presentation remain unresolved. Commit title: Implement Day 1 afternoon logic.
