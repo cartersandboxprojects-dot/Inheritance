@@ -84,7 +84,7 @@ namespace Inheritance.Tests
         public void UnsupportedVersionAndInvalidGenericValuesAreRejected()
         {
             var save = CreateState().Capture();
-            save.Version = 2;
+            save.Version = StatePersistence.CurrentVersion + 1;
             Assert.Throws<InvalidDataException>(() => GameState.Restore(save));
             save.Version = 1; save.Day = -1;
             Assert.Throws<InvalidDataException>(() => GameState.Restore(save));

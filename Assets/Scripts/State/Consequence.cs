@@ -51,6 +51,9 @@ namespace Inheritance.State
     {
         public Condition Condition { get; }
         private readonly Effect[] effects;
+        private readonly ActionCost cost;
+        public Consequence(Condition condition, ActionCost cost, params Effect[] effects) : this(condition, effects)
+        { this.cost = cost ?? throw new ArgumentNullException(nameof(cost)); }
         public Consequence(Condition condition, params Effect[] effects)
         {
             Condition = condition ?? throw new ArgumentNullException(nameof(condition));
@@ -62,6 +65,15 @@ namespace Inheritance.State
         public bool TryApply(GameState state)
         {
             if (!Condition.IsMet(state)) return false;
+            if (cost != null)
+            {
+                if (!state.CanAfford(cost)) return false;
+                var candidate = GameState.Restore(state.Capture());
+                candidate.TryApplyCost(cost);
+                foreach (var effect in effects) effect.Apply(candidate);
+                state.CommitFrom(candidate);
+                return true;
+            }
             foreach (var effect in effects) effect.Apply(state);
             return true;
         }

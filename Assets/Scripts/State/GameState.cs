@@ -18,6 +18,8 @@ namespace Inheritance.State
         private readonly Dictionary<string, OpportunityState> opportunities =
             new Dictionary<string, OpportunityState>();
 
+        public const int TimeUnitsPerBlock = 3;
+        public int TimeUnitsRemaining { get; private set; } = TimeUnitsPerBlock;
         public int Day { get; private set; }
         public TimeBlock CurrentTimeBlock { get; private set; }
         public string StoryPhase { get; private set; }
@@ -64,6 +66,33 @@ namespace Inheritance.State
                 CurrentTimeBlock = TimeBlock.Morning;
             }
             else CurrentTimeBlock = (TimeBlock)((int)CurrentTimeBlock + 1);
+            TimeUnitsRemaining = TimeUnitsPerBlock;
+        }
+
+        public bool CanAfford(ActionCost cost)
+        {
+            if (cost == null) throw new ArgumentNullException(nameof(cost));
+            return cost.Mode != ActionCostMode.Units || cost.Units <= TimeUnitsRemaining;
+        }
+
+        public bool TryApplyCost(ActionCost cost)
+        {
+            if (!CanAfford(cost)) return false;
+            if (cost.Mode != ActionCostMode.Units || cost.Units == TimeUnitsRemaining)
+                AdvanceTime(); // Overflow is checked before any mutation.
+            else TimeUnitsRemaining -= cost.Units;
+            return true;
+        }
+
+        // Commit a fully validated, detached result while keeping this state authoritative.
+        internal void CommitFrom(GameState result)
+        {
+            facts.Clear(); foreach (var item in result.facts) facts.Add(item.Key, item.Value);
+            relationships.Clear(); foreach (var item in result.relationships) relationships.Add(item.Key, item.Value);
+            knowledge.Clear(); foreach (var item in result.knowledge) knowledge.Add(item);
+            opportunities.Clear(); foreach (var item in result.opportunities) opportunities.Add(item.Key, item.Value);
+            Day = result.Day; CurrentTimeBlock = result.CurrentTimeBlock;
+            TimeUnitsRemaining = result.TimeUnitsRemaining; StoryPhase = result.StoryPhase;
         }
 
         public void SetStoryPhase(string phase) => StoryPhase = Id(phase);

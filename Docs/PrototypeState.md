@@ -31,7 +31,7 @@ are immutable delegate-backed definitions authored in C#, with no Unity dependen
 The original consequence milestone included no OR/NOT combinators, serialization, scheduler, history, automatic inference,
 scene hookup, dialogue runner, or save/load are included.
 
-Effects are sequential, not transactional: invalid identifiers or relationship/day
+Legacy consequences without an ActionCost remain sequential, not transactional: invalid identifiers or relationship/day
 overflow can throw, and earlier effects are not rolled back. Definitions must be
 valid before execution; identifier validation is delegated to GameState operations.
 There is no generic one-shot tracking. Content guards must prevent unwanted repeats.
@@ -80,7 +80,7 @@ BreckenMetCharlie, completes CharlieBusiness, adds 1 Elena resentment and subtra
 predicates and report consequences also require the opposite event false.
 The scene's explicit information event is Brecken reporting his meeting when
 talking to Victoria. See InkPrototype.md for complete current logic, controls,
-outcome table, and verification. The current suite has 32 passing cases.
+outcome table, and verification. The original playable extension had 32 passing cases; see the authored time extension below for current coverage.
 
 ## Save/load extension (October 27, 2026)
 
@@ -88,3 +88,42 @@ GameState now exposes detached Capture/Restore snapshots. StatePersistence write
 versioned JSON and restores all backend state without Unity or Ink dependencies.
 FuneralNightSaveValidation owns the current prototype's authored consistency rules.
 See SaveLoad.md for the format, single-slot UI, error behavior, and verification.
+## Authored time costs (October 28, 2026)
+
+Interaction != time advancement. GameState owns TimeUnitsRemaining, initially 3,
+and the constant TimeUnitsPerBlock = 3 for every coarse block. No calendar or minute clock.
+ActionCost is immutable content: Fixed(0)/Free leaves time unchanged; Fixed(n)
+spends n units, rejecting negative definitions and returning false for over-budget
+actions. Exact exhaustion advances exactly one block and restores 3 units. No
+overflow cost carries into another block. Capacity is always 1..3 in live state.
+ConsumeRemainder explicitly ends the block regardless of its remaining capacity.
+HardTransition explicitly forces the next block for sleep/travel/event boundaries.
+Both reset capacity; Night -> Morning increments Day with checked overflow.
+AdvanceTime remains the explicit low-level transition API and also resets capacity.
+Narrative importance never implies a time cost.
+
+Consequence(condition, cost, effects) checks guards and affordability, applies cost
+and ordered effects to a detached candidate, then commits into the authoritative
+GameState only on success. Rejection returns false; invalid effects/overflow throw
+without changing live state. This atomic path is opt-in for costed actions; legacy
+uncosted consequences retain their prior sequential semantics. Costs run before
+effects. Content should declare one cost and avoid additional AdvanceTime effects
+unless multiple transitions are intentional.
+
+OpportunityDefinition(id, cost, condition, effects) provides CanStart/TryComplete:
+requires Available plus authored conditions and budget, then applies cost/effects
+and marks Completed atomically. Definitions are content, not save state. Rebuild
+them from authored code after load. No automatic scheduling or expiry is implied;
+existing explicit opportunity states/guards remain. Ordinary conversations can use
+free consequences directly without becoming opportunities.
+
+ChooseElena and ChooseCharlie now declare ActionCost.HardTransition instead of
+an AdvanceTime effect. Both still move Evening -> Night/AfterFuneralNight exactly
+once, preserving facts, relationships, Charlie opportunity, and Victoria knowledge
+guards. Victoria reporting has no time effect. See ActionCostTests for budget,
+atomic failure, rollover, opportunities, persistence, and both funeral branches.
+
+Validation: full Unity 6000.3.27f1 EditMode suite passed 81/81 cases (60 existing +
+21 new), zero failed/skipped/inconclusive. Script compilation completed with
+failed=false, no errors; current Console had zero errors and warnings. No scenes,
+art, vendor assets, packages, or project settings changed.

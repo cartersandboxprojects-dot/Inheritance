@@ -10,11 +10,11 @@ namespace Inheritance.State
                 Condition.Opportunity(FuneralNightContent.CharlieBusiness, OpportunityState.Available),
                 Condition.Fact(FuneralNightContent.BreckenComfortedElena, false),
                 Condition.Fact(FuneralNightContent.BreckenMetCharlie, false)),
+            ActionCost.HardTransition,
             Effect.SetFact(FuneralNightContent.BreckenComfortedElena, true),
             Effect.SetFact(FuneralNightContent.BreckenMetCharlie, false),
             Effect.ModifyRelationship(FuneralNightContent.Elena, FuneralNightContent.Resentment, -1),
             Effect.SetOpportunity(FuneralNightContent.CharlieBusiness, OpportunityState.Missed),
-            Effect.AdvanceTime(),
             Effect.SetPhase(FuneralNightContent.AfterFuneralNight));
 
         // The same evening opportunity is consumed by either mutually exclusive choice.
@@ -25,11 +25,11 @@ namespace Inheritance.State
                 Condition.Opportunity(FuneralNightContent.CharlieBusiness, OpportunityState.Available),
                 Condition.Fact(FuneralNightContent.BreckenComfortedElena, false),
                 Condition.Fact(FuneralNightContent.BreckenMetCharlie, false)),
+            ActionCost.HardTransition,
             Effect.SetFact(FuneralNightContent.BreckenMetCharlie, true),
             Effect.ModifyRelationship(FuneralNightContent.Elena, FuneralNightContent.Resentment, 1),
             Effect.ModifyRelationship(FuneralNightContent.Charlie, FuneralNightContent.Resentment, -1),
             Effect.SetOpportunity(FuneralNightContent.CharlieBusiness, OpportunityState.Completed),
-            Effect.AdvanceTime(),
             Effect.SetPhase(FuneralNightContent.AfterFuneralNight));
 
         public static readonly Consequence InformVictoriaAboutCharlie = new Consequence(

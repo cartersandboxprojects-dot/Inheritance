@@ -14,6 +14,7 @@ namespace Inheritance.State
     public sealed class StateSave
     {
         [DataMember(IsRequired = true)] public int Version;
+        [DataMember] public int? TimeUnitsRemaining;
         [DataMember(IsRequired = true)] public int Day;
         [DataMember(IsRequired = true)] public int Time;
         [DataMember(IsRequired = true)] public string Phase;
@@ -59,6 +60,7 @@ namespace Inheritance.State
         {
             Version = StatePersistence.CurrentVersion,
             Day = Day, Time = (int)CurrentTimeBlock, Phase = StoryPhase,
+            TimeUnitsRemaining = TimeUnitsRemaining,
             Facts = facts.OrderBy(x => x.Key, StringComparer.Ordinal)
                 .Select(x => new FactSave { Id = x.Key, Value = x.Value }).ToArray(),
             Relationships = relationships.OrderBy(x => x.Key.character, StringComparer.Ordinal)
@@ -74,12 +76,16 @@ namespace Inheritance.State
 
         public static GameState Restore(StateSave save)
         {
-            if (save == null || save.Version != StatePersistence.CurrentVersion)
+            if (save == null || (save.Version != 1 && save.Version != StatePersistence.CurrentVersion))
                 throw new InvalidDataException("Unsupported or missing save version.");
             if (save.Day < 0 || save.Facts == null || save.Relationships == null ||
                 save.Knowledge == null || save.Opportunities == null)
                 throw new InvalidDataException("Incomplete or invalid state.");
-            var state = new GameState(save.Phase, (TimeBlock)save.Time) { Day = save.Day };
+            int capacity = save.Version == 1 ? TimeUnitsPerBlock : save.TimeUnitsRemaining ?? -1;
+            if (capacity < 1 || capacity > TimeUnitsPerBlock)
+                throw new InvalidDataException("Invalid or missing time capacity.");
+            var state = new GameState(save.Phase, (TimeBlock)save.Time)
+                { Day = save.Day, TimeUnitsRemaining = capacity };
             foreach (var entry in save.Facts)
             {
                 if (entry == null) throw new InvalidDataException("Null fact.");
@@ -108,7 +114,7 @@ namespace Inheritance.State
     // Pure .NET persistence; no Ink, scene, transform, or Unity ownership.
     public static class StatePersistence
     {
-        public const int CurrentVersion = 1;
+        public const int CurrentVersion = 2;
         public const int MaximumBytes = 1024 * 1024;
 
         public static string Serialize(GameState state, Action<GameState> validate = null)

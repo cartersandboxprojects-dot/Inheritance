@@ -16,14 +16,18 @@ Failed Load preserves the previous state, conversation, and transcript and displ
 an error. Save errors also display in the existing UI.
 
 Only backend state persists: facts (including explicitly false entries),
-relationships, per-character knowledge, opportunities, day, time block, and phase.
+relationships, per-character knowledge, opportunities, day, time block, remaining capacity, and phase.
 Player position, scene objects, transcript, and Ink execution position are excluded.
 
 ## Format and ownership
 
 StateSave is a detached DTO with required Version, Day, Time, Phase, Facts,
-Relationships, Knowledge, and Opportunities members. Version is currently 1;
-unsupported versions fail rather than silently resetting or attempting migration.
+Relationships, Knowledge, and Opportunities members. Version is now 2 and requires
+TimeUnitsRemaining (1..3). Missing/null/out-of-range capacity fails on version 2.
+Version 1 saves migrate to a full block (3 units), because they recorded no partial
+capacity. All other state and authored validation are preserved. Future versions fail.
+The existing funeral-night-v1.json slot filename is retained to find older saves;
+the JSON Version member determines schema. New writes always use version 2.
 Dictionary/set entries use arrays of explicit records. Capture orders records
 ordinally for deterministic output and never shares live mutable collections.
 
@@ -74,5 +78,10 @@ other platforms and player builds were not tested.
   implementation, and normalized again after Unity regenerated the same LF noise.
   No actual shader settings changed.
 
-No autosave, slot browser, migration system, cloud sync, or Ink-flow persistence
+No autosave, slot browser, general migration framework, cloud sync, or Ink-flow persistence
 is included in this milestone.
+
+Authored-time validation (October 28, 2026): full suite 81/81 passed, including
+partial-capacity round trip, invalid/missing/null capacity rejection, version 1
+compatibility, and existing Elena/Charlie/Victoria save/load regression cases.
+Compilation succeeded; current Console had zero errors/warnings.
