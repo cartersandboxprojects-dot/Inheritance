@@ -154,10 +154,10 @@ namespace Inheritance.Tests
             string missing = Regex.Replace(json, "\"TimeUnitsRemaining\":3,?", "");
             Assert.Throws<InvalidDataException>(() => StatePersistence.Deserialize(missing));
             Assert.Throws<InvalidDataException>(() => StatePersistence.Deserialize(json.Replace("\"TimeUnitsRemaining\":3", "\"TimeUnitsRemaining\":null")));
-            var loaded = StatePersistence.Deserialize(missing.Replace("\"Version\":2", "\"Version\":1"));
+            var loaded = StatePersistence.Deserialize(missing.Replace("\"Version\":" + StatePersistence.CurrentVersion, "\"Version\":1"));
             Assert.That(loaded.TimeUnitsRemaining, Is.EqualTo(3));
             Assert.That(loaded.CurrentTimeBlock, Is.EqualTo(TimeBlock.Evening));
-            Assert.That(loaded.Capture().Version, Is.EqualTo(2));
+            Assert.That(loaded.Capture().Version, Is.EqualTo(StatePersistence.CurrentVersion));
         }
 
         [TestCase(false)]

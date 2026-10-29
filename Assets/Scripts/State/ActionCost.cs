@@ -1,5 +1,4 @@
 using System;
-using System.Linq;
 
 namespace Inheritance.State
 {
@@ -21,22 +20,4 @@ namespace Inheritance.State
         public static readonly ActionCost HardTransition = new ActionCost(ActionCostMode.HardTransition);
     }
 
-    // Optional content wrapper. Conversations need not be opportunities.
-    public sealed class OpportunityDefinition
-    {
-        public string Id { get; }
-        public ActionCost Cost { get; }
-        private readonly Consequence consequence;
-        public OpportunityDefinition(string id, ActionCost cost, Condition condition, params Effect[] effects)
-        {
-            if (string.IsNullOrWhiteSpace(id)) throw new ArgumentException("Missing opportunity id.", nameof(id));
-            Id = id; Cost = cost ?? throw new ArgumentNullException(nameof(cost));
-            if (condition == null) throw new ArgumentNullException(nameof(condition));
-            if (effects == null) throw new ArgumentNullException(nameof(effects));
-            consequence = new Consequence(Condition.All(Condition.Opportunity(id, OpportunityState.Available), condition),
-                cost, effects.Concat(new[] { Effect.SetOpportunity(id, OpportunityState.Completed) }).ToArray());
-        }
-        public bool CanStart(GameState state) => consequence.Condition.IsMet(state) && state.CanAfford(Cost);
-        public bool TryComplete(GameState state) => consequence.TryApply(state);
-    }
 }

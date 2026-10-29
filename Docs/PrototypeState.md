@@ -127,3 +127,78 @@ Validation: full Unity 6000.3.27f1 EditMode suite passed 81/81 cases (60 existin
 21 new), zero failed/skipped/inconclusive. Script compilation completed with
 failed=false, no errors; current Console had zero errors and warnings. No scenes,
 art, vendor assets, packages, or project settings changed.
+
+## Opportunity scheduling and phone proof (October 28, 2026)
+
+GameState remains authoritative. OpportunityState retains numeric values 0..4 and
+adds Accepted=5 and Expired=6. OpportunityDefinition is now in its own file. The
+original constructor/CanStart/TryComplete API is preserved: a direct completion
+from Available pays Cost. The extended constructor adds optional TimeBlock,
+AcceptanceCost, and copied OpportunityCompetition definitions. Eligibility is
+checked at offer, acceptance, and completion; completion of an accepted commitment
+still requires the authored eligibility/block. Content can make eligibility broader
+for commitments spanning blocks. Cost is the completion cost; AcceptanceCost is
+independent, free by default. CanStart retains its legacy completion-budget meaning.
+
+TryMakeAvailable offers Unavailable/Deferred opportunities only when eligible.
+TryAccept locks the commitment; TryComplete accepts Available or Accepted and is
+one-shot. Both validate eligibility, budget and competitors before working on a
+detached candidate, then commit cost, competition, effects and own outcome together.
+Accepted/Completed competitors reject an action. Nonterminal competitors become
+Missed or Deferred as authored; terminal results are not overwritten. Author mutual
+competition on both definitions for mutual exclusion. GameState setters remain
+low-level primitives; callers should use definitions for player actions.
+TryDefer is a free explicit action on Available. TryExpire uses a caller-authored
+predicate for Available/Deferred/Accepted. There is no automatic expiry tick.
+Missed/Completed/Expired never reopen through TryMakeAvailable.
+
+PhoneMessage is an immutable view of backend state: Id, SenderId, optional
+RelatedOpportunityId and Queued/Delivered/Read status (Absent means no record).
+MessageDefinition owns stable IDs, text, delivery eligibility and optional onRead
+Consequence; definitions are rebuilt from code after load. TryQueue is idempotent,
+TryDeliver checks the queued record metadata and authored predicate before the
+one-time transition. Neither rendering Text nor GetMessage has effects. TryRead
+is explicit, requires Delivered, and atomically applies an optional guarded
+consequence before marking Read. A rejected/throwing consequence leaves everything
+unchanged. Reading is free unless content explicitly authors a cost in onRead.
+Condition.Message composes with existing opportunity, fact, time and knowledge
+conditions; an exact Delivered check ceases matching once Read, by design.
+
+SchedulingProofContent is test-only authored content with no scene connection:
+- Phase SchedulingProof, initially Afternoon. Both commitments become Available.
+- proof.family.visit_elena: free acceptance, ConsumeRemainder completion. Acceptance
+  or direct completion marks proof.business.charlie_call Missed. Completion records
+  proof.family.visited and grants Elena knowledge of that visit, ending Afternoon.
+- proof.business.charlie_call: free acceptance, ConsumeRemainder completion. It
+  defers the family visit; completed/accepted business prevents reoffering it.
+- proof.message.elena_thanks is queued initially, linked to the family visit, sender
+  Elena: "Thank you for spending the afternoon with me." It delivers only in Evening
+  in the proof phase with the family visit Completed and the visit fact true.
+- LaterReaction requires Evening/proof phase, family Completed, business Missed,
+  the message Read, visit fact true and Elena knowing it. This represents Elena's
+  later response after the player has read her thanks. React sets proof.elena.reacted
+  once using an explicit fact guard. The sample read itself has no world effects.
+
+Caller sequence: CreateState -> Family.TryAccept -> Family.TryComplete -> Evaluate
+-> Thanks.TryRead -> React.TryApply. Direct TryComplete also works. Evaluate offers
+eligible commitments and attempts queue/delivery at explicit action/load boundaries.
+It is safe to repeat. No message delivers merely because time changes; callers
+must evaluate at the authored boundary. The sample Evening window is intentional:
+other content can author a wider condition if delivery should survive that window.
+
+Delayed consequences remain authored persistent state-read/write chains, NOT a
+universal pending-event simulator. There is no universal scheduler, automatic event
+propagation, conversation-to-opportunity conversion or scene/visual integration.
+FuneralNightContent, funeral consequences, Ink and all scenes remain unchanged.
+
+Scheduling validation: full Unity 6000.3.27f1 EditMode suite passed 119/119 cases
+(81 baseline + 38 new), zero failed/skipped/inconclusive. Compilation completed
+with failed=false and no errors; current Console had zero errors/warnings. Tests
+cover eligibility/block guards, acceptance/completion costs, atomic failures,
+competition, defer/expiry, delayed one-time delivery, free/guarded/failed reads,
+reaction prerequisites, queued/accepted/delivered/read save-load continuation,
+v1/v2 migration and invalid phone/opportunity records. Existing authored-time and
+Elena/Charlie/Victoria regression tests passed. No runtime surface was needed;
+Production Mansion, frozen POC, Sandbox, art, vendor, package and project settings
+content were untouched. This tranche was verified through backend/EditMode tests,
+not an additional live gameplay walkthrough.

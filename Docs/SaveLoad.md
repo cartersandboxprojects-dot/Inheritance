@@ -16,18 +16,18 @@ Failed Load preserves the previous state, conversation, and transcript and displ
 an error. Save errors also display in the existing UI.
 
 Only backend state persists: facts (including explicitly false entries),
-relationships, per-character knowledge, opportunities, day, time block, remaining capacity, and phase.
+relationships, per-character knowledge, opportunities, phone messages, day, time block, remaining capacity, and phase.
 Player position, scene objects, transcript, and Ink execution position are excluded.
 
 ## Format and ownership
 
 StateSave is a detached DTO with required Version, Day, Time, Phase, Facts,
-Relationships, Knowledge, and Opportunities members. Version is now 2 and requires
-TimeUnitsRemaining (1..3). Missing/null/out-of-range capacity fails on version 2.
+Relationships, Knowledge, Opportunities and (for v3) Messages members. Version is now 3 and requires
+TimeUnitsRemaining (1..3). Missing/null/out-of-range capacity fails on versions 2 and 3.
 Version 1 saves migrate to a full block (3 units), because they recorded no partial
 capacity. All other state and authored validation are preserved. Future versions fail.
 The existing funeral-night-v1.json slot filename is retained to find older saves;
-the JSON Version member determines schema. New writes always use version 2.
+the JSON Version member determines schema. New writes always use version 3.
 Dictionary/set entries use arrays of explicit records. Capture orders records
 ordinally for deterministic output and never shares live mutable collections.
 
@@ -85,3 +85,38 @@ Authored-time validation (October 28, 2026): full suite 81/81 passed, including
 partial-capacity round trip, invalid/missing/null capacity rejection, version 1
 compatibility, and existing Elena/Charlie/Victoria save/load regression cases.
 Compilation succeeded; current Console had zero errors/warnings.
+
+## Scheduling/phone schema v3 (October 28, 2026)
+
+CurrentVersion is 3. Capture stores the ordered Messages array with stable message
+Id, Sender, optional RelatedOpportunity, and Status (1 Queued, 2 Delivered, 3 Read).
+Opportunities retain their original numeric values with Accepted=5 and Expired=6
+appended. Every scheduling result/queue/read marker lives in GameState, is included
+in detached snapshots, and survives atomic candidate commits and save/load.
+Definitions, text, predicates, costs and competition rules remain content, not saves.
+
+V1/v2 migrate to an empty inbox; v1 still gets 3 time units, v2 still requires valid
+capacity. V3 requires a non-null Messages array, even if empty. It rejects null or
+duplicate records, blank IDs/senders/optional relation IDs, invalid statuses (including
+Absent in a stored record), missing required record members and invalid opportunity
+enum values. Generic restore validates structure, not an authored content registry
+or inferred story history. Message actions also require metadata matching their
+definition. Content-specific cross-field invariants can use the existing validation
+callback; funeral-night validation is unchanged.
+
+After loading, rebuild definitions and explicitly evaluate eligible delivery where
+the authored caller requires it. Delivered/read records reject requeue/redelivery;
+queued records can deliver later. Loading and rendering never deliver implicitly.
+There is no serialized universal event queue or pending-event simulator.
+
+Scheduling validation: full Unity 6000.3.27f1 EditMode suite passed 119/119 cases
+(81 baseline + 38 new), zero failed/skipped/inconclusive. Compilation completed
+with failed=false and no errors; current Console had zero errors/warnings. Tests
+cover eligibility/block guards, acceptance/completion costs, atomic failures,
+competition, defer/expiry, delayed one-time delivery, free/guarded/failed reads,
+reaction prerequisites, queued/accepted/delivered/read save-load continuation,
+v1/v2 migration and invalid phone/opportunity records. Existing authored-time and
+Elena/Charlie/Victoria regression tests passed. No runtime surface was needed;
+Production Mansion, frozen POC, Sandbox, art, vendor, package and project settings
+content were untouched. This tranche was verified through backend/EditMode tests,
+not an additional live gameplay walkthrough.

@@ -17,6 +17,7 @@ namespace Inheritance.State
             new Condition(s => s.GetRelationship(character, attribute) <= maximum);
         public static Condition Opportunity(string opportunity, OpportunityState expected) =>
             new Condition(s => s.GetOpportunityState(opportunity) == expected);
+        public static Condition Message(string id, MessageStatus expected) => new Condition(s => s.GetMessageStatus(id) == expected);
         public static Condition Time(TimeBlock expected) => new Condition(s => s.CurrentTimeBlock == expected);
         public static Condition Phase(string expected) => new Condition(s => s.StoryPhase == expected);
 

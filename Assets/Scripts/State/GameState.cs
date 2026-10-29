@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Inheritance.State
 {
-    public enum OpportunityState { Unavailable, Available, Missed, Deferred, Completed }
+    public enum OpportunityState { Unavailable = 0, Available = 1, Missed = 2, Deferred = 3, Completed = 4, Accepted = 5, Expired = 6 }
     public enum TimeBlock { Morning, Afternoon, Evening, Night }
 
     // Backend-owned state. Content owns identifiers and decides when consequences apply.
@@ -91,6 +91,7 @@ namespace Inheritance.State
             relationships.Clear(); foreach (var item in result.relationships) relationships.Add(item.Key, item.Value);
             knowledge.Clear(); foreach (var item in result.knowledge) knowledge.Add(item);
             opportunities.Clear(); foreach (var item in result.opportunities) opportunities.Add(item.Key, item.Value);
+            messages.Clear(); foreach (var item in result.messages) messages.Add(item.Key, item.Value);
             Day = result.Day; CurrentTimeBlock = result.CurrentTimeBlock;
             TimeUnitsRemaining = result.TimeUnitsRemaining; StoryPhase = result.StoryPhase;
         }

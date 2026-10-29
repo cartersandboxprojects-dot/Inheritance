@@ -15,6 +15,7 @@ namespace Inheritance.State
     {
         [DataMember(IsRequired = true)] public int Version;
         [DataMember] public int? TimeUnitsRemaining;
+        [DataMember] public MessageSave[] Messages;
         [DataMember(IsRequired = true)] public int Day;
         [DataMember(IsRequired = true)] public int Time;
         [DataMember(IsRequired = true)] public string Phase;
@@ -53,6 +54,15 @@ namespace Inheritance.State
         [DataMember(IsRequired = true)] public int Value;
     }
 
+    [DataContract]
+    public sealed class MessageSave
+    {
+        [DataMember(IsRequired = true)] public string Id;
+        [DataMember(IsRequired = true)] public string Sender;
+        [DataMember] public string RelatedOpportunity;
+        [DataMember(IsRequired = true)] public int Status;
+    }
+
     public sealed partial class GameState
     {
         // Detached, ordered snapshot; callers cannot mutate the live dictionaries.
@@ -61,6 +71,9 @@ namespace Inheritance.State
             Version = StatePersistence.CurrentVersion,
             Day = Day, Time = (int)CurrentTimeBlock, Phase = StoryPhase,
             TimeUnitsRemaining = TimeUnitsRemaining,
+            Messages = messages.OrderBy(x => x.Key, StringComparer.Ordinal).Select(x => new MessageSave {
+                Id = x.Key, Sender = x.Value.SenderId, RelatedOpportunity = x.Value.RelatedOpportunityId,
+                Status = (int)x.Value.Status }).ToArray(),
             Facts = facts.OrderBy(x => x.Key, StringComparer.Ordinal)
                 .Select(x => new FactSave { Id = x.Key, Value = x.Value }).ToArray(),
             Relationships = relationships.OrderBy(x => x.Key.character, StringComparer.Ordinal)
@@ -76,10 +89,10 @@ namespace Inheritance.State
 
         public static GameState Restore(StateSave save)
         {
-            if (save == null || (save.Version != 1 && save.Version != StatePersistence.CurrentVersion))
+            if (save == null || (save.Version < 1 || save.Version > StatePersistence.CurrentVersion))
                 throw new InvalidDataException("Unsupported or missing save version.");
             if (save.Day < 0 || save.Facts == null || save.Relationships == null ||
-                save.Knowledge == null || save.Opportunities == null)
+                save.Knowledge == null || save.Opportunities == null || (save.Version >= 3 && save.Messages == null))
                 throw new InvalidDataException("Incomplete or invalid state.");
             int capacity = save.Version == 1 ? TimeUnitsPerBlock : save.TimeUnitsRemaining ?? -1;
             if (capacity < 1 || capacity > TimeUnitsPerBlock)
@@ -107,6 +120,15 @@ namespace Inheritance.State
                     throw new InvalidDataException("Invalid opportunity.");
                 state.opportunities.Add(Id(entry.Id), (OpportunityState)entry.Value);
             }
+            // Legacy schemas had no phone state. Migration introduces an empty inbox.
+            if (save.Version >= 3) foreach (var entry in save.Messages)
+            {
+                if (entry == null || string.IsNullOrWhiteSpace(entry.Id) || string.IsNullOrWhiteSpace(entry.Sender) ||
+                    (entry.RelatedOpportunity != null && string.IsNullOrWhiteSpace(entry.RelatedOpportunity)) ||
+                    entry.Status < (int)MessageStatus.Queued || entry.Status > (int)MessageStatus.Read || state.messages.ContainsKey(entry.Id))
+                    throw new InvalidDataException("Invalid or duplicate message.");
+                state.messages.Add(entry.Id, new PhoneMessage(entry.Id, entry.Sender, entry.RelatedOpportunity, (MessageStatus)entry.Status));
+            }
             return state;
         }
     }
@@ -114,7 +136,7 @@ namespace Inheritance.State
     // Pure .NET persistence; no Ink, scene, transform, or Unity ownership.
     public static class StatePersistence
     {
-        public const int CurrentVersion = 2;
+        public const int CurrentVersion = 3;
         public const int MaximumBytes = 1024 * 1024;
 
         public static string Serialize(GameState state, Action<GameState> validate = null)
