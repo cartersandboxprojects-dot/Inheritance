@@ -101,3 +101,8 @@ Seven instances in the Sandbox entry foundation validate portico, front opening,
 ## Sandbox grand stair and master suite - 2026-10-29
 
 Owned assembly: Assets/Inheritance/Environment/Sandbox/Mansion_Stair_MasterSuite_Shell.prefab. Read Docs/MansionStairMasterSuiteShell.md before editing. Pair it with the Sandbox-only disabled Central upper deck override on Mansion Entry Foundation; the new assembly replaces that slab around the stair opening. Source foundation and vendor originals remain unchanged. Return stair, eastbound hall, first-left suite entrance, receiving room, bath/private transition, rear bedroom and east covered balcony terrace are architectural shells only. Caps/supports/balcony boundaries remain provisional; X+/-16 wing planes and broader upper-floor program remain open. No furniture, new art payload, packages or gameplay changes. Full EditMode: 206/206; Console: 0 errors/0 warnings. Production/POC scene and meta SHA-256 checks match the pre-tranche baseline.
+
+
+## Ceremonial staircase correction - 2026-10-29
+
+See [MansionStairCorrection.md](MansionStairCorrection.md), which supersedes the earlier return stair, near-door placement, and uninterrupted ground cross-band claims. Current stair: one centered 4 m clear flight beginning at the far end of the foyer (Z6), 22 risers to Y4, 300 mm goings, 6.3 m run, and a 7.7 x 3.7 m upper gallery. The east passage continues past the reserved future southbound third-floor stair to the eastbound hall; Brecken's suite remains first door on the left. The third-floor flight is not built. Suite program and room arrangement are retained.

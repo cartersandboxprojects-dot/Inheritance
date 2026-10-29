@@ -101,3 +101,8 @@ Fabrication required a short in-memory Unity builder, two prefab saves, seven pl
 ## Grand staircase / master-suite addition - 2026-10-29
 
 See [MansionStairMasterSuiteShell.md](MansionStairMasterSuiteShell.md) for the current Sandbox stair opening, return staircase, east/right upper hall, first-left receiving-room entrance, bathroom/transition, rear bedroom and provisional balcony terrace. The foundation asset remains unchanged; Sandbox disables its single central upper slab and pairs it with the new owned replacement-deck/stair/suite assembly. The earlier no-stair and unobstructed axial-route observations above describe the pre-stair foundation. Ground cross circulation at Z6..10 is retained. Two foyer scale rulers moved to the side approach; the historical reference-position table above is superseded for those two placements. Current full suite is 206/206 passing; current Console has 0 errors / 0 warnings.
+
+
+## Ceremonial staircase correction - 2026-10-29
+
+See [MansionStairCorrection.md](MansionStairCorrection.md), which supersedes the earlier return stair, near-door placement, and uninterrupted ground cross-band claims. Current stair: one centered 4 m clear flight beginning at the far end of the foyer (Z6), 22 risers to Y4, 300 mm goings, 6.3 m run, and a 7.7 x 3.7 m upper gallery. The east passage continues past the reserved future southbound third-floor stair to the eastbound hall; Brecken's suite remains first door on the left. The third-floor flight is not built. Suite program and room arrangement are retained.

@@ -70,3 +70,8 @@ All four pre/post **SHA-256 hashes match exactly**:
 | Assets/Scenes/Prototype/Prototype_Mansion_POC.unity.meta | 9AD9FC0E72FF0BB47DCDF9170A58EF1B413ADF3B14B28F7BD9358131481DC021 |
 
 Git diff review excludes gameplay/backend, tests, other scenes, vendor assets, packages and project settings. Only Sandbox, the new owned prefab/meta and environment documentation are included. No additional LFS art payload is introduced.
+
+
+## Ceremonial staircase correction - 2026-10-29
+
+See [MansionStairCorrection.md](MansionStairCorrection.md), which supersedes the earlier return stair, near-door placement, and uninterrupted ground cross-band claims. Current stair: one centered 4 m clear flight beginning at the far end of the foyer (Z6), 22 risers to Y4, 300 mm goings, 6.3 m run, and a 7.7 x 3.7 m upper gallery. The east passage continues past the reserved future southbound third-floor stair to the eastbound hall; Brecken's suite remains first door on the left. The third-floor flight is not built. Suite program and room arrangement are retained.
