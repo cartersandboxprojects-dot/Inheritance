@@ -120,3 +120,22 @@ Elena/Charlie/Victoria regression tests passed. No runtime surface was needed;
 Production Mansion, frozen POC, Sandbox, art, vendor, package and project settings
 content were untouched. This tranche was verified through backend/EditMode tests,
 not an additional live gameplay walkthrough.
+
+## Backend quality checkpoint (October 28, 2026)
+
+Schema remains v3; no format change. Full unfiltered EditMode suite: 121/121 passed,
+zero failures/skips/inconclusive. Compilation passed and current Console was clear.
+V2 migration coverage now starts with one remaining unit to prove capacity survives;
+v1 restores three units. Both introduce an empty inbox. Existing JSON tests cover
+missing v2 capacity and missing v3 Messages/required message members.
+
+Restore validates structural states allowed by low-level GameState operations.
+It has no content registry, so unknown IDs, directional competition conflicts or
+impossible authored histories require the existing validation callback. Metadata
+mismatch is rejected by message actions before delivery/read. Do not broaden the
+funeral-specific validator into a global story rule or infer knowledge from truth.
+Next hardening should validate stable IDs/references and define saved-ID aliases
+and content migrations before renaming authored IDs. No broad ID refactor here.
+All consequences now commit atomically, including uncosted effects; failed effects
+cannot leak partial state into a later save. See INHERITANCE_CURRENT_CHECKPOINT.md
+and the handoff entry titled Backend gameplay quality checkpoint for the full audit.

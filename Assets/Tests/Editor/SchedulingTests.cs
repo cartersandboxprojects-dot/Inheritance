@@ -209,6 +209,7 @@ namespace Inheritance.Tests
         {
             var state = CreateState(); Family.TryComplete(state); Evaluate(state);
             Thanks.TryRead(state);
+            Assert.That(LaterReaction.IsMet(state), Is.True);
             if (missing == "knowledge")
             {
                 var save = state.Capture(); save.Knowledge = new KnowledgeSave[0]; state = GameState.Restore(save);
@@ -246,11 +247,13 @@ namespace Inheritance.Tests
         [TestCase(2)]
         public void LegacySchemasMigrateWithEmptyInbox(int version)
         {
-            var save = CreateState().Capture(); save.Version = version; save.Messages = null;
+            var original = CreateState();
+            Assert.That(original.TryApplyCost(ActionCost.Fixed(2)), Is.True);
+            var save = original.Capture(); save.Version = version; save.Messages = null;
             if (version == 1) save.TimeUnitsRemaining = null;
             var loaded = GameState.Restore(save);
             Assert.That(loaded.GetMessageStatus(MessageId), Is.EqualTo(MessageStatus.Absent));
-            Assert.That(loaded.TimeUnitsRemaining, Is.EqualTo(3));
+            Assert.That(loaded.TimeUnitsRemaining, Is.EqualTo(version == 1 ? 3 : 1));
             Assert.That(loaded.Capture().Version, Is.EqualTo(3));
         }
 

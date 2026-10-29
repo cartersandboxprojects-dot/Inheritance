@@ -31,8 +31,8 @@ are immutable delegate-backed definitions authored in C#, with no Unity dependen
 The original consequence milestone included no OR/NOT combinators, serialization, scheduler, history, automatic inference,
 scene hookup, dialogue runner, or save/load are included.
 
-Legacy consequences without an ActionCost remain sequential, not transactional: invalid identifiers or relationship/day
-overflow can throw, and earlier effects are not rolled back. Definitions must be
+All consequences use detached candidate/commit, including those without an ActionCost.
+Invalid identifiers or relationship/day overflow throw without partial live mutation. Definitions must be
 valid before execution; identifier validation is delegated to GameState operations.
 There is no generic one-shot tracking. Content guards must prevent unwanted repeats.
 Definition arrays are copied and null entries rejected. Definitions may be shared
@@ -105,8 +105,7 @@ Narrative importance never implies a time cost.
 Consequence(condition, cost, effects) checks guards and affordability, applies cost
 and ordered effects to a detached candidate, then commits into the authoritative
 GameState only on success. Rejection returns false; invalid effects/overflow throw
-without changing live state. This atomic path is opt-in for costed actions; legacy
-uncosted consequences retain their prior sequential semantics. Costs run before
+without changing live state. The quality checkpoint extends this atomic path to uncosted consequences too. Costs run before
 effects. Content should declare one cost and avoid additional AdvanceTime effects
 unless multiple transitions are intentional.
 
@@ -202,3 +201,21 @@ Elena/Charlie/Victoria regression tests passed. No runtime surface was needed;
 Production Mansion, frozen POC, Sandbox, art, vendor, package and project settings
 content were untouched. This tranche was verified through backend/EditMode tests,
 not an additional live gameplay walkthrough.
+
+## Backend quality checkpoint (October 28, 2026)
+
+At d7d7dbe the 119-test baseline had one atomicity gap in uncosted Consequence.
+The checkpoint unifies candidate/commit for every consequence, with two regressions
+proved failing before the fix. Full unfiltered EditMode suite: 121/121 passed,
+zero failed/skipped/inconclusive; compilation passed and current Console zero
+warnings/errors. Existing array-isolation, reaction-prerequisite and partial-v2
+migration tests were strengthened. No gameplay systems or protected assets changed.
+
+GameState setters/Effect.Apply are low-level primitives, not guarded player actions.
+Definitions own transition rules; structural save validation does not prove authored
+history. Current dialogue mutations use consequences. No truth-to-knowledge leakage
+was found. Directional competition, completion windows after acceptance, delivery
+windows, read guards and one-shot guards remain content responsibilities. Next debt
+is stable-ID uniqueness/reference validation, saved-ID rename/alias policy and
+content-specific invariants. C# definitions remain sufficient for this proof; add
+validation/tooling as content expands. See the current checkpoint for detailed risks.

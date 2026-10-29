@@ -9,6 +9,44 @@ Convention mirrored from Wedge's WEDGE_DEVELOPMENT_HANDOFF.md and
 WEDGE_CURRENT_CHECKPOINT.md, inspected October 27, 2026. This record documents
 source/build provenance; it does not independently establish legal ownership.
 
+## Backend gameplay quality checkpoint (2026-10-28)
+
+Started clean on main/origin/main at d7d7dbe3ce85819d001327ba72ea620981e67d8f
+(opportunity/phone scheduling, 119 tests), following 6289c49 (authored time costs).
+This entry shares the commit titled `Checkpoint backend gameplay systems`; Git
+history supplies its exact hash. No new gameplay subsystem or scene integration.
+
+Reviewed state ownership, conditions/effects/consequences, authored costs and
+rollover, opportunities/competition/expiry, delayed phone delivery/read, independent
+knowledge, relationships, phase and v3 save/load with v1/v2 migration. Ownership
+remains coherent: GameState stores progress; immutable definitions own authored
+rules; callers evaluate consequences explicitly; persistence owns structural
+validation and delegates story invariants to content callbacks.
+
+Fixed one demonstrated defect: uncosted Consequence could partially mutate live
+state when a later effect threw. Both new regression cases failed before the fix.
+All consequences now apply ordered effects to detached candidates and commit only
+on success, matching the existing costed path. No API, schema or cost-policy change.
+Strengthened existing tests for copied condition arrays, positive reaction setup,
+and v2 partial-capacity migration instead of adding redundant cases.
+
+Full unfiltered Unity 6000.3.27f1 EditMode suite: 121/121 passed, none failed, skipped
+or inconclusive. Compilation succeeded, errors=[], compilationFailed=false. Current
+Console: zero errors/warnings; historical Pipeline buffer is distinguished from
+current Editor ground truth. No extra gameplay walkthrough/player-build validation.
+Only backend Consequence code, existing backend tests and these checkpoint/relevant
+Docs files changed. Production/POC/Sandbox scenes, art, vendors, packages and project
+settings are unchanged.
+
+Current milestone: 3-unit authored within-block time; opportunity acceptance and
+completion costs/competition/defer/expiry; Queued/Delivered/Read phone state;
+explicit delayed authored consequences; schema v3 with legacy empty-inbox migration.
+See INHERITANCE_CURRENT_CHECKPOINT.md for restart state and detailed future risks.
+Next debt: stable-ID/reference validation and rename/migration policy, followed by
+content invariants and mutation-boundary hardening as production authoring grows.
+Directional competition, acceptance across block windows, missed message windows,
+guarded reads and one-shot consequences remain deliberate authored responsibilities.
+No broad ID refactor or generalized authoring framework was introduced.
 ## Environment structure (2026-10-28)
 
 Started on clean main at 9f003ac; Unity 6000.3.27f1. Moved Prototype_Mansion to
@@ -101,7 +139,8 @@ World truth never automatically grants character knowledge.
 
 Generic Condition / Effect / Consequence definitions query and modify backend
 state. Content owns story meaning and guarded eligibility; GameState remains
-engine-independent. Effects apply in order, with no transactional rollback yet.
+engine-independent. Effects apply in order; the backend quality checkpoint above
+extends detached atomic application to every consequence.
 
 ### Ink and funeral-night branch
 
@@ -153,8 +192,9 @@ precise historical verification methods and platform limits.
 
 - Generalize Elena-specific dialogue bridge names when further interactions justify it.
 - Revisit string identifiers as content expands to reduce typo-driven errors.
-- Consider transactional consequence application before complex multi-system effects.
-- Add save migration as the schema evolves; other platforms/player builds remain unverified.
+- Atomic consequence application is now implemented; retain regression coverage.
+- V1/v2 migration to v3 is implemented; plan ID/content migrations as schemas evolve.
+- Other platforms/player builds remain unverified.
 
 The next story expansion remains unimplemented. A second small authored loop is a
 possible next step, not an approved specification in this log.

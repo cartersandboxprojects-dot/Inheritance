@@ -124,8 +124,10 @@ namespace Inheritance.Tests
                 Condition.RelationshipAtMost(Elena, Resentment, -1),
                 Condition.Opportunity(CharlieBusiness, OpportunityState.Available),
                 Condition.Time(TimeBlock.Evening), Condition.Phase(FuneralNight) };
-            Assert.That(Condition.All(conditions).IsMet(state), Is.True);
+            var all = Condition.All(conditions);
+            Assert.That(all.IsMet(state), Is.True);
             conditions[0] = Condition.Fact(BreckenMetCharlie);
+            Assert.That(all.IsMet(state), Is.True);
             Assert.That(Condition.All(conditions).IsMet(state), Is.False);
             Assert.That(state.CurrentTimeBlock, Is.EqualTo(TimeBlock.Evening));
             Assert.That(state.GetRelationship(Elena, Resentment), Is.EqualTo(-1));
@@ -202,6 +204,28 @@ namespace Inheritance.Tests
             Assert.That(state.Knows(Victoria, BreckenComfortedElena), Is.False);
         }
 
+        [TestCase(false)]
+        [TestCase(true)]
+        public void UncostedConsequenceFailurePreservesEveryStateCategory(bool invalidIdentifier)
+        {
+            var state = new GameState("p", TimeBlock.Night);
+            state.TryApplyCost(ActionCost.Fixed(1));
+            state.ModifyRelationship("a", "trust", int.MaxValue);
+            var message = new MessageDefinition("m", "a", "text", Condition.All());
+            Assert.That(message.TryQueue(state), Is.True);
+            Assert.That(message.TryDeliver(state), Is.True);
+            string before = StatePersistence.Serialize(state);
+            var consequence = new Consequence(Condition.All(),
+                Effect.SetFact("partial", true), Effect.GrantKnowledge("a", "partial"),
+                Effect.SetOpportunity("o", OpportunityState.Completed),
+                Effect.AdvanceTime(), Effect.SetPhase("changed"),
+                invalidIdentifier ? Effect.SetFact(" ", true) : Effect.ModifyRelationship("a", "trust", 1));
+            if (invalidIdentifier) Assert.Throws<System.ArgumentException>(() => consequence.TryApply(state));
+            else Assert.Throws<System.OverflowException>(() => consequence.TryApply(state));
+            Assert.That(StatePersistence.Serialize(state), Is.EqualTo(before));
+            Assert.That(state.Knows("a", "partial"), Is.False);
+            Assert.That(state.GetMessageStatus("m"), Is.EqualTo(MessageStatus.Delivered));
+        }
         [Test]
         public void DefinitionsCopyArraysAndRejectNullMembers()
         {

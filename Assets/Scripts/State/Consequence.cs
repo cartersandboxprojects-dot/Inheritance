@@ -66,16 +66,12 @@ namespace Inheritance.State
         public bool TryApply(GameState state)
         {
             if (!Condition.IsMet(state)) return false;
-            if (cost != null)
-            {
-                if (!state.CanAfford(cost)) return false;
-                var candidate = GameState.Restore(state.Capture());
-                candidate.TryApplyCost(cost);
-                foreach (var effect in effects) effect.Apply(candidate);
-                state.CommitFrom(candidate);
-                return true;
-            }
-            foreach (var effect in effects) effect.Apply(state);
+            if (cost != null && !state.CanAfford(cost)) return false;
+            // Every consequence is atomic, including free/legacy authored effects.
+            var candidate = GameState.Restore(state.Capture());
+            if (cost != null) candidate.TryApplyCost(cost);
+            foreach (var effect in effects) effect.Apply(candidate);
+            state.CommitFrom(candidate);
             return true;
         }
     }
