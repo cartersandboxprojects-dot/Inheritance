@@ -1,0 +1,521 @@
+{
+  "schemaVersion": 1,
+  "files": [
+    {
+      "path": "Assets/NatureManufacture Assets.meta",
+      "bytes": 172,
+      "sha256": "494ceab9be988b8f7a9ecdd942e006038ac232aa28a0d2eacebcd692aa9a83b4"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack.meta",
+      "bytes": 192,
+      "sha256": "b24be83b3eec9a72bdeeefa99a763eae3cb775aefeff20be7097812b4da384d6"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass.meta",
+      "bytes": 192,
+      "sha256": "ac7753d5a7c6b087f528b8747b32ba19269f45026e9cb3cd1c1106878a850bf6"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials.meta",
+      "bytes": 192,
+      "sha256": "d154691151d2ccf5c101b5fbae82d558a9d401fa0e35c9ded93dffb49ac3b093"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_atlas_grass_01.mat",
+      "bytes": 4509,
+      "sha256": "57816eb6f152dab8368ce6ffc4979d0b1d75fe44667993c7c217714638c65f1d"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_atlas_grass_01.mat.meta",
+      "bytes": 456,
+      "sha256": "4082e408a1f1d4430be38b7c5b38ecbf97a135de499341963041ff5ec47d9085"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_clover_01.mat",
+      "bytes": 4458,
+      "sha256": "6ff73770db16c9055319f7a42b215e6d6b7cfdf23cc79f9d71d6b921af40c42c"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_clover_01.mat.meta",
+      "bytes": 451,
+      "sha256": "f252be97ec01ac91b7ef7e78e9526d7b20edd1cb7d4cb5c7ee706ddb0c98ad20"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_fern_01.mat",
+      "bytes": 4453,
+      "sha256": "3ceb87ee32e0ac350093fa389ebe852a92ac9c13e96d149b4ca1d4036a3bed73"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_fern_01.mat.meta",
+      "bytes": 449,
+      "sha256": "0e07106445e42f8ad5928ea0b5e1e4d234e95c2eccc7161ce6972555a39e6936"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_forest_heather_01.mat",
+      "bytes": 4475,
+      "sha256": "9af7e6343d2524f3ec5cb8e96ad60f95ea681f2a062794c7cb9153eea3241fab"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_forest_heather_01.mat.meta",
+      "bytes": 459,
+      "sha256": "9fdd22aece068e72f3cff910115ba1888422ba38f73db0c726de12d3d5bbd202"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Prefabs.meta",
+      "bytes": 192,
+      "sha256": "e3acaf219f2dd62a83ac3a73a76ef7e7a1c0174a7f0788139963f3841d9c75d8"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Prefabs/prefab_SM_clover_01_flowery.prefab",
+      "bytes": 6449,
+      "sha256": "de9a2f07759d6e2ae9e4cd78b5dfbacdbb48df261355758ff95ef3fcfb6dbdad"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Prefabs/prefab_SM_clover_01_flowery.prefab.meta",
+      "bytes": 475,
+      "sha256": "33e305f0e2556e1f838abacc479e6feca5eba8414d2350fe91ea43a3b768ef71"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Prefabs/prefab_SM_fern_01_0.prefab",
+      "bytes": 8959,
+      "sha256": "1c503fdbebb928c8f55cb0c16580d64b3de27cca6f605a760d5cd3cd434a5245"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Prefabs/prefab_SM_fern_01_0.prefab.meta",
+      "bytes": 467,
+      "sha256": "1ba5bd61a370534fc3637e6544b86dffb6cfcbbc0943b62209c2c4924a933e52"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Prefabs/prefab_SM_forest_heather_01.prefab",
+      "bytes": 3010,
+      "sha256": "58bc39196c55205f20c9660042b5c34054ae51468a80600334e20db35c7ec739"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Prefabs/prefab_SM_forest_heather_01.prefab.meta",
+      "bytes": 475,
+      "sha256": "adf4595e30e03b8054c12ddc7d0b5915f3eedd555fd8e816013e5432a444112f"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Prefabs/prefab_SM_grass_bush_01.prefab",
+      "bytes": 6436,
+      "sha256": "2d60daa55a558acb8d57243c269b0edb035c319f9a7e5cccf8ac4d5d8a7914f1"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Prefabs/prefab_SM_grass_bush_01.prefab.meta",
+      "bytes": 471,
+      "sha256": "7d51612444f68e90c75b32d4773d2cdeb602b828e2397a19363a894ed215dc8a"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/SM_clover_01_flowery.fbx",
+      "bytes": 23708,
+      "sha256": "b121ea91c4ae21fe9e8e299983f4aefe0581aacd6e6f2d3dd6960a96e8a100f2"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/SM_clover_01_flowery.fbx.meta",
+      "bytes": 4144,
+      "sha256": "a18fc7d71af7161879d0f7ee7ec5cc23e653b910cbeac150eedbf1e5bbc1d053"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/SM_fern_01_0.fbx",
+      "bytes": 34620,
+      "sha256": "be7e8742763e377ef9651cfac3e9adc029d93f7cd6366a1dcc12ce0f92add302"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/SM_fern_01_0.fbx.meta",
+      "bytes": 5232,
+      "sha256": "240d00a942e268cfd97242220bc76dccbcd74806f021b728bf757457c00d31a3"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/SM_forest_heather_01.fbx",
+      "bytes": 20204,
+      "sha256": "f8a770f3e85ee1f9dea0b8e02dd6618508e38806b518b3a6d3b9406fcab0c663"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/SM_forest_heather_01.fbx.meta",
+      "bytes": 2703,
+      "sha256": "ad7685ce80a2283edb0a5976466f4787c12f4d1307230162b83dc5a79986a4bd"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/SM_grass_bush_01.fbx",
+      "bytes": 20748,
+      "sha256": "ba51e17a37626e154c54bbfd110585e48a1edae08b3f0c52282a44314e321f0e"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/SM_grass_bush_01.fbx.meta",
+      "bytes": 3996,
+      "sha256": "31577ce5d5a2e314a57c6091a8c1e08f92decb214114b1c12ba41f477770e670"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Textures.meta",
+      "bytes": 193,
+      "sha256": "9a6fc60db8d0c9cdf0ff04f072bbfed81f57bf46c26108252434cb709a265385"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Textures/T_atlas_grass_01_A_M.png",
+      "bytes": 6032659,
+      "sha256": "1b809296268bab083c50d3890b9743dda18e238d985414b181c2b5121f4287be"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Textures/T_atlas_grass_01_A_M.png.meta",
+      "bytes": 2470,
+      "sha256": "3fc05ca2d3d1bd7f31f00855c73a5dd4a77211f73ba7e52d759b0a4fa937e9c0"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Textures/T_atlas_grass_01_Mt_AO_Sm.png",
+      "bytes": 47523266,
+      "sha256": "b986c5ae57fe65880d36602245bccf46125a19b2d7ef6328379cb9b69b1b42bd"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Textures/T_atlas_grass_01_Mt_AO_Sm.png.meta",
+      "bytes": 2476,
+      "sha256": "09ee1705a7df5e66bdf69637bb7ce606b031f271ffda09c8b129f46c04f3591a"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Textures/T_atlas_grass_01_N.png",
+      "bytes": 5205120,
+      "sha256": "9993d46f635c447ef0f77013440656ead7935958b75f0d9845164491a781c14f"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Textures/T_atlas_grass_01_N.png.meta",
+      "bytes": 2469,
+      "sha256": "7bb06aa838c86bc3b74ed562085e636c84dc6128ff0253f7de568c9e19a878b4"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Textures/T_clover_01_AO_Sm.png",
+      "bytes": 2337536,
+      "sha256": "2ceb34d81f0d42070465100ce1c51dc4a1ad549a7f80ab60ac178bb47cb1c15d"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Textures/T_clover_01_AO_Sm.png.meta",
+      "bytes": 2468,
+      "sha256": "2fc0f549cd08fa0d9b40fc17b729f97970a7628a42048d80ab99a3ba3a0e4dcc"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Textures/T_clover_01_A_M.png",
+      "bytes": 11061306,
+      "sha256": "7931aba51467f2ed58b8e58885e6146b8d2feeb46b8472a30469bccca78630c5"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Textures/T_clover_01_A_M.png.meta",
+      "bytes": 2467,
+      "sha256": "132d798c354cb457d71b975fa2201108142edcd4a803938cc60f0d53c7fff45f"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Textures/T_clover_01_N.png",
+      "bytes": 2523997,
+      "sha256": "90b5339a80396e01e988d3ec3bbfd96e8f586b119c2d72a28ed54f44c3deaf06"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Textures/T_clover_01_N.png.meta",
+      "bytes": 2464,
+      "sha256": "61ea58d3aba20133d71d6dad9401accac9ed26f4b7a36b9dcab928475a9afad5"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Textures/T_fern_01_A_M.png",
+      "bytes": 10735463,
+      "sha256": "ffc326ac5763afd6b062710395cdccbd18dea12e41346f3da9834a0e9e49fcf9"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Textures/T_fern_01_A_M.png.meta",
+      "bytes": 2464,
+      "sha256": "07cb22252b90d69eadbb87954fd6a008f8305b2a8826ba7289bb2254416dd9a4"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Textures/T_fern_01_Mt_AO_Sm.png",
+      "bytes": 21038987,
+      "sha256": "c29b28a919f364a90e874b954684a490e7ad2540c27ad60cf332a638aa4b906f"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Textures/T_fern_01_Mt_AO_Sm.png.meta",
+      "bytes": 2469,
+      "sha256": "f620a20d893a517238d8d9e558c9b26fe3015d6932bf633f455151db530070b5"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Textures/T_fern_01_N.png",
+      "bytes": 4936965,
+      "sha256": "fcdad613cb8462d48340b934bf9a07972d26a60f0563ac605dfcb16872cb13d9"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Textures/T_fern_01_N.png.meta",
+      "bytes": 2462,
+      "sha256": "ae951ef65fe7dab90546d6589230460fcdf3dfc808b444a813fbf7b51a9bda99"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Textures/T_forest_heather_01_AO_Sm.png",
+      "bytes": 1706318,
+      "sha256": "bf1de4c151f893f543346e350c5d8b0bcc60b621ea29b36731f3e2219f99db79"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Textures/T_forest_heather_01_AO_Sm.png.meta",
+      "bytes": 2476,
+      "sha256": "25aff5651f3b9b61ba484cd5f780dac8db30b74fd2feebf3b3f3412319234c72"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Textures/T_forest_heather_01_A_M.png",
+      "bytes": 3789497,
+      "sha256": "fbc22c25e6e0290671ed5dd8e3c57845220f5c8c93d269f0debf56d2a02fd533"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Textures/T_forest_heather_01_A_M.png.meta",
+      "bytes": 2474,
+      "sha256": "424f6160ffc3028f7136feaacfcbb1cca472ab7466fc60846b42fa6025ee8f5c"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Textures/T_forest_heather_01_N.png",
+      "bytes": 1917575,
+      "sha256": "29e492fd617f4cf613ddb39b5344e73ee2f198518c1d18333fdc935537a355da"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Textures/T_forest_heather_01_N.png.meta",
+      "bytes": 2472,
+      "sha256": "89ad91014ae37b4dceae7d6b1660be58b53cc158972ccccd7e3a44113607d9e2"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Crooked Roots.meta",
+      "bytes": 193,
+      "sha256": "245e8e411668a2340ec22620d741df52e1038102302569e11ca4fded7363aaec"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Crooked Roots/Materials.meta",
+      "bytes": 192,
+      "sha256": "b126b589bb13cf2fec111222a734289e71aae8dd7f907560f718d352190e812f"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Crooked Roots/Materials/M_crooked_roots_01.mat",
+      "bytes": 4125,
+      "sha256": "6fbff7c0f8faa8ad5f1f201baa99a14e11c63a9d156febbdf819b29f1f77d748"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Crooked Roots/Materials/M_crooked_roots_01.mat.meta",
+      "bytes": 462,
+      "sha256": "f9816b467ab2d3a093fa9b81448d3229d504b13c46f778dab5e4eddad56f8e74"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Crooked Roots/Prefabs.meta",
+      "bytes": 192,
+      "sha256": "6cfa0d3cbae5ce97d09de84840112d0d0a1800297580185510e484c479203271"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Crooked Roots/Prefabs/prefab_crooked_root_01.prefab",
+      "bytes": 11503,
+      "sha256": "cc690b64a33436f807aca1642a1b62089a6c77b5a3c2b94a0a3e42c67ad1d155"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Crooked Roots/Prefabs/prefab_crooked_root_01.prefab.meta",
+      "bytes": 190,
+      "sha256": "6307954556301e2a4b78fe601ab93f5ace5869f0527c8ab42ad92c697edf266d"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Crooked Roots/Textures.meta",
+      "bytes": 193,
+      "sha256": "2f08fdb94abc5b23f2430b27d2744410d09f5c252eb233aa1ef3353178da503c"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Crooked Roots/Textures/crooked_roots_01_AO_Sm.tga",
+      "bytes": 16777260,
+      "sha256": "e01fea75e1c4289ea937a8e61bb9a4c6365d52e5a94033f7047e3196be4f0215"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Crooked Roots/Textures/crooked_roots_01_AO_Sm.tga.meta",
+      "bytes": 2659,
+      "sha256": "8b779dfedf0cd4ed56d07b24fed304174726aa234ccaf173c183bcb8236a443d"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Crooked Roots/Textures/crooked_roots_01_A_M.tga",
+      "bytes": 14553366,
+      "sha256": "d92b375e37dbe07bdf6c95edc65f256ffff07269a41a1111466240c869a8afec"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Crooked Roots/Textures/crooked_roots_01_A_M.tga.meta",
+      "bytes": 2470,
+      "sha256": "19ed74d9e4b2bc157b3dec6140d9bddb14740c4cc0311cbf4a06fab22080c0cd"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Crooked Roots/Textures/crooked_roots_01_N.png",
+      "bytes": 23559980,
+      "sha256": "578ad1360b51a6e64147699a0e41003e096f0514da2e9cf3157ef6b972ba8c8b"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Crooked Roots/Textures/crooked_roots_01_N.png.meta",
+      "bytes": 1929,
+      "sha256": "d8f9e59472f8bf910879ee9eeb6f4629db51f6bf7837ca172d4383781e996e3f"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Crooked Roots/crooked_root_01.fbx",
+      "bytes": 78332,
+      "sha256": "6f14728828b6acfb03ec9654dc59f97254037514b516560bf7ddb5225772d115"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Crooked Roots/crooked_root_01.fbx.meta",
+      "bytes": 2963,
+      "sha256": "0e5b05b4b237632c0bf00bd04701b6635870e891837aed613c95b11ff6147405"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Trunks.meta",
+      "bytes": 193,
+      "sha256": "222de28fb7675471079ac0a6762a2c3064c8e7a3119af3b8eb6c4dc17511ee21"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Trunks/Materials.meta",
+      "bytes": 192,
+      "sha256": "998321b9b8a947a27fd9af22bc604958b8a4ca5fdeae11e5303ed0fd6f1bc8e7"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Trunks/Materials/M_trunk_01.mat",
+      "bytes": 4716,
+      "sha256": "0fe2ba8426108231e1450e31bda14a15cd12ee73ae5153aa7cff4217134fb5cc"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Trunks/Materials/M_trunk_01.mat.meta",
+      "bytes": 447,
+      "sha256": "0a93d1134a2591ea8653d746095de239dfbd694402a3a2f5c6facaf295229395"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Trunks/Prefabs.meta",
+      "bytes": 192,
+      "sha256": "ac97d6b6b49f6a4a9015763a4ed57e8e6e3254d281eefd9199b6ec854ef3b00e"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Trunks/Prefabs/Prefab_trunk_01.prefab",
+      "bytes": 11941,
+      "sha256": "2039e48aaf707b9cb525cdd962b898b47c433f1b5eaf3cda48a79c12954468f2"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Trunks/Prefabs/Prefab_trunk_01.prefab.meta",
+      "bytes": 190,
+      "sha256": "39114b5a96129d99e6b0b263b789560227e4ddcdde4157c7b7282620044d1c5c"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Trunks/SM_trunk_01.fbx",
+      "bytes": 292284,
+      "sha256": "5c4a3a08738cd1ca7b7455bc80716d96f6a6fafff3a0db538384d46a3a1ba45c"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Trunks/SM_trunk_01.fbx.meta",
+      "bytes": 2795,
+      "sha256": "b03a078c4026464b26452b7353d045d55c12365cc7b1c04dfcad242f221259f6"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Trunks/Textures.meta",
+      "bytes": 193,
+      "sha256": "b3285e69f1fd1c0aada51e85b4b85cd4e3092b7fa3ab44f49bfb9c06c1739e7a"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Trunks/Textures/T_trunk_01_A.tga",
+      "bytes": 12365181,
+      "sha256": "3b7dc6be2e9e7dc2337773037fd7015b2bd31bf1e357e9dce2c90432bc131e06"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Trunks/Textures/T_trunk_01_A.tga.meta",
+      "bytes": 2508,
+      "sha256": "c99204db14d23339002a31ba2eaf523fab441a6c8561b5c18f986423a2ae18f5"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Trunks/Textures/T_trunk_01_Mt_AO_Sm.tga",
+      "bytes": 16777260,
+      "sha256": "702f99ab2a5984e46b033d1aa24a7419299a59a9dbc9c1b79d5bd295e7ad1d60"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Trunks/Textures/T_trunk_01_Mt_AO_Sm.tga.meta",
+      "bytes": 2059,
+      "sha256": "f6cbace091a68ea3953261e4a4cbc19e3b81319e9856b6dff2e74b60a8b858e8"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Trunks/Textures/T_trunk_01_N.png",
+      "bytes": 8390858,
+      "sha256": "90960a0ba1deaa23d18d0f0558a6449d035707d61d11a384c8967547be5265d5"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Advanced Foliage Pack/Trunks/Textures/T_trunk_01_N.png.meta",
+      "bytes": 1716,
+      "sha256": "bf3f899507c2361f4eb0b448b39792e37b3599deb2047f74d6a8d1797bde24d5"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Foliage Shaders.meta",
+      "bytes": 193,
+      "sha256": "8556c6a4fc62fe99bb29409022073cdcb25ef6e4f220909ff68337dd88f4e54a"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Foliage Shaders/NM_Foliage.shader",
+      "bytes": 982051,
+      "sha256": "ba35169fa5c1a03a84b05bc99de1458596a31d5ef143f73b429b70209b40ac15"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Foliage Shaders/NM_Foliage.shader.meta",
+      "bytes": 204,
+      "sha256": "11d812b76d562284511f12501736bb59043421a2b769a51d4e7181a218892067"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/NatureManufacture Wind.meta",
+      "bytes": 193,
+      "sha256": "a71109b889119eb6219679e38fac2ce005cc5c70c969ddd3bcc8a63fbe125d48"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/NatureManufacture Wind/3DNoise.psd",
+      "bytes": 199023,
+      "sha256": "6cd06ce05d1ad8fa39356e56be8161f25d0a2142775a42b532d8a7de4c0041ce"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/NatureManufacture Wind/3DNoise.psd.meta",
+      "bytes": 2032,
+      "sha256": "708f86ffc10dd092473bc2cc1f07d376f0db71c7afa96820d8ec021a95ca006d"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/NatureManufacture Wind/GustNoise.psd",
+      "bytes": 13501760,
+      "sha256": "8a84eb0909fe6f554ea5aa475fc5c2e58db25cf06737828775628ed30f11a56d"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/NatureManufacture Wind/GustNoise.psd.meta",
+      "bytes": 2034,
+      "sha256": "fc6621f67f67a117e9c12cd9a7234ebd1efa8d575be95ec4e4ed5a6c2451d897"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/NatureManufacture Wind/NM_Wind.cs",
+      "bytes": 4417,
+      "sha256": "93f8ca426dce6a27902c83fb4815c77a2f241bf5623019e0ca00fb4f55a54c98"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/NatureManufacture Wind/NM_Wind.cs.meta",
+      "bytes": 652,
+      "sha256": "ae39941bab8a1c23e3427e152e1024769850e40e0af7a82f07e87f05215e377e"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/NatureManufacture Wind/Prefab_Wind.prefab",
+      "bytes": 1965,
+      "sha256": "50059f32b5a10eaadddfe5027f44063c3022d6e0c8274a98412e1e3296159d0b"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/NatureManufacture Wind/Prefab_Wind.prefab.meta",
+      "bytes": 437,
+      "sha256": "aba5081d068da696f54950ada618bade8a74de0058c648d0e9e4397fd4f7543d"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Object Shaders.meta",
+      "bytes": 193,
+      "sha256": "2b029a259c9ede96852901ecf8d37b4f30109d075adcec97a4abcb22005fd37c"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Object Shaders/NM_Lit_Top_Cover.shader",
+      "bytes": 568187,
+      "sha256": "d204fc366d3e3c4fa5794ebf6e59c719e5432a0d0f64f5af3356532ef061c1ca"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Object Shaders/NM_Lit_Top_Cover.shader.meta",
+      "bytes": 204,
+      "sha256": "81a60ab6dedf9f589e828ac9174cd8e460e53a2ad9b392e04f090c65332321d2"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Third-Party Notices.txt",
+      "bytes": 1172,
+      "sha256": "ceda212709674eb9179d897726519ffa0e1fbcfa4dac17175207a2314ad39747"
+    },
+    {
+      "path": "Assets/NatureManufacture Assets/Third-Party Notices.txt.meta",
+      "bytes": 388,
+      "sha256": "c4bb5a3ac43320d5456eef44d739c9e22158859f53f90cdfe2026122efb591c1"
+    }
+  ],
+  "hashScope": "Qualification working-tree bytes before Git text line-ending normalization. Binary hashes are checkout-stable; text SHA-256 can change with core.autocrlf."
+}

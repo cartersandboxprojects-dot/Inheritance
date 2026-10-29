@@ -14,6 +14,45 @@
         "sha256": "ded61fb67343e91d2f4c314b6612590865052559a94a871b7c03e3ab5bd405d3"
       },
       "restore": "Import the original archive in Unity 6000.3.27f1 / URP 17.3.0, then its bundled URP overlay. Preserve paths and GUIDs. The committed selected dependency subset is sufficient for the qualification sample; full archives are not required for checkout."
+    },
+    {
+      "name": "Advanced Foliage Pack 2.0",
+      "publisher": "NatureManufacture",
+      "version": "3.1.2",
+      "assetStoreProductId": 103151,
+      "assetStoreUploadId": 880618,
+      "source": "Unity Asset Store, licensed local cache",
+      "archivePath": "C:\\Users\\josep\\AppData\\Roaming\\Unity\\Asset Store-5.x\\NatureManufacture\\3D ModelsEnvironments\\Advanced Foliage Pack 20.unitypackage",
+      "sha256": "323547b50055850e524476042d551dcd7ba897ad5d3cca817097e0abd85757e9",
+      "vendorRoot": "Assets/NatureManufacture Assets",
+      "supportOverlay": {
+        "archivePath": "Assets/NatureManufacture Assets/Advanced Foliage Pack/HD and URP Support Packs Foliage/URP 17.3 Unity 6.3 Advanced Foliage Pack.unitypackage",
+        "sha256": "cd40ccafdbb02d3609ad2b9297245b040b24a5d69e91fbfb66a40566cb971e06",
+        "target": "Unity 6.3 / URP 17.3"
+      },
+      "optionalIntegrationsNotImported": [
+        {
+          "archive": "Post Process Stack.unitypackage",
+          "sha256": "18d4a11f845782d4eb88071859f9a1bc32f252b3a468bd5c35bb0984cd53b41a",
+          "paths": 1,
+          "scripts": [],
+          "roots": [
+            "Assets/NatureManufacture Assets/Advanced Foliage Pack"
+          ]
+        },
+        {
+          "archive": "Vegetation Studio Prefabs.unitypackage",
+          "sha256": "3a593ee97fb1c19dd08d0cb79ab6d96b615a601fce43354d07a710b1bc804b24",
+          "paths": 124,
+          "scripts": [],
+          "roots": [
+            "Assets/NatureManufacture Assets/Advanced Foliage Pack"
+          ]
+        }
+      ],
+      "selectedFiles": "Docs/FoliageSelectedFiles.txt",
+      "selectedFileHashes": "Docs/FoliageSelectedManifest.json",
+      "restore": "A Git LFS checkout supplies all selected dependencies without a vendor cache. For full licensed reimport, verify the base archive hash, import base then the recorded URP overlay in Unity 6000.3.27f1 with locked URP 17.3.0, preserve paths/GUIDs, and follow Docs/FoliageQualification.md including selected importer/material normalization. Do not import HDRP, Post Process Stack, or Vegetation Studio support for this sample."
     }
   ]
 }

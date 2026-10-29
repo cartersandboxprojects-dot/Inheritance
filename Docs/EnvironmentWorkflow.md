@@ -74,4 +74,16 @@ No new Sandbox sample layout, material conversion, Unity visual/compile qualific
 - Pre-existing NatureManufacture content remains untouched and untracked; do not stage it as part of Mansion qualification.
 
 
-Mansion qualification is complete for the selected realtime Sandbox subset. See [MansionQualification.md](MansionQualification.md) for findings, limits, tests and repository impact; [AssetSources.json](AssetSources.json) records exact archive provenance and [MansionSelectedFiles.txt](MansionSelectedFiles.txt) records selected vendor files. Future additions must repeat dependency and LFS impact review. Foliage, Town and Furniture remain unqualified.
+Mansion qualification is complete for the selected realtime Sandbox subset. See [MansionQualification.md](MansionQualification.md) for findings, limits, tests and repository impact; [AssetSources.json](AssetSources.json) records exact archive provenance and [MansionSelectedFiles.txt](MansionSelectedFiles.txt) records selected vendor files. Future additions must repeat dependency and LFS impact review. At the end of the Mansion tranche, Foliage, Town and Furniture remained unqualified; the foliage result below supersedes that status for its selected subset.
+
+## Accepted storage convention - Advanced Foliage qualification (2026-10-28)
+
+Advanced Foliage Pack 2.0, cached version 3.1.2, is qualified for the selected realtime URP Sandbox sample only. See [FoliageQualification.md](FoliageQualification.md), [AssetSources.json](AssetSources.json) and [FoliageSelectedFiles.txt](FoliageSelectedFiles.txt). No leafy trees or formal hedge prefabs exist in this package; terrain details, billboards, legacy materials, snow and optional integrations are not promoted by this result.
+
+Keep only the selected dependency closure at the original NatureManufacture paths/GUIDs, with owned assembly placement under Inheritance/Environment/Sandbox. The complete inspected import is preserved outside Assets in ignored Temp/FoliageUnselected; exact original archives/hashes are the durable reimport source. A normal Git LFS checkout is self-contained for the sample.
+
+Explicit foliage pipeline exceptions to the vendor-original convention: apply the recorded vendor URP 17.3 overlay, calculate Mikk tangents in the six selected model importers, and remove obsolete texture slots absent from the selected materials' current shaders through Unity serialization. These changes preserve GUIDs and active material properties; the report and normalization helper document reproduction. Future artistic edits still belong in owned material variants.
+
+The selected closure is about 227.1 MB including metadata, with 225.4 MB in 26 LFS objects. Existing patterns cover the selected FBX/PNG/TGA/PSD; no speculative TIFF rule was added. Keep vendor notices. Every future foliage addition must repeat closure/reference and storage-impact review, because the full import contains legacy render paths and expensive demo content.
+
+One wind controller writes shared global shader state, including in edit mode. Avoid competing controllers and explicitly reinitialize globals when switching wind setups. Qualify target density, shadows, terrain/navigation and art direction before production promotion. The photoreal mossy trunk currently looks more detailed than the Mansion surfaces. Furniture and Town remain deferred; no final grounds have been built.

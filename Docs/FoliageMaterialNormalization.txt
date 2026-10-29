@@ -1,0 +1,51 @@
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_clover_01.mat removed obsolete texture slot _texcoord
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_clover_01.mat removed obsolete texture slot _WindNoise
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_clover_01.mat removed obsolete texture slot _SnowNormalMap
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_clover_01.mat removed obsolete texture slot _SnowMaskMap
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_clover_01.mat removed obsolete texture slot _SnowCover
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_clover_01.mat removed obsolete texture slot _SnowBaseColorMap
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_clover_01.mat removed obsolete texture slot _MainTex
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_clover_01.mat removed obsolete texture slot _BumpMap
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_clover_01.mat removed obsolete texture slot _AmbientOcclusionG
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_clover_01.mat removed obsolete texture slot <noninit>
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_atlas_grass_01.mat removed obsolete texture slot _texcoord
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_atlas_grass_01.mat removed obsolete texture slot _WindNoise
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_atlas_grass_01.mat removed obsolete texture slot _SnowNormalMap
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_atlas_grass_01.mat removed obsolete texture slot _SnowMaskMap
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_atlas_grass_01.mat removed obsolete texture slot _SnowCover
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_atlas_grass_01.mat removed obsolete texture slot _SnowBaseColorMap
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_atlas_grass_01.mat removed obsolete texture slot _MainTex
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_atlas_grass_01.mat removed obsolete texture slot _BumpMap
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_atlas_grass_01.mat removed obsolete texture slot _AmbientOcclusionG
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_atlas_grass_01.mat removed obsolete texture slot <noninit>
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Trunks/Materials/M_trunk_01.mat removed obsolete texture slot _SpecGlossMap
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Trunks/Materials/M_trunk_01.mat removed obsolete texture slot _ParallaxMap
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Trunks/Materials/M_trunk_01.mat removed obsolete texture slot _OcclusionMap
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Trunks/Materials/M_trunk_01.mat removed obsolete texture slot _MetallicGlossMap
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Trunks/Materials/M_trunk_01.mat removed obsolete texture slot _MainTex
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Trunks/Materials/M_trunk_01.mat removed obsolete texture slot _EmissionMap
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Trunks/Materials/M_trunk_01.mat removed obsolete texture slot _DetailNormalMap
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Trunks/Materials/M_trunk_01.mat removed obsolete texture slot _DetailMask
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Trunks/Materials/M_trunk_01.mat removed obsolete texture slot _DetailAlbedoMap
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Trunks/Materials/M_trunk_01.mat removed obsolete texture slot _BumpMap
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Trunks/Materials/M_trunk_01.mat removed obsolete texture slot _BaseMap
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_fern_01.mat removed obsolete texture slot _texcoord
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_fern_01.mat removed obsolete texture slot _WindNoise
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_fern_01.mat removed obsolete texture slot _SnowNormalMap
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_fern_01.mat removed obsolete texture slot _SnowMaskMap
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_fern_01.mat removed obsolete texture slot _SnowCover
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_fern_01.mat removed obsolete texture slot _SnowBaseColorMap
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_fern_01.mat removed obsolete texture slot _MainTex
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_fern_01.mat removed obsolete texture slot _BumpMap
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_fern_01.mat removed obsolete texture slot _AmbientOcclusionG
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_fern_01.mat removed obsolete texture slot <noninit>
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_forest_heather_01.mat removed obsolete texture slot _texcoord
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_forest_heather_01.mat removed obsolete texture slot _WindNoise
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_forest_heather_01.mat removed obsolete texture slot _SnowNormalMap
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_forest_heather_01.mat removed obsolete texture slot _SnowMaskMap
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_forest_heather_01.mat removed obsolete texture slot _SnowCover
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_forest_heather_01.mat removed obsolete texture slot _SnowBaseColorMap
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_forest_heather_01.mat removed obsolete texture slot _MainTex
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_forest_heather_01.mat removed obsolete texture slot _BumpMap
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_forest_heather_01.mat removed obsolete texture slot _AmbientOcclusionG
+Assets/NatureManufacture Assets/Advanced Foliage Pack/Advanced Grass/Materials/M_forest_heather_01.mat removed obsolete texture slot <noninit>

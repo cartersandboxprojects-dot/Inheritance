@@ -1,0 +1,18 @@
+using System.IO;
+using System.Linq;
+using UnityEditor;
+using UnityEngine;
+public static class FoliageReimportNormalization {
+ [MenuItem("Tools/Inheritance/Normalize Selected Foliage")]
+ public static void Normalize(){
+  var paths=File.ReadAllLines("Docs/FoliageSelectedFiles.txt");
+  foreach(var p in paths.Where(p=>p.EndsWith(".fbx"))){var importer=(ModelImporter)AssetImporter.GetAtPath(p);importer.importTangents=ModelImporterTangents.CalculateMikk;importer.SaveAndReimport();}
+  foreach(var p in paths.Where(p=>p.EndsWith(".mat"))){
+   var material=AssetDatabase.LoadAssetAtPath<Material>(p);var serialized=new SerializedObject(material);
+   var textures=serialized.FindProperty("m_SavedProperties.m_TexEnvs");
+   for(int i=textures.arraySize-1;i>=0;i--){var key=textures.GetArrayElementAtIndex(i).FindPropertyRelative("first").stringValue;if(!material.HasProperty(key))textures.DeleteArrayElementAtIndex(i);}
+   serialized.ApplyModifiedPropertiesWithoutUndo();EditorUtility.SetDirty(material);
+  }
+  AssetDatabase.SaveAssets();
+ }
+}

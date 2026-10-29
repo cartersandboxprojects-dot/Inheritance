@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="60" result="Passed" total="60" passed="60" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-29 00:02:22Z" end-time="2026-10-29 00:02:23Z" duration="1.2101013">
+  <test-suite type="TestSuite" id="1000" name="Inheritance" fullname="Inheritance" runstate="Runnable" testcasecount="60" result="Passed" start-time="2026-10-29 00:02:22Z" end-time="2026-10-29 00:02:23Z" duration="1.210101" total="60" passed="60" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1077" name="Inheritance.State.Tests.dll" fullname="C:/Users/josep/Inheritance/Library/ScriptAssemblies/Inheritance.State.Tests.dll" runstate="Runnable" testcasecount="60" result="Passed" start-time="2026-10-29 00:02:22Z" end-time="2026-10-29 00:02:23Z" duration="1.108576" total="60" passed="60" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="14492" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestSuite" id="1078" name="Inheritance" fullname="Inheritance" runstate="Runnable" testcasecount="60" result="Passed" start-time="2026-10-29 00:02:22Z" end-time="2026-10-29 00:02:23Z" duration="1.104853" total="60" passed="60" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1079" name="Tests" fullname="Inheritance.Tests" runstate="Runnable" testcasecount="60" result="Passed" start-time="2026-10-29 00:02:22Z" end-time="2026-10-29 00:02:23Z" duration="1.002821" total="60" passed="60" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestFixture" id="1002" name="ConsequenceTests" fullname="Inheritance.Tests.ConsequenceTests" classname="Inheritance.Tests.ConsequenceTests" runstate="Runnable" testcasecount="21" result="Passed" start-time="2026-10-29 00:02:22Z" end-time="2026-10-29 00:02:22Z" duration="0.538498" total="21" passed="21" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1020" name="AllInspectsEveryStateCategoryWithoutMutation" fullname="Inheritance.Tests.ConsequenceTests.AllInspectsEveryStateCategoryWithoutMutation" methodname="AllInspectsEveryStateCategoryWithoutMutation" classname="Inheritance.Tests.ConsequenceTests" runstate="Runnable" seed="1269266165" result="Passed" start-time="2026-10-29 00:02:22Z" end-time="2026-10-29 00:02:22Z" duration="0.056532" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1010" name="CharliePropagationIsExplicitGuardedAndSpecific" fullname="Inheritance.Tests.ConsequenceTests.CharliePropagationIsExplicitGuardedAndSpecific" methodname="CharliePropagationIsExplicitGuardedAndSpecific" classname="Inheritance.Tests.ConsequenceTests" runstate="Runnable" seed="600096750" result="Passed" start-time="2026-10-29 00:02:22Z" end-time="2026-10-29 00:02:22Z" duration="0.002864" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1009" name="CharlieVerificationRequiresTruthKnowledgeAndLaterPhase" fullname="Inheritance.Tests.ConsequenceTests.CharlieVerificationRequiresTruthKnowledgeAndLaterPhase" classname="Inheritance.Tests.ConsequenceTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-10-29 00:02:22Z" end-time="2026-10-29 00:02:22Z" duration="0.005347" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1006" name="CharlieVerificationRequiresTruthKnowledgeAndLaterPhase(False,True,&quot;AfterFuneralNight&quot;)" fullname="Inheritance.Tests.ConsequenceTests.CharlieVerificationRequiresTruthKnowledgeAndLaterPhase(False,True,&quot;AfterFuneralNight&quot;)" methodname="CharlieVerificationRequiresTruthKnowledgeAndLaterPhase" classname="Inheritance.Tests.ConsequenceTests" runstate="Runnable" seed="684887618" result="Passed" start-time="2026-10-29 00:02:22Z" end-time="2026-10-29 00:02:22Z" duration="0.000653" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1007" name="CharlieVerificationRequiresTruthKnowledgeAndLaterPhase(True,False,&quot;AfterFuneralNight&quot;)" fullname="Inheritance.Tests.ConsequenceTests.CharlieVerificationRequiresTruthKnowledgeAndLaterPhase(True,False,&quot;AfterFuneralNight&quot;)" methodname="CharlieVerificationRequiresTruthKnowledgeAndLaterPhase" classname="Inheritance.Tests.ConsequenceTests" runstate="Runnable" seed="1709766035" result="Passed" start-time="2026-10-29 00:02:22Z" end-time="2026-10-29 00:02:22Z" duration="0.000095" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1008" name="CharlieVerificationRequiresTruthKnowledgeAndLaterPhase(True,True,&quot;FuneralNight&quot;)" fullname="Inheritance.Tests.ConsequenceTests.CharlieVerificationRequiresTruthKnowledgeAndLaterPhase(True,True,&quot;FuneralNight&quot;)" methodname="CharlieVerificationRequiresTruthKnowledgeAndLaterPhase" classname="Inheritance.Tests.ConsequenceTests" runstate="Runnable" seed="1619524525" result="Passed" start-time="2026-10-29 00:02:22Z" end-time="2026-10-29 00:02:22Z" duration="0.000043" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="ParameterizedMethod" id="1019" name="ContradictoryTruthCannotInformOrVerifyVictoria" fullname="Inheritance.Tests.ConsequenceTests.ContradictoryTruthCannotInformOrVerifyVictoria" classname="Inheritance.Tests.ConsequenceTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-29 00:02:22Z" end-time="2026-10-29 00:02:22Z" duration="0.005001" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1017" name="ContradictoryTruthCannotInformOrVerifyVictoria(True)" fullname="Inheritance.Tests.ConsequenceTests.ContradictoryTruthCannotInformOrVerifyVictoria(True)" methodname="ContradictoryTruthCannotInformOrVerifyVictoria" classname="Inheritance.Tests.ConsequenceTests" runstate="Runnable" seed="1360532237" result="Passed" start-time="2026-10-29 00:02:22Z" end-time="2026-10-29 00:02:22Z" duration="0.000797" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1018" name="ContradictoryTruthCannotInformOrVerifyVictoria(False)" fullname="Inheritance.Tests.ConsequenceTests.ContradictoryTruthCannotInformOrVerifyVictoria(False)" methodname="ContradictoryTruthCannotInformOrVerifyVictoria" classname="Inheritance.Tests.ConsequenceTests" runstate="Runnable" seed="161412860" result="Passed" start-time="2026-10-29 00:02:22Z" end-time="2026-10-29 00:02:22Z" duration="0.000132" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-case id="1029" name="DefinitionsCopyArraysAndRejectNullMembers" fullname="Inheritance.Tests.ConsequenceTests.DefinitionsCopyArraysAndRejectNullMembers" methodname="DefinitionsCopyArraysAndRejectNullMembers" classname="Inheritance.Tests.ConsequenceTests" runstate="Runnable" seed="1853091139" result="Passed" start-time="2026-10-29 00:02:22Z" end-time="2026-10-29 00:02:22Z" duration="0.006111" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1026" name="EachRequiredVictoriaBranchTermMustHold" fullname="Inheritance.Tests.ConsequenceTests.EachRequiredVictoriaBranchTermMustHold" classname="Inheritance.Tests.ConsequenceTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-10-29 00:02:22Z" end-time="2026-10-29 00:02:22Z" duration="0.094441" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1023" name="EachRequiredVictoriaBranchTermMustHold(False,True,&quot;AfterFuneralNight&quot;)" fullname="Inheritance.Tests.ConsequenceTests.EachRequiredVictoriaBranchTermMustHold(False,True,&quot;AfterFuneralNight&quot;)" methodname="EachRequiredVictoriaBranchTermMustHold" classname="Inheritance.Tests.ConsequenceTests" runstate="Runnable" seed="960249081" result="Passed" start-time="2026-10-29 00:02:22Z" end-time="2026-10-29 00:02:22Z" duration="0.000788" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1024" name="EachRequiredVictoriaBranchTermMustHold(True,False,&quot;AfterFuneralNight&quot;)" fullname="Inheritance.Tests.ConsequenceTests.EachRequiredVictoriaBranchTermMustHold(True,False,&quot;AfterFuneralNight&quot;)" methodname="EachRequiredVictoriaBranchTermMustHold" classname="Inheritance.Tests.ConsequenceTests" runstate="Runnable" seed="1824044065" result="Passed" start-time="2026-10-29 00:02:22Z" end-time="2026-10-29 00:02:22Z" duration="0.000188" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1025" name="EachRequiredVictoriaBranchTermMustHold(True,True,&quot;FuneralNight&quot;)" fullname="Inheritance.Tests.ConsequenceTests.EachRequiredVictoriaBranchTermMustHold(True,True,&quot;FuneralNight&quot;)" methodname="EachRequiredVictoriaBranchTermMustHold" classname="Inheritance.Tests.ConsequenceTests" runstate="Runnable" seed="124472601" result="Passed" start-time="2026-10-29 00:02:22Z" end-time="2026-10-29 00:02:22Z" duration="0.000065" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="ParameterizedMethod" id="1005" name="EitherChoiceConsumesEveningAndRejectsBothRepeats" fullname="Inheritance.Tests.ConsequenceTests.EitherChoiceConsumesEveningAndRejectsBothRepeats" classname="Inheritance.Tests.ConsequenceTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-29 00:02:22Z" end-time="2026-10-29 00:02:22Z" duration="0.005882" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1003" name="EitherChoiceConsumesEveningAndRejectsBothRepeats(True)" fullname="Inheritance.Tests.ConsequenceTests.EitherChoiceConsumesEveningAndRejectsBothRepeats(True)" methodname="EitherChoiceConsumesEveningAndRejectsBothRepeats" classname="Inheritance.Tests.ConsequenceTests" runstate="Runnable" seed="1755514996" result="Passed" start-time="2026-10-29 00:02:22Z" end-time="2026-10-29 00:02:22Z" duration="0.003352" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1004" name="EitherChoiceConsumesEveningAndRejectsBothRepeats(False)" fullname="Inheritance.Tests.ConsequenceTests.EitherChoiceConsumesEveningAndRejectsBothRepeats(False)" methodname="EitherChoiceConsumesEveningAndRejectsBothRepeats" classname="Inheritance.Tests.ConsequenceTests" runstate="Runnable" seed="728176261" result="Passed" start-time="2026-10-29 00:02:22Z" end-time="2026-10-29 00:02:22Z" duration="0.000310" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-case id="1021" name="ElenaChoiceAppliesImmediateEffectsOnce" fullname="Inheritance.Tests.ConsequenceTests.ElenaChoiceAppliesImmediateEffectsOnce" methodname="ElenaChoiceAppliesImmediateEffectsOnce" classname="Inheritance.Tests.ConsequenceTests" runstate="Runnable" seed="1891061361" result="Passed" start-time="2026-10-29 00:02:22Z" end-time="2026-10-29 00:02:22Z" duration="0.001008" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1027" name="FailedChoiceDoesNotApplyAnyEffects" fullname="Inheritance.Tests.ConsequenceTests.FailedChoiceDoesNotApplyAnyEffects" methodname="FailedChoiceDoesNotApplyAnyEffects" classname="Inheritance.Tests.ConsequenceTests" runstate="Runnable" seed="423752198" result="Passed" start-time="2026-10-29 00:02:22Z" end-time="2026-10-29 00:02:22Z" duration="0.001638" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1013" name="InkChoiceAndVictoriaLineUseBackendAndKnowledge" fullname="Inheritance.Tests.ConsequenceTests.InkChoiceAndVictoriaLineUseBackendAndKnowledge" classname="Inheritance.Tests.ConsequenceTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-29 00:02:22Z" end-time="2026-10-29 00:02:22Z" duration="0.238472" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1011" name="InkChoiceAndVictoriaLineUseBackendAndKnowledge(True)" fullname="Inheritance.Tests.ConsequenceTests.InkChoiceAndVictoriaLineUseBackendAndKnowledge(True)" methodname="InkChoiceAndVictoriaLineUseBackendAndKnowledge" classname="Inheritance.Tests.ConsequenceTests" runstate="Runnable" seed="899275036" result="Passed" start-time="2026-10-29 00:02:22Z" end-time="2026-10-29 00:02:22Z" duration="0.142930" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1012" name="InkChoiceAndVictoriaLineUseBackendAndKnowledge(False)" fullname="Inheritance.Tests.ConsequenceTests.InkChoiceAndVictoriaLineUseBackendAndKnowledge(False)" methodname="InkChoiceAndVictoriaLineUseBackendAndKnowledge" classname="Inheritance.Tests.ConsequenceTests" runstate="Runnable" seed="480036816" result="Passed" start-time="2026-10-29 00:02:22Z" end-time="2026-10-29 00:02:22Z" duration="0.003083" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="ParameterizedMethod" id="1016" name="InkLeavingDoesNotSpendTheChoice" fullname="Inheritance.Tests.ConsequenceTests.InkLeavingDoesNotSpendTheChoice" classname="Inheritance.Tests.ConsequenceTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-29 00:02:22Z" end-time="2026-10-29 00:02:22Z" duration="0.004251" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1014" name="InkLeavingDoesNotSpendTheChoice(True)" fullname="Inheritance.Tests.ConsequenceTests.InkLeavingDoesNotSpendTheChoice(True)" methodname="InkLeavingDoesNotSpendTheChoice" classname="Inheritance.Tests.ConsequenceTests" runstate="Runnable" seed="1312910602" result="Passed" start-time="2026-10-29 00:02:22Z" end-time="2026-10-29 00:02:22Z" duration="0.001794" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1015" name="InkLeavingDoesNotSpendTheChoice(False)" fullname="Inheritance.Tests.ConsequenceTests.InkLeavingDoesNotSpendTheChoice(False)" methodname="InkLeavingDoesNotSpendTheChoice" classname="Inheritance.Tests.ConsequenceTests" runstate="Runnable" seed="2032002147" result="Passed" start-time="2026-10-29 00:02:22Z" end-time="2026-10-29 00:02:22Z" duration="0.000765" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-case id="1022" name="LaterInformationEnablesVictoriaBranch" fullname="Inheritance.Tests.ConsequenceTests.LaterInformationEnablesVictoriaBranch" methodname="LaterInformationEnablesVictoriaBranch" classname="Inheritance.Tests.ConsequenceTests" runstate="Runnable" seed="646640080" result="Passed" start-time="2026-10-29 00:02:22Z" end-time="2026-10-29 00:02:22Z" duration="0.000373" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1028" name="PropagationRequiresTruthAndLaterPhase" fullname="Inheritance.Tests.ConsequenceTests.PropagationRequiresTruthAndLaterPhase" methodname="PropagationRequiresTruthAndLaterPhase" classname="Inheritance.Tests.ConsequenceTests" runstate="Runnable" seed="1708328588" result="Passed" start-time="2026-10-29 00:02:22Z" end-time="2026-10-29 00:02:22Z" duration="0.000210" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1030" name="GameStateTests" fullname="Inheritance.Tests.GameStateTests" classname="Inheritance.Tests.GameStateTests" runstate="Runnable" testcasecount="11" result="Passed" start-time="2026-10-29 00:02:22Z" end-time="2026-10-29 00:02:23Z" duration="0.121425" total="11" passed="11" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1041" name="FuneralNightWritesRemainSeparateAndInstancesDoNotLeak" fullname="Inheritance.Tests.GameStateTests.FuneralNightWritesRemainSeparateAndInstancesDoNotLeak" methodname="FuneralNightWritesRemainSeparateAndInstancesDoNotLeak" classname="Inheritance.Tests.GameStateTests" runstate="Runnable" seed="1020361848" result="Passed" start-time="2026-10-29 00:02:22Z" end-time="2026-10-29 00:02:22Z" duration="0.000492" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1042" name="InvalidInputsFailBeforeChangingState" fullname="Inheritance.Tests.GameStateTests.InvalidInputsFailBeforeChangingState" methodname="InvalidInputsFailBeforeChangingState" classname="Inheritance.Tests.GameStateTests" runstate="Runnable" seed="1207430098" result="Passed" start-time="2026-10-29 00:02:22Z" end-time="2026-10-29 00:02:22Z" duration="0.001107" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1032" name="KnowledgeIsPerCharacterAndDoesNotWriteTruth" fullname="Inheritance.Tests.GameStateTests.KnowledgeIsPerCharacterAndDoesNotWriteTruth" methodname="KnowledgeIsPerCharacterAndDoesNotWriteTruth" classname="Inheritance.Tests.GameStateTests" runstate="Runnable" seed="91864721" result="Passed" start-time="2026-10-29 00:02:22Z" end-time="2026-10-29 00:02:22Z" duration="0.000257" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1039" name="OpportunityDoesNotAdvanceTimeOrPhase" fullname="Inheritance.Tests.GameStateTests.OpportunityDoesNotAdvanceTimeOrPhase" classname="Inheritance.Tests.GameStateTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-10-29 00:02:22Z" end-time="2026-10-29 00:02:23Z" duration="0.111539" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1034" name="OpportunityDoesNotAdvanceTimeOrPhase(Unavailable)" fullname="Inheritance.Tests.GameStateTests.OpportunityDoesNotAdvanceTimeOrPhase(Unavailable)" methodname="OpportunityDoesNotAdvanceTimeOrPhase" classname="Inheritance.Tests.GameStateTests" runstate="Runnable" seed="1955974885" result="Passed" start-time="2026-10-29 00:02:22Z" end-time="2026-10-29 00:02:22Z" duration="0.002069" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1035" name="OpportunityDoesNotAdvanceTimeOrPhase(Available)" fullname="Inheritance.Tests.GameStateTests.OpportunityDoesNotAdvanceTimeOrPhase(Available)" methodname="OpportunityDoesNotAdvanceTimeOrPhase" classname="Inheritance.Tests.GameStateTests" runstate="Runnable" seed="419810313" result="Passed" start-time="2026-10-29 00:02:22Z" end-time="2026-10-29 00:02:22Z" duration="0.000349" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1036" name="OpportunityDoesNotAdvanceTimeOrPhase(Missed)" fullname="Inheritance.Tests.GameStateTests.OpportunityDoesNotAdvanceTimeOrPhase(Missed)" methodname="OpportunityDoesNotAdvanceTimeOrPhase" classname="Inheritance.Tests.GameStateTests" runstate="Runnable" seed="1513052216" result="Passed" start-time="2026-10-29 00:02:23Z" end-time="2026-10-29 00:02:23Z" duration="0.000349" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1037" name="OpportunityDoesNotAdvanceTimeOrPhase(Deferred)" fullname="Inheritance.Tests.GameStateTests.OpportunityDoesNotAdvanceTimeOrPhase(Deferred)" methodname="OpportunityDoesNotAdvanceTimeOrPhase" classname="Inheritance.Tests.GameStateTests" runstate="Runnable" seed="213921404" result="Passed" start-time="2026-10-29 00:02:23Z" end-time="2026-10-29 00:02:23Z" duration="0.000348" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1038" name="OpportunityDoesNotAdvanceTimeOrPhase(Completed)" fullname="Inheritance.Tests.GameStateTests.OpportunityDoesNotAdvanceTimeOrPhase(Completed)" methodname="OpportunityDoesNotAdvanceTimeOrPhase" classname="Inheritance.Tests.GameStateTests" runstate="Runnable" seed="1443727877" result="Passed" start-time="2026-10-29 00:02:23Z" end-time="2026-10-29 00:02:23Z" duration="0.000376" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-case id="1033" name="RelationshipAttributesAndCharactersAreIndependent" fullname="Inheritance.Tests.GameStateTests.RelationshipAttributesAndCharactersAreIndependent" methodname="RelationshipAttributesAndCharactersAreIndependent" classname="Inheritance.Tests.GameStateTests" runstate="Runnable" seed="479708590" result="Passed" start-time="2026-10-29 00:02:23Z" end-time="2026-10-29 00:02:23Z" duration="0.000722" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1040" name="TimeAndStoryPhaseChangeIndependently" fullname="Inheritance.Tests.GameStateTests.TimeAndStoryPhaseChangeIndependently" methodname="TimeAndStoryPhaseChangeIndependently" classname="Inheritance.Tests.GameStateTests" runstate="Runnable" seed="1498621501" result="Passed" start-time="2026-10-29 00:02:23Z" end-time="2026-10-29 00:02:23Z" duration="0.000810" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1031" name="WorldTruthDoesNotGrantKnowledge" fullname="Inheritance.Tests.GameStateTests.WorldTruthDoesNotGrantKnowledge" methodname="WorldTruthDoesNotGrantKnowledge" classname="Inheritance.Tests.GameStateTests" runstate="Runnable" seed="1154693937" result="Passed" start-time="2026-10-29 00:02:23Z" end-time="2026-10-29 00:02:23Z" duration="0.000639" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1043" name="PersistenceTests" fullname="Inheritance.Tests.PersistenceTests" classname="Inheritance.Tests.PersistenceTests" runstate="Runnable" testcasecount="28" result="Passed" start-time="2026-10-29 00:02:23Z" end-time="2026-10-29 00:02:23Z" duration="0.325413" total="28" passed="28" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="ParameterizedMethod" id="1049" name="BothBranchesRetainTruthAndKnowledgeAndRejectReplay" fullname="Inheritance.Tests.PersistenceTests.BothBranchesRetainTruthAndKnowledgeAndRejectReplay" classname="Inheritance.Tests.PersistenceTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-10-29 00:02:23Z" end-time="2026-10-29 00:02:23Z" duration="0.152677" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1045" name="BothBranchesRetainTruthAndKnowledgeAndRejectReplay(False,False)" fullname="Inheritance.Tests.PersistenceTests.BothBranchesRetainTruthAndKnowledgeAndRejectReplay(False,False)" methodname="BothBranchesRetainTruthAndKnowledgeAndRejectReplay" classname="Inheritance.Tests.PersistenceTests" runstate="Runnable" seed="1144660646" result="Passed" start-time="2026-10-29 00:02:23Z" end-time="2026-10-29 00:02:23Z" duration="0.138206" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1046" name="BothBranchesRetainTruthAndKnowledgeAndRejectReplay(True,False)" fullname="Inheritance.Tests.PersistenceTests.BothBranchesRetainTruthAndKnowledgeAndRejectReplay(True,False)" methodname="BothBranchesRetainTruthAndKnowledgeAndRejectReplay" classname="Inheritance.Tests.PersistenceTests" runstate="Runnable" seed="1252644530" result="Passed" start-time="2026-10-29 00:02:23Z" end-time="2026-10-29 00:02:23Z" duration="0.001254" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1047" name="BothBranchesRetainTruthAndKnowledgeAndRejectReplay(False,True)" fullname="Inheritance.Tests.PersistenceTests.BothBranchesRetainTruthAndKnowledgeAndRejectReplay(False,True)" methodname="BothBranchesRetainTruthAndKnowledgeAndRejectReplay" classname="Inheritance.Tests.PersistenceTests" runstate="Runnable" seed="1560285143" result="Passed" start-time="2026-10-29 00:02:23Z" end-time="2026-10-29 00:02:23Z" duration="0.007368" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1048" name="BothBranchesRetainTruthAndKnowledgeAndRejectReplay(True,True)" fullname="Inheritance.Tests.PersistenceTests.BothBranchesRetainTruthAndKnowledgeAndRejectReplay(True,True)" methodname="BothBranchesRetainTruthAndKnowledgeAndRejectReplay" classname="Inheritance.Tests.PersistenceTests" runstate="Runnable" seed="1057407203" result="Passed" start-time="2026-10-29 00:02:23Z" end-time="2026-10-29 00:02:23Z" duration="0.001943" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="ParameterizedMethod" id="1070" name="ContradictoryStoryStatesAreRejected" fullname="Inheritance.Tests.PersistenceTests.ContradictoryStoryStatesAreRejected" classname="Inheritance.Tests.PersistenceTests" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-10-29 00:02:23Z" end-time="2026-10-29 00:02:23Z" duration="0.029783" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1063" name="ContradictoryStoryStatesAreRejected(&quot;both&quot;)" fullname="Inheritance.Tests.PersistenceTests.ContradictoryStoryStatesAreRejected(&quot;both&quot;)" methodname="ContradictoryStoryStatesAreRejected" classname="Inheritance.Tests.PersistenceTests" runstate="Runnable" seed="521912056" result="Passed" start-time="2026-10-29 00:02:23Z" end-time="2026-10-29 00:02:23Z" duration="0.003151" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1064" name="ContradictoryStoryStatesAreRejected(&quot;knowledge&quot;)" fullname="Inheritance.Tests.PersistenceTests.ContradictoryStoryStatesAreRejected(&quot;knowledge&quot;)" methodname="ContradictoryStoryStatesAreRejected" classname="Inheritance.Tests.PersistenceTests" runstate="Runnable" seed="1625161856" result="Passed" start-time="2026-10-29 00:02:23Z" end-time="2026-10-29 00:02:23Z" duration="0.002831" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1065" name="ContradictoryStoryStatesAreRejected(&quot;phase&quot;)" fullname="Inheritance.Tests.PersistenceTests.ContradictoryStoryStatesAreRejected(&quot;phase&quot;)" methodname="ContradictoryStoryStatesAreRejected" classname="Inheritance.Tests.PersistenceTests" runstate="Runnable" seed="1560758879" result="Passed" start-time="2026-10-29 00:02:23Z" end-time="2026-10-29 00:02:23Z" duration="0.002607" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1066" name="ContradictoryStoryStatesAreRejected(&quot;time&quot;)" fullname="Inheritance.Tests.PersistenceTests.ContradictoryStoryStatesAreRejected(&quot;time&quot;)" methodname="ContradictoryStoryStatesAreRejected" classname="Inheritance.Tests.PersistenceTests" runstate="Runnable" seed="986989192" result="Passed" start-time="2026-10-29 00:02:23Z" end-time="2026-10-29 00:02:23Z" duration="0.001828" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1067" name="ContradictoryStoryStatesAreRejected(&quot;opportunity&quot;)" fullname="Inheritance.Tests.PersistenceTests.ContradictoryStoryStatesAreRejected(&quot;opportunity&quot;)" methodname="ContradictoryStoryStatesAreRejected" classname="Inheritance.Tests.PersistenceTests" runstate="Runnable" seed="3319299" result="Passed" start-time="2026-10-29 00:02:23Z" end-time="2026-10-29 00:02:23Z" duration="0.001596" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1068" name="ContradictoryStoryStatesAreRejected(&quot;relationship&quot;)" fullname="Inheritance.Tests.PersistenceTests.ContradictoryStoryStatesAreRejected(&quot;relationship&quot;)" methodname="ContradictoryStoryStatesAreRejected" classname="Inheritance.Tests.PersistenceTests" runstate="Runnable" seed="610182201" result="Passed" start-time="2026-10-29 00:02:23Z" end-time="2026-10-29 00:02:23Z" duration="0.002117" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1069" name="ContradictoryStoryStatesAreRejected(&quot;day&quot;)" fullname="Inheritance.Tests.PersistenceTests.ContradictoryStoryStatesAreRejected(&quot;day&quot;)" methodname="ContradictoryStoryStatesAreRejected" classname="Inheritance.Tests.PersistenceTests" runstate="Runnable" seed="1919251756" result="Passed" start-time="2026-10-29 00:02:23Z" end-time="2026-10-29 00:02:23Z" duration="0.002388" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="ParameterizedMethod" id="1062" name="DuplicateIdentifiersAreRejected" fullname="Inheritance.Tests.PersistenceTests.DuplicateIdentifiersAreRejected" classname="Inheritance.Tests.PersistenceTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-10-29 00:02:23Z" end-time="2026-10-29 00:02:23Z" duration="0.012969" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1058" name="DuplicateIdentifiersAreRejected(&quot;fact&quot;)" fullname="Inheritance.Tests.PersistenceTests.DuplicateIdentifiersAreRejected(&quot;fact&quot;)" methodname="DuplicateIdentifiersAreRejected" classname="Inheritance.Tests.PersistenceTests" runstate="Runnable" seed="1161413037" result="Passed" start-time="2026-10-29 00:02:23Z" end-time="2026-10-29 00:02:23Z" duration="0.002299" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1059" name="DuplicateIdentifiersAreRejected(&quot;relationship&quot;)" fullname="Inheritance.Tests.PersistenceTests.DuplicateIdentifiersAreRejected(&quot;relationship&quot;)" methodname="DuplicateIdentifiersAreRejected" classname="Inheritance.Tests.PersistenceTests" runstate="Runnable" seed="1782178266" result="Passed" start-time="2026-10-29 00:02:23Z" end-time="2026-10-29 00:02:23Z" duration="0.001164" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1060" name="DuplicateIdentifiersAreRejected(&quot;knowledge&quot;)" fullname="Inheritance.Tests.PersistenceTests.DuplicateIdentifiersAreRejected(&quot;knowledge&quot;)" methodname="DuplicateIdentifiersAreRejected" classname="Inheritance.Tests.PersistenceTests" runstate="Runnable" seed="1807727369" result="Passed" start-time="2026-10-29 00:02:23Z" end-time="2026-10-29 00:02:23Z" duration="0.002993" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1061" name="DuplicateIdentifiersAreRejected(&quot;opportunity&quot;)" fullname="Inheritance.Tests.PersistenceTests.DuplicateIdentifiersAreRejected(&quot;opportunity&quot;)" methodname="DuplicateIdentifiersAreRejected" classname="Inheritance.Tests.PersistenceTests" runstate="Runnable" seed="1492824794" result="Passed" start-time="2026-10-29 00:02:23Z" end-time="2026-10-29 00:02:23Z" duration="0.000454" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-case id="1076" name="FileRoundTripOverwriteAndFailedSavePreservePreviousSlot" fullname="Inheritance.Tests.PersistenceTests.FileRoundTripOverwriteAndFailedSavePreservePreviousSlot" methodname="FileRoundTripOverwriteAndFailedSavePreservePreviousSlot" classname="Inheritance.Tests.PersistenceTests" runstate="Runnable" seed="254082758" result="Passed" start-time="2026-10-29 00:02:23Z" end-time="2026-10-29 00:02:23Z" duration="0.074216" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1050" name="InitialStateRoundTripsAndRemainsEligible" fullname="Inheritance.Tests.PersistenceTests.InitialStateRoundTripsAndRemainsEligible" methodname="InitialStateRoundTripsAndRemainsEligible" classname="Inheritance.Tests.PersistenceTests" runstate="Runnable" seed="1311251196" result="Passed" start-time="2026-10-29 00:02:23Z" end-time="2026-10-29 00:02:23Z" duration="0.000996" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1056" name="MalformedOrIncompleteJsonIsRejected" fullname="Inheritance.Tests.PersistenceTests.MalformedOrIncompleteJsonIsRejected" classname="Inheritance.Tests.PersistenceTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-10-29 00:02:23Z" end-time="2026-10-29 00:02:23Z" duration="0.008649" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1051" name="MalformedOrIncompleteJsonIsRejected(&quot;&quot;)" fullname="Inheritance.Tests.PersistenceTests.MalformedOrIncompleteJsonIsRejected(&quot;&quot;)" methodname="MalformedOrIncompleteJsonIsRejected" classname="Inheritance.Tests.PersistenceTests" runstate="Runnable" seed="178390989" result="Passed" start-time="2026-10-29 00:02:23Z" end-time="2026-10-29 00:02:23Z" duration="0.000691" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1052" name="MalformedOrIncompleteJsonIsRejected(&quot;null&quot;)" fullname="Inheritance.Tests.PersistenceTests.MalformedOrIncompleteJsonIsRejected(&quot;null&quot;)" methodname="MalformedOrIncompleteJsonIsRejected" classname="Inheritance.Tests.PersistenceTests" runstate="Runnable" seed="1540972277" result="Passed" start-time="2026-10-29 00:02:23Z" end-time="2026-10-29 00:02:23Z" duration="0.000315" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1053" name="MalformedOrIncompleteJsonIsRejected(&quot;{&quot;)" fullname="Inheritance.Tests.PersistenceTests.MalformedOrIncompleteJsonIsRejected(&quot;{&quot;)" methodname="MalformedOrIncompleteJsonIsRejected" classname="Inheritance.Tests.PersistenceTests" runstate="Runnable" seed="597968859" result="Passed" start-time="2026-10-29 00:02:23Z" end-time="2026-10-29 00:02:23Z" duration="0.000284" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1054" name="MalformedOrIncompleteJsonIsRejected(&quot;{}&quot;)" fullname="Inheritance.Tests.PersistenceTests.MalformedOrIncompleteJsonIsRejected(&quot;{}&quot;)" methodname="MalformedOrIncompleteJsonIsRejected" classname="Inheritance.Tests.PersistenceTests" runstate="Runnable" seed="1298330656" result="Passed" start-time="2026-10-29 00:02:23Z" end-time="2026-10-29 00:02:23Z" duration="0.001347" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1055" name="MalformedOrIncompleteJsonIsRejected(&quot;{\&quot;Version\&quot;:1}&quot;)" fullname="Inheritance.Tests.PersistenceTests.MalformedOrIncompleteJsonIsRejected(&quot;{\&quot;Version\&quot;:1}&quot;)" methodname="MalformedOrIncompleteJsonIsRejected" classname="Inheritance.Tests.PersistenceTests" runstate="Runnable" seed="700630174" result="Passed" start-time="2026-10-29 00:02:23Z" end-time="2026-10-29 00:02:23Z" duration="0.001012" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-case id="1071" name="NullEntriesBlankIdentifiersAndInvalidOpportunityAreRejected" fullname="Inheritance.Tests.PersistenceTests.NullEntriesBlankIdentifiersAndInvalidOpportunityAreRejected" methodname="NullEntriesBlankIdentifiersAndInvalidOpportunityAreRejected" classname="Inheritance.Tests.PersistenceTests" runstate="Runnable" seed="244985188" result="Passed" start-time="2026-10-29 00:02:23Z" end-time="2026-10-29 00:02:23Z" duration="0.000879" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1075" name="OversizedJsonIsRejected" fullname="Inheritance.Tests.PersistenceTests.OversizedJsonIsRejected" methodname="OversizedJsonIsRejected" classname="Inheritance.Tests.PersistenceTests" runstate="Runnable" seed="1746965851" result="Passed" start-time="2026-10-29 00:02:23Z" end-time="2026-10-29 00:02:23Z" duration="0.021709" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1044" name="RoundTripPreservesAllGenericStateAndDoesNotAlias" fullname="Inheritance.Tests.PersistenceTests.RoundTripPreservesAllGenericStateAndDoesNotAlias" methodname="RoundTripPreservesAllGenericStateAndDoesNotAlias" classname="Inheritance.Tests.PersistenceTests" runstate="Runnable" seed="1445300545" result="Passed" start-time="2026-10-29 00:02:23Z" end-time="2026-10-29 00:02:23Z" duration="0.004777" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1074" name="TrailingDataIsRejected" fullname="Inheritance.Tests.PersistenceTests.TrailingDataIsRejected" classname="Inheritance.Tests.PersistenceTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-29 00:02:23Z" end-time="2026-10-29 00:02:23Z" duration="0.004636" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1072" name="TrailingDataIsRejected(&quot;garbage&quot;)" fullname="Inheritance.Tests.PersistenceTests.TrailingDataIsRejected(&quot;garbage&quot;)" methodname="TrailingDataIsRejected" classname="Inheritance.Tests.PersistenceTests" runstate="Runnable" seed="213231807" result="Passed" start-time="2026-10-29 00:02:23Z" end-time="2026-10-29 00:02:23Z" duration="0.001354" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1073" name="TrailingDataIsRejected(&quot;{}&quot;)" fullname="Inheritance.Tests.PersistenceTests.TrailingDataIsRejected(&quot;{}&quot;)" methodname="TrailingDataIsRejected" classname="Inheritance.Tests.PersistenceTests" runstate="Runnable" seed="1945916220" result="Passed" start-time="2026-10-29 00:02:23Z" end-time="2026-10-29 00:02:23Z" duration="0.000544" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-case id="1057" name="UnsupportedVersionAndInvalidGenericValuesAreRejected" fullname="Inheritance.Tests.PersistenceTests.UnsupportedVersionAndInvalidGenericValuesAreRejected" methodname="UnsupportedVersionAndInvalidGenericValuesAreRejected" classname="Inheritance.Tests.PersistenceTests" runstate="Runnable" seed="318950955" result="Passed" start-time="2026-10-29 00:02:23Z" end-time="2026-10-29 00:02:23Z" duration="0.001052" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[Saving results to: C:/Users/josep/AppData/LocalLow/DefaultCompany/Inheritance\TestResults.xml
+]]></output>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>
